@@ -15,6 +15,16 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmHoe
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmHoe extends Item
 {
 

@@ -16,6 +16,16 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: WoodenTrellis
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class WoodenTrellis extends Block
 {
 	public WoodenTrellis(int i, int j)

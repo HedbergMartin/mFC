@@ -14,6 +14,16 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmBucket
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmBucket extends FarmItem
 {
 

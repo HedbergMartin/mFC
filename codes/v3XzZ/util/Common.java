@@ -15,6 +15,16 @@ import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: Common
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Common {
 	public static Item getFromMod(String mod, String classname) {
 		try {

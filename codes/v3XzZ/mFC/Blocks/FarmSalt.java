@@ -14,6 +14,16 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmSalt
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmSalt extends Block
 {
 	public FarmSalt(int i)

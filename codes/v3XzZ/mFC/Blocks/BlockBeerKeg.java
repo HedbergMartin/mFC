@@ -20,6 +20,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockBeerKeg
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockBeerKeg extends BlockContainer
 {
     /**

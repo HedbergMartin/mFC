@@ -7,6 +7,16 @@ import v3XzZ.util.Common;
 
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmSaltGen
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmSaltGen {
 	public FarmSaltGen(){
 		

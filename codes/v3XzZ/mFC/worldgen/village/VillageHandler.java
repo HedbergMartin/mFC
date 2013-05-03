@@ -9,6 +9,16 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureVillagePieceWeight;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
 
+/**
+ * Project: mFC
+ * 
+ * Class: VillageHandler
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class VillageHandler implements IVillageCreationHandler {
 
 	@Override

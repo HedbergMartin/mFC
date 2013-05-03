@@ -1,5 +1,15 @@
 package v3XzZ.mFC.lib;
 
+/**
+ * Project: mFC
+ * 
+ * Class: References
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class References {
 
 	//public static final String

@@ -17,6 +17,16 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockRenderHandler
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockRenderHandler implements ISimpleBlockRenderingHandler
 {
     public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)

@@ -11,6 +11,16 @@ import v3XzZ.mFC.Blocks.TileEntitys.TileEntityBeerKeg;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityBeerKeg
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 @SideOnly(Side.CLIENT)
 public class TileEntityBeerKegRender extends TileEntitySpecialRenderer {
 	

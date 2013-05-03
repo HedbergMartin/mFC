@@ -9,6 +9,16 @@ import net.minecraft.network.packet.Packet250CustomPayload;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ServerPacketHandler
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ServerPacketHandler implements IPacketHandler {
 
 	@Override

@@ -14,6 +14,16 @@ import net.minecraft.src.ModLoader;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ClientPacketHandler
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ClientPacketHandler implements IPacketHandler {
 
 	@Override

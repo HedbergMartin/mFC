@@ -9,6 +9,16 @@ import net.minecraft.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: Pancake
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Pancake extends FarmFood {
 
 	public Pancake(int i, int j, int k) {

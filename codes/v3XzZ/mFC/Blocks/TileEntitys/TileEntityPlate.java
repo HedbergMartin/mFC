@@ -8,6 +8,16 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.relauncher.Side;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityPlate
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class TileEntityPlate extends TileEntity {
 	
 	public int baseFood = 0;

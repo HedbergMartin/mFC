@@ -7,6 +7,16 @@ import v3XzZ.mFC.lib.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmFruitTree
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmFruitTree extends WorldGenerator
 {
 	private int FruitBlock;

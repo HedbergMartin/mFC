@@ -9,6 +9,16 @@ import net.minecraft.util.Icon;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ItemRender
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ItemRender {
 
 	public static void renderWithPasses(float scale, float thikness, ItemStack item){

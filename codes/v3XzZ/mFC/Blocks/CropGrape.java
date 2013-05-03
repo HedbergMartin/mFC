@@ -16,6 +16,16 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: CropGrape
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class CropGrape extends CropTemplate
 {
     public CropGrape(int i)

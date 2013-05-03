@@ -17,6 +17,16 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FruitSaplings
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FruitSaplings extends BlockFlower
 {
 	@SideOnly(Side.CLIENT)

@@ -11,6 +11,16 @@ import v3XzZ.mFC.Blocks.FarmFlower;
 import v3XzZ.mFC.Blocks.FruitLeaves;
 import net.minecraft.block.Block;
 
+/**
+ * Project: mFC
+ * 
+ * Class: Blocks
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Blocks {
 
 	public static Block appleBlock;

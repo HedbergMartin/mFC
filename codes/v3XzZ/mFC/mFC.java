@@ -22,7 +22,6 @@ import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import v3XzZ.mFC.Blocks.BlockNewCauldron;
-import v3XzZ.mFC.Items.FarmBoneMeal;
 import v3XzZ.mFC.Items.FarmFruitFood;
 import v3XzZ.mFC.Recipes.BoilingRecipes;
 import v3XzZ.mFC.Recipes.PlateRecipes;
@@ -34,6 +33,16 @@ import v3XzZ.mFC.worldgen.WorldGenerator;
 import v3XzZ.mFC.worldgen.village.VillageHandler;
 import v3XzZ.util.Common;
 import v3XzZ.util.PacketCrafter;
+
+/**
+ * Project: mFC
+ * 
+ * Class: mFC
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 @Mod( modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
 @NetworkMod(

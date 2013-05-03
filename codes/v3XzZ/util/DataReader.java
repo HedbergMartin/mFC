@@ -4,6 +4,16 @@ import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 
+/**
+ * Project: mFC
+ * 
+ * Class: DataReader
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class DataReader {
 	ByteArrayInputStream byteInput;
     DataInputStream inputStream;

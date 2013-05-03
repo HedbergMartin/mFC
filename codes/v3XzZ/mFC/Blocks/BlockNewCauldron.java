@@ -26,6 +26,16 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockNewCauldron
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockNewCauldron extends BlockCauldron implements ITileEntityProvider {
 	
 	Random rand = new Random();

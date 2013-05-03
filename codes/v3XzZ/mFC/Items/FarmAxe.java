@@ -10,6 +10,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmAxe
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmAxe extends FarmTool
 {
     /** an array of the blocks this axe is effective against */

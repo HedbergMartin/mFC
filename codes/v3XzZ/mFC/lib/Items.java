@@ -2,6 +2,16 @@ package v3XzZ.mFC.lib;
 
 import net.minecraft.item.Item;
 
+/**
+ * Project: mFC
+ * 
+ * Class: Items
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Items {
 
 	public static Item money;

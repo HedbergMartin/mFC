@@ -7,6 +7,16 @@ import cpw.mods.fml.relauncher.Side;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet250CustomPayload;
 
+/**
+ * Project: mFC
+ * 
+ * Class: PacketCrafter
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class PacketCrafter {
 	public static final String clientChannel = "mFC_CLIENT";
 	public static final String serverChannel = "mFC_SERVER";

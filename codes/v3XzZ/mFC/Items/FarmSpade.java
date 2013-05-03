@@ -8,6 +8,16 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmSpade
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmSpade extends FarmTool
 {
 

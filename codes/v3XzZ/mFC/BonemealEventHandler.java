@@ -14,6 +14,16 @@ import net.minecraft.block.Block;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BonemealEventHandler
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BonemealEventHandler {
 
 	@ForgeSubscribe

@@ -4,6 +4,16 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Project: mFC
+ * 
+ * Class: DataWriter
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class DataWriter {
 	
 	ByteArrayOutputStream bos = new ByteArrayOutputStream();

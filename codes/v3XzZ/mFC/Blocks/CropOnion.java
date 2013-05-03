@@ -12,6 +12,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: CropOnion
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class CropOnion extends CropTemplate
 {
 	

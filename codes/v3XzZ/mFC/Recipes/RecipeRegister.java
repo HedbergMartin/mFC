@@ -9,6 +9,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
+
+/**
+ * Project: mFC
+ * 
+ * Class: RecipeRegister
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class RecipeRegister {
 
 	public static void addRecipe(){

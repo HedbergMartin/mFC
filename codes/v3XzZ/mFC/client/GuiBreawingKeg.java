@@ -9,6 +9,16 @@ import org.lwjgl.opengl.GL11;
 import v3XzZ.mFC.Blocks.TileEntitys.FarmKegContainer;
 import v3XzZ.mFC.Blocks.TileEntitys.TileEntityBeerKeg;
 
+/**
+ * Project: mFC
+ * 
+ * Class: GuiBrewingKeg
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class GuiBreawingKeg extends GuiContainer
 {
     private TileEntityBeerKeg kegInventory;

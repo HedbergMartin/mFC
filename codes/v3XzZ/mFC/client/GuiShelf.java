@@ -9,6 +9,16 @@ import org.lwjgl.opengl.GL11;
 import v3XzZ.mFC.Blocks.TileEntitys.ContainerShelf;
 import v3XzZ.mFC.Blocks.TileEntitys.TileEntityShelf;
 
+/**
+ * Project: mFC
+ * 
+ * Class: GuiShelf
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class GuiShelf extends GuiContainer
 {
     public TileEntityShelf shelfInventory;

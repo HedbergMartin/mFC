@@ -10,6 +10,16 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmPum
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FarmPum extends ItemFood {
 
 	public FarmPum(int i, int j) {

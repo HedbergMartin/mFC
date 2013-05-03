@@ -13,6 +13,16 @@ import net.minecraft.world.gen.structure.ComponentVillageStartPiece;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 
+/**
+ * Project: mFC
+ * 
+ * Class: VillageFieldGrapes
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class VillageFieldGrapes extends ComponentVillage
 {
     private int averageGroundLevel = -1;

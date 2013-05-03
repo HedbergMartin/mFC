@@ -13,6 +13,16 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityCauldronRender
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class TileEntityCauldronRender extends TileEntitySpecialRenderer {
 
 	private void renderCauldronLiquid(TileEntityCauldron tile, float i, float j, float k, float var8) {

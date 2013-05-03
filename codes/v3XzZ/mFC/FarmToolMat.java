@@ -1,5 +1,15 @@
 package v3XzZ.mFC;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FarmToolMat
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public enum FarmToolMat
 {
     WOOD("WOOD", 0, 0, 59, 2.0F, 0),

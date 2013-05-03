@@ -12,6 +12,16 @@ import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.IWorldGenerator;
 
+/**
+ * Project: mFC
+ * 
+ * Class: WorldGenerator
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class WorldGenerator implements IWorldGenerator {
 
 	@Override

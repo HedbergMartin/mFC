@@ -20,6 +20,16 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: FruitLeaves
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class FruitLeaves extends BlockLeavesBase {
     int[] adjacentTreeBlocks;
     public final String[] names = new String[] {"leaves", "leaves_jungle"};

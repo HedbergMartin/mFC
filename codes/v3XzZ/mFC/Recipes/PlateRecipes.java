@@ -8,6 +8,16 @@ import v3XzZ.mFC.lib.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Project: mFC
+ * 
+ * Class: PlateRecipe
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class PlateRecipes {
 	
 	public static PlateRecipes instance;

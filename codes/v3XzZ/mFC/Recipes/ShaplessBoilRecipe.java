@@ -7,6 +7,16 @@ import java.util.List;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ShaplessBoilRecipe
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ShaplessBoilRecipe {
 	
 	/** Is the ItemStack that you get when craft the recipe. */

@@ -6,6 +6,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.item.ItemExpireEvent;
 
+/**
+ * Project: mFC
+ * 
+ * Class: EntityCauldronItem
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class EntityCauldronItem extends EntityItem {
 	
 	public boolean shouldDespawn = false;

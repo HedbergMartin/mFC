@@ -9,6 +9,16 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BowlPorridge
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BowlPorridge extends BowlFood {
 	
 	public Icon[] iconArray;

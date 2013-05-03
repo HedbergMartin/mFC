@@ -4,6 +4,16 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ModelBeerKeg
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ModelBeerKeg extends ModelBase
 {
   //fields

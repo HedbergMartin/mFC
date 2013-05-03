@@ -17,6 +17,16 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityCauldron
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class TileEntityCauldron extends TileEntity {
 
 	public static final int EMPTY = 0;

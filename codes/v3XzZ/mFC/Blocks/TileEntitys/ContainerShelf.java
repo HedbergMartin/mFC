@@ -8,6 +8,16 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ContainerShelf
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ContainerShelf extends Container
 {
     private TileEntityShelf tileShelf;

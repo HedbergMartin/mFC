@@ -1,9 +1,6 @@
 package v3XzZ.mFC.Recipes;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import v3XzZ.mFC.Blocks.TileEntitys.TileEntityCauldron;
 import v3XzZ.mFC.lib.Items;
@@ -11,6 +8,16 @@ import v3XzZ.mFC.lib.Items;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+/**
+ * Project: mFC
+ * 
+ * Class: BoilingRecipes, ColorCode
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class BoilingRecipes {
 	

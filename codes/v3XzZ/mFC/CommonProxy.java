@@ -11,6 +11,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 
+/**
+ * Project: mFC
+ * 
+ * Class: CommonProxy
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class CommonProxy implements IGuiHandler
 {
 	public PacketCrafter packetcrafter;

@@ -10,6 +10,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockPresent
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockPresent extends Block {
 	
 	Map randomloot = new HashMap();

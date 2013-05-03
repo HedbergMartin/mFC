@@ -14,6 +14,16 @@ import v3XzZ.util.ItemRender;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityShelfRender
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 @SideOnly(Side.CLIENT)
 public class TileEntityShelfRender extends TileEntitySpecialRenderer {
 	

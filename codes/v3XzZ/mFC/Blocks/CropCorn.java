@@ -14,6 +14,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: CropCorn
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class CropCorn extends CropTemplate {
 	
 	public CropCorn(int i)

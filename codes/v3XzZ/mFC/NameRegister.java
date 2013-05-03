@@ -4,6 +4,16 @@ import v3XzZ.mFC.lib.Blocks;
 import v3XzZ.mFC.lib.Items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
+/**
+ * Project: mFC
+ * 
+ * Class: NameRegister
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class NameRegister 
 {
 	public static void addName()

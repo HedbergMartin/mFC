@@ -20,6 +20,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockPlate
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockPlate extends BlockContainer {
 
 	public BlockPlate(int par1, Material par3Material) {

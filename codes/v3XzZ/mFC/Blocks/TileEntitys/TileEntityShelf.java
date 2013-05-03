@@ -19,6 +19,16 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 
+/**
+ * Project: mFC
+ * 
+ * Class: TileEntityShelf
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class TileEntityShelf extends TileEntity implements IInventory, ISidedInventory {
 
 	public ItemStack[] items = new ItemStack[8];

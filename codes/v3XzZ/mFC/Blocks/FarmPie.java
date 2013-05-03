@@ -16,9 +16,15 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-// Referenced classes of package net.minecraft.src:
-//            Block, Material, IBlockAccess, World, 
-//            AxisAlignedBB, EntityPlayer, FoodStats
+/**
+ * Project: mFC
+ * 
+ * Class: FarmPie
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class FarmPie extends Block
 {

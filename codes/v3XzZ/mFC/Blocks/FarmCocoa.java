@@ -15,9 +15,15 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-// Referenced classes of package net.minecraft.src:
-//            Block, Material, mod_chocolate, Item, 
-//            World, AxisAlignedBB
+/**
+ * Project: mFC
+ * 
+ * Class: FarmCocoa
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class FarmCocoa extends Block
 {

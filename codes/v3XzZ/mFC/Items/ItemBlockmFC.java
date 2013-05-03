@@ -7,6 +7,16 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemReed;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ItemBlockmFC
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ItemBlockmFC extends ItemReed {
 
 	public ItemBlockmFC(int par1, Block par2Block) {

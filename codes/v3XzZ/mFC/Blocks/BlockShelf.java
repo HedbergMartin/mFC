@@ -23,6 +23,16 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
+/**
+ * Project: mFC
+ * 
+ * Class: BlockShelf
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class BlockShelf extends BlockContainer {
 
 	public BlockShelf(int par1, Material par3Material) {

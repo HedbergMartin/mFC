@@ -2,6 +2,16 @@ package v3XzZ.mFC;
 
 import net.minecraftforge.common.Configuration;
 
+/**
+ * Project: mFC
+ * 
+ * Class: Identifications
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public abstract class Identifications {
 	
 	public static int cornCobFood;
