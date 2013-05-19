@@ -40,6 +40,7 @@ import v3XzZ.mFC.Items.FarmSeeds;
 import v3XzZ.mFC.Items.FarmSpade;
 import v3XzZ.mFC.Items.FarmSword;
 import v3XzZ.mFC.Items.FarmTreeSeed;
+import v3XzZ.mFC.Items.ItemSeedFood_mFC;
 import v3XzZ.mFC.Items.ItemTallBottleDrink;
 import v3XzZ.mFC.Items.Pancake;
 import v3XzZ.mFC.lib.Blocks;
@@ -76,15 +77,15 @@ public class Config {
 	}
 	
 	public static void loadModern(){
-		Items.hamburgerBread = (new FarmFood(Identifications.HamburgerBreadID, Identifications.HamburgerBreadFood, 64)).setUnlocalizedName("modern/hamburgerBread");
-		Items.hamburgerOrginal = (new FarmFood(Identifications.HamBurgerID, Identifications.HamBurgerFood, 64)).setUnlocalizedName("modern/hamburgerOriginal");
-		Items.hamburgerCheese = (new FarmFood(Identifications.CheeseBurgerID, Identifications.CheeseBurgerFood, 64)).setUnlocalizedName("modern/hamburgerCheese");
-		Items.hamburgerRaw = (new FarmFood(Identifications.RawHamburgerMeatID, Identifications.RawHamburgerMeatFood, 64)).setUnlocalizedName("modern/hamburgerRaw");
-		Items.hamburger = (new FarmFood(Identifications.HamburgerMeatID, Identifications.HamburgerMeatFood, 64)).setUnlocalizedName("modern/hamburger");
-		Items.frenchFries = (new FarmFood(Identifications.StripsID, Identifications.StripsFood, 64)).setUnlocalizedName("modern/frenchFries");
-		Items.hamburgerBacon = (new FarmFood(Identifications.CheeseBaconBurgerID, Identifications.CheeseBaconBurgerFood, 64)).setUnlocalizedName("modern/hamburgerBacon");
-		Items.hotDog = (new FarmFood(Identifications.HotDogID, Identifications.HotDogFood, 64)).setUnlocalizedName("modern/hotdog");
-		Items.hotDogKetchup = (new FarmFood(Identifications.HotDogKetchupID, Identifications.HotDogKetchupFood, 64)).setUnlocalizedName("modern/hotdogKetchup");
+		Items.hamburgerBread = (new FarmFood(Identifications.HamburgerBreadID, Identifications.HamburgerBreadFood, 16, 0.1F)).setUnlocalizedName("modern/hamburgerBread");
+		Items.hamburgerOrginal = (new FarmFood(Identifications.HamBurgerID, Identifications.HamBurgerFood, 16, 0.8F)).setUnlocalizedName("modern/hamburgerOriginal");
+		Items.hamburgerCheese = (new FarmFood(Identifications.CheeseBurgerID, Identifications.CheeseBurgerFood, 16, 0.9F)).setUnlocalizedName("modern/hamburgerCheese");
+		Items.hamburgerRaw = (new FarmFood(Identifications.RawHamburgerMeatID, Identifications.RawHamburgerMeatFood, 16, 0.1F)).setUnlocalizedName("modern/hamburgerRaw");
+		Items.hamburger = (new FarmFood(Identifications.HamburgerMeatID, Identifications.HamburgerMeatFood, 16, 0.5F)).setUnlocalizedName("modern/hamburger");
+		Items.frenchFries = (new FarmFood(Identifications.StripsID, Identifications.StripsFood, 16, 0.6F)).setUnlocalizedName("modern/frenchFries");
+		Items.hamburgerBacon = (new FarmFood(Identifications.CheeseBaconBurgerID, Identifications.CheeseBaconBurgerFood, 16, 0.9F)).setUnlocalizedName("modern/hamburgerBacon");
+		Items.hotDog = (new FarmFood(Identifications.HotDogID, Identifications.HotDogFood, 16, 0.6F)).setUnlocalizedName("modern/hotdog");
+		Items.hotDogKetchup = (new FarmFood(Identifications.HotDogKetchupID, Identifications.HotDogKetchupFood, 16, 0.6F)).setUnlocalizedName("modern/hotdogKetchup");
 		Items.bottleOfKetchup = (new FarmItem(Identifications.KetchupID)).setUnlocalizedName("modern/ketchup").setMaxStackSize(1).setContainerItem(Item.glassBottle);
 	}
 	
@@ -92,12 +93,12 @@ public class Config {
 		Items.moldEmpty = (new FarmItem(Identifications.CheeseMoldID)).setUnlocalizedName("moldEmpty");
 		Items.moldMilk = (new FarmItem(Identifications.CheeseMoldMilkID)).setUnlocalizedName("moldMilk");
 		Items.moldCheese = (new FarmItem(Identifications.CheeseMoldCheeseID)).setUnlocalizedName("moldCheese").setMaxStackSize(1).setContainerItem(Items.moldEmpty);
-		Items.cheesePiece = (new FarmFood(Identifications.CheesePieceID, Identifications.CheesePieceFood, 16)).setUnlocalizedName("cheesePiece");
+		Items.cheesePiece = (new FarmFood(Identifications.CheesePieceID, Identifications.CheesePieceFood, 16, 0.1F)).setUnlocalizedName("cheesePiece");
 	}
 	
 	public static void loadDrinkingRelated(){
 		Items.drinkingGlass = (new FarmItem(Identifications.DrinkingGlassID)).setUnlocalizedName("glass").setMaxStackSize(2);
-		Items.glassWater = (new FarmDrink(Identifications.BottleWaterID, Identifications.BottleWaterFood)).setUnlocalizedName("glassWater").setContainerItem(Items.drinkingGlass);
+		Items.glassWater = (new FarmDrink(Identifications.BottleWaterID, Identifications.BottleWaterFood)).setUnlocalizedName("glassWater");
 		Items.clayCup = (new FarmItem(Identifications.CupUnburnedID)).setUnlocalizedName("cupClay").setMaxStackSize(1);
 		Items.cup = (new FarmItem(Identifications.CupID)).setUnlocalizedName("cup").setMaxStackSize(2);
 		Items.cupChocolate = (new FarmCup(Identifications.CupChoklateID, Identifications.CupChoklateFood)).setMaxStackSize(3).setUnlocalizedName("cupChocolate");
@@ -114,15 +115,15 @@ public class Config {
 	}
 	
 	public static void loadSandwichAndRelated(){
-		Items.baconRaw = (new FarmFood(Identifications.RawBaconID, Identifications.RawBaconFood, 8)).setUnlocalizedName("baconRaw");
-		Items.bacon = (new FarmFood(Identifications.BaconID, Identifications.BaconFood, 8)).setUnlocalizedName("bacon");
-		Items.friedEgg = (new FarmFood(Identifications.friedEggID, Identifications.friedEggFood, 4)).setUnlocalizedName("friedEgg");
-		Items.breadSlice = (new FarmFood(Identifications.BreadSliceID, Identifications.BreadSliceFood, 8)).setUnlocalizedName("breadSlice");
-		Items.sandwichEgg = (new FarmFood(Identifications.EggSandwichID, Identifications.EggSandwichFood, 4)).setUnlocalizedName("sandwichEgg");
-		Items.sandwichBacon = (new FarmFood(Identifications.EggBaconSandwichID, Identifications.EggBaconSandwichFood, 4)).setUnlocalizedName("sandwichBacon");
-		Items.sausageRaw = (new FarmFood(Identifications.HotDogRawID, Identifications.HotDogRawFood, 8)).setUnlocalizedName("sausageRaw");
-		Items.sausage = (new FarmFood(Identifications.HotDogGrilledID, Identifications.HotDogGrilledFood, 8)).setUnlocalizedName("sausage");
-		Items.sandwichChicken = (new FarmFood(Identifications.ChickenSandwichID, Identifications.ChickenSandwichFood, 4)).setUnlocalizedName("sandwichChicken");
+		Items.baconRaw = (new FarmFood(Identifications.RawBaconID, Identifications.RawBaconFood, 8, 0.1F)).setUnlocalizedName("baconRaw");
+		Items.bacon = (new FarmFood(Identifications.BaconID, Identifications.BaconFood, 8, 0.4F)).setUnlocalizedName("bacon");
+		Items.friedEgg = (new FarmFood(Identifications.friedEggID, Identifications.friedEggFood, 4, 0.4F)).setUnlocalizedName("friedEgg");
+		Items.breadSlice = (new FarmFood(Identifications.BreadSliceID, Identifications.BreadSliceFood, 8, 0.1F)).setUnlocalizedName("breadSlice");
+		Items.sandwichEgg = (new FarmFood(Identifications.EggSandwichID, Identifications.EggSandwichFood, 4, 0.9F)).setUnlocalizedName("sandwichEgg");
+		Items.sandwichBacon = (new FarmFood(Identifications.EggBaconSandwichID, Identifications.EggBaconSandwichFood, 4, 0.9F)).setUnlocalizedName("sandwichBacon");
+		Items.sausageRaw = (new FarmFood(Identifications.HotDogRawID, Identifications.HotDogRawFood, 8, 0.1F)).setUnlocalizedName("sausageRaw");
+		Items.sausage = (new FarmFood(Identifications.HotDogGrilledID, Identifications.HotDogGrilledFood, 8, 0.4F)).setUnlocalizedName("sausage");
+		Items.sandwichChicken = (new FarmFood(Identifications.ChickenSandwichID, Identifications.ChickenSandwichFood, 4, 0.9F)).setUnlocalizedName("sandwichChicken");
 	}
 	
 	public static void loadBrewingAndRelated(){
@@ -149,61 +150,59 @@ public class Config {
 	}
 	
 	public static void loadBowlFoodAndRelated(){
-		Items.meatScrap = (new FarmFood(Identifications.MeatSauceID, Identifications.MeatSauceFood, 64)).setUnlocalizedName("meatScrap");
+		Items.meatScrap = (new FarmFood(Identifications.MeatSauceID, Identifications.MeatSauceFood, 16, 0.3F)).setUnlocalizedName("meatScrap");
 		Items.pasta = (new FarmItem(Identifications.PastaID)).setUnlocalizedName("pasta");
-		Items.mayonnaise = (new BowlFood(Identifications.MayonnaiseID, Identifications.MayonnaiseFood)).setUnlocalizedName("mayonnaise");
-		Items.saladPasta = (new BowlFood(Identifications.PastaSalladID, Identifications.PastaSalladFood)).setUnlocalizedName("saladPasta");
-		Items.pastaMeat = (new BowlFood(Identifications.PastaMeatsauceID, Identifications.PastaMeatsauceFood)).setUnlocalizedName("pastaMeat");
-		Items.saladCeasar = (new BowlFood(Identifications.CeasarSalladID, Identifications.CeasarSalladFood)).setUnlocalizedName("saladCeasar");
-		Items.saladChicken = (new BowlFood(Identifications.ChickenSalladID, Identifications.ChickenSalladFood)).setUnlocalizedName("saladChicken");
-		Items.bowlOfRice = (new BowlFood(Identifications.BowlOfRiceID, Identifications.BowlOfRiceFood)).setUnlocalizedName("riceBowl");
-		Items.tomatoStew = new BowlFood(Identifications.tomatoAndOnionSalladID, Identifications.tomatoAndOnionSalladFood).setUnlocalizedName("stewTomato");
-		Items.carrotStew = new BowlFood(Identifications.carrotStewID, Identifications.carrotStewFood).setUnlocalizedName("stewCarrot");
-		Items.beefStew = new BowlFood(Identifications.beefStewID, Identifications.beefStewFood).setUnlocalizedName("stewBeef");
-		Items.onionStew = new BowlFood(Identifications.onionStewID, Identifications.onionStewFood).setUnlocalizedName("stewOnion");
-		Items.beefSoup = new BowlFood(Identifications.beefSoupID, Identifications.beefSoupFood).setUnlocalizedName("soupBeef");
-		Items.macaroniAndCheese = new BowlFood(Identifications.macaroniAndCheeseID, Identifications.macaroniAndCheeseFood).setUnlocalizedName("macaroneAndCheese");
-		Items.porridge = new BowlPorridge(Identifications.porridgeID, Identifications.porridgeFood).setUnlocalizedName("porridge");
-		Items.guacamole = (BowlFood) new BowlFood(Identifications.guacamoleID, Identifications.guacamoleFood).setUnlocalizedName("guacamole");
+		Items.mayonnaise = (new BowlFood(Identifications.MayonnaiseID, Identifications.MayonnaiseFood, 0.4F)).setUnlocalizedName("mayonnaise");
+		Items.saladPasta = (new BowlFood(Identifications.PastaSalladID, Identifications.PastaSalladFood, 0.8F)).setUnlocalizedName("saladPasta");
+		Items.pastaMeat = (new BowlFood(Identifications.PastaMeatsauceID, Identifications.PastaMeatsauceFood, 0.9F)).setUnlocalizedName("pastaMeat");
+		Items.saladCeasar = (new BowlFood(Identifications.CeasarSalladID, Identifications.CeasarSalladFood, 0.9F)).setUnlocalizedName("saladCeasar");
+		Items.saladChicken = (new BowlFood(Identifications.ChickenSalladID, Identifications.ChickenSalladFood, 0.9F)).setUnlocalizedName("saladChicken");
+		Items.bowlOfRice = new BowlFood(Identifications.BowlOfRiceID, Identifications.BowlOfRiceFood, 0.7F).setContainerItem(Item.bowlEmpty).setUnlocalizedName("riceBowl");
+		Items.tomatoStew = new BowlFood(Identifications.tomatoAndOnionSalladID, Identifications.tomatoAndOnionSalladFood, 0.8F).setUnlocalizedName("stewTomato");
+		Items.carrotStew = new BowlFood(Identifications.carrotStewID, Identifications.carrotStewFood, 0.8F).setUnlocalizedName("stewCarrot");
+		Items.beefStew = new BowlFood(Identifications.beefStewID, Identifications.beefStewFood, 1F).setUnlocalizedName("stewBeef");
+		Items.onionStew = new BowlFood(Identifications.onionStewID, Identifications.onionStewFood, 0.8F).setUnlocalizedName("stewOnion");
+		Items.beefSoup = new BowlFood(Identifications.beefSoupID, Identifications.beefSoupFood, 1F).setUnlocalizedName("soupBeef");
+		Items.macaroniAndCheese = new BowlFood(Identifications.macaroniAndCheeseID, Identifications.macaroniAndCheeseFood, 0.8F).setUnlocalizedName("macaroneAndCheese");
+		Items.porridge = new BowlPorridge(Identifications.porridgeID, Identifications.porridgeFood, 0.8F).setUnlocalizedName("porridge");
+		Items.guacamole = (BowlFood) new BowlFood(Identifications.guacamoleID, Identifications.guacamoleFood, 0.5F).setUnlocalizedName("guacamole");
 	}
 	
 	public static void loadSuchiAndSea(){
 		Items.MakiLong = new FarmItem(Identifications.MakiLongID).setUnlocalizedName("suchiMakiLong");
-		Items.MakiShort = new FarmFood(Identifications.MakiShortID, Identifications.MakiFood, 32).setUnlocalizedName("suchiMaki");
-		Items.LaxSuchi = new FarmFood(Identifications.LaxSuchiID, Identifications.LaxSuchiFood, 32).setUnlocalizedName("suchiLax");
+		Items.MakiShort = new FarmFood(Identifications.MakiShortID, Identifications.MakiFood, 16, 0.5F).setUnlocalizedName("suchiMaki");
+		Items.LaxSuchi = new FarmFood(Identifications.SalmonSuchiID, Identifications.LaxSuchiFood, 16, 0.5F).setUnlocalizedName("suchiLax");
 		Items.wasabi = new FarmItem(Identifications.WasabiID).setUnlocalizedName("wasabiPaste");
 	}
 	
 	public static void loadOtherFood(){
-		Items.beefJerky = (new FarmFood(Identifications.BeefJerkyID, Identifications.BeefJerkyFood, 16)).setUnlocalizedName("beefJerky");
+		Items.beefJerky = (new FarmFood(Identifications.BeefJerkyID, Identifications.BeefJerkyFood, 16, 0.6F)).setUnlocalizedName("beefJerky");
 		Items.saltPile = (new FarmItem(Identifications.SaltID)).setUnlocalizedName("salt");
 		Items.bottleOfOil = (new FarmItem(Identifications.OilID)).setUnlocalizedName("oil").setMaxStackSize(1).setContainerItem(Item.glassBottle);
-		Items.palt = (new FarmFood(Identifications.paltID, Identifications.paltFood, 16)).setUnlocalizedName("palt");
-		Items.pancake = (new Pancake(Identifications.pancakesID, Identifications.pancakesFood, 16)).setUnlocalizedName("pancake");
-		Items.gingerBread = new FarmFood(Identifications.gingerBreadID, Identifications.gingerBreadFood, 16).setUnlocalizedName("christmasBread");
-		Items.candyCane = new FarmFood(Identifications.candyCaneID, Identifications.candyCaneFood, 16).setPotionEffect(Potion.regeneration.id, 4, 0, 1F).setUnlocalizedName("christmasCane");
-		Items.dogFood = new FarmFood(Identifications.dogFoodID, Identifications.dogFoodFood, 16, true).setPotionEffect(Potion.hunger.id, 60, 0, 1.0F).setUnlocalizedName("dogFood");
+		Items.palt = (new FarmFood(Identifications.paltID, Identifications.paltFood, 16, 0.9F)).setUnlocalizedName("palt");
+		Items.pancake = (new Pancake(Identifications.pancakesID, Identifications.pancakesFood, 16, 0.9F)).setUnlocalizedName("pancake");
+		Items.gingerBread = new FarmFood(Identifications.gingerBreadID, Identifications.gingerBreadFood, 16, 0.4F).setUnlocalizedName("christmasBread");
+		Items.candyCane = new FarmFood(Identifications.candyCaneID, Identifications.candyCaneFood, 16, 0.4F).setPotionEffect(Potion.regeneration.id, 4, 0, 1F).setUnlocalizedName("christmasCane");
+		Items.dogFood = new FarmFood(Identifications.dogFoodID, Identifications.dogFoodFood, 16, 0.05F, true).setPotionEffect(Potion.hunger.id, 60, 0, 1.0F).setUnlocalizedName("dogFood");
 		Items.jamJar = new FarmItem(Identifications.jamJarID).setUnlocalizedName("jamJar");
 		Items.StrawBerryjam = new FarmJam(Identifications.StrawBerryjamID, Identifications.StrawBerryjamFood).setUnlocalizedName("jamStrawBerry");
 		Items.RaspBerryjam = new FarmJam(Identifications.RaspBerryjamID, Identifications.RaspBerryjamFood).setUnlocalizedName("jamRaspBerry");
-		Items.chocolateBar = new FarmFood(Identifications.chocolateBarID, Identifications.chocolateBarFood, 4).setUnlocalizedName("chocolateBar");
-		Items.boiledRice = new FarmItem(Identifications.boiledRiceID).setUnlocalizedName("riceBoiled");
+		Items.chocolateBar = new FarmFood(Identifications.chocolateBarID, Identifications.chocolateBarFood, 4, 0.4F).setUnlocalizedName("chocolateBar");
 		Items.pumpkinPiece = new FarmItem(Identifications.pumpkinPieceID).setUnlocalizedName("pumpkinPiece");
 		Items.roastPumpkin = new FarmPum(Identifications.roastPumpkinID,Identifications.roastPumpkinFood).setUnlocalizedName("pumpkinRoast");
-		Items.cornCobCooked = new FarmFood(Identifications.cornCobCookedID,Identifications.cornCobCookedFood, 64).setUnlocalizedName("cornCob");
+		Items.cornCobCooked = new FarmFood(Identifications.cornCobCookedID,Identifications.cornCobCookedFood, 8, 0.5F).setUnlocalizedName("cornCob");
 	}
 	
 	public static void loadVegetables(){
-		Items.wasabiRoot = new FarmItem(Identifications.WasabiRootID).setUnlocalizedName("wasabiRoot").setMaxStackSize(8);
-		Items.onion = new FarmFood(Identifications.onionID, Identifications.onionFood, 8).setUnlocalizedName("vegOnion");
-		Items.strawBerry = new FarmFood(Identifications.strawBerryID, Identifications.strawBerryFood, 8).setUnlocalizedName("vegStrawBerry");
-		Items.raspBerry = new FarmFood(Identifications.raspBerryID, Identifications.raspBerryFood, 8).setUnlocalizedName("vegRaspBerry");
-		Items.grapes = new FarmFood(Identifications.grapesID, Identifications.grapesFood, 64).setUnlocalizedName("fruitGrape");
-		Items.avacado = new FarmFruitFood(Identifications.avacadoID, Identifications.avacadoFood, Items.AvacadoSeeds.itemID).setUnlocalizedName("fruitAvocado");
-		Items.orange = new FarmFruitFood(Identifications.orangeID, Identifications.orangeFood, Items.OrangeSeeds.itemID).setUnlocalizedName("fruitOrange");
-		Items.cornCob = new FarmFood(Identifications.cornCobID,Identifications.cornCobFood, 8).setUnlocalizedName("vegCorn");
-		Items.tomato = new FarmFood(Identifications.tomatoID,Identifications.tomatoFood, 8).setUnlocalizedName("vegTomato");
-		Items.lettuce = new FarmFood(Identifications.lettuceID, Identifications.lettuceFood, 8).setUnlocalizedName("vegLettuce");
+		Items.onion = new ItemSeedFood_mFC(Identifications.onionID, Identifications.onionFood, 0.05F, Blocks.onionPlant.blockID, Block.tilledField.blockID).setUnlocalizedName("vegOnion").setMaxStackSize(8);
+		Items.strawBerry = new FarmFood(Identifications.strawBerryID, Identifications.strawBerryFood, 8, 0.05F).setUnlocalizedName("vegStrawBerry");
+		Items.raspBerry = new FarmFood(Identifications.raspBerryID, Identifications.raspBerryFood, 8, 0.05F).setUnlocalizedName("vegRaspBerry");
+		Items.grapes = new FarmFood(Identifications.grapesID, Identifications.grapesFood, 16, 0.05F).setUnlocalizedName("fruitGrape");
+		Items.avacado = new FarmFruitFood(Identifications.avacadoID, Identifications.avacadoFood, 0.05F, Items.AvacadoSeeds.itemID).setUnlocalizedName("fruitAvocado");
+		Items.orange = new FarmFruitFood(Identifications.orangeID, Identifications.orangeFood, 0.05F, Items.OrangeSeeds.itemID).setUnlocalizedName("fruitOrange");
+		Items.cornCob = new FarmFood(Identifications.cornCobID,Identifications.cornCobFood, 8, 0.05F).setUnlocalizedName("vegCorn");
+		Items.tomato = new FarmFood(Identifications.tomatoID,Identifications.tomatoFood, 8, 0.05F).setUnlocalizedName("vegTomato");
+		Items.lettuce = new FarmFood(Identifications.lettuceID, Identifications.lettuceFood, 8, 0.05F).setUnlocalizedName("vegLettuce");
 		Items.Rice = new FarmItem(Identifications.RiceID).setUnlocalizedName("rice");
 	}
 	
@@ -216,13 +215,12 @@ public class Config {
 		Items.redSeeds = new FarmSeeds(Identifications.redSeedsID, Blocks.redSeedling.blockID).setUnlocalizedName("seedRed");
 		Items.cornSeeds = new FarmSeeds(Identifications.cornSeedsID, Blocks.cornPlant.blockID).setUnlocalizedName("seedCorn");
 		Items.lettuceSeeds = new FarmSeeds(Identifications.lettuceSeedsID, Blocks.lettucePlant.blockID).setUnlocalizedName("seedLettuce");
-		Items.wasabiSeeds = new FarmSeeds(Identifications.wasabiSeedsID, Blocks.wasabiPlant.blockID).setUnlocalizedName("seedWasabi");
 		Items.riceSeeds = new FarmSeeds(Identifications.riceSeedsID, Blocks.ricePlant.blockID, 1).setUnlocalizedName("seedRice");
-		Items.onionSeeds = new FarmSeeds(Identifications.onionSeedsID, Blocks.onionPlant.blockID).setUnlocalizedName("seedOnion");
 		Items.grapeSeeds = new FarmItem(Identifications.grapeSeedsID).setUnlocalizedName("seedGrape");
 		Items.tomatoSeeds = new FarmSeeds(Identifications.tomatoSeedsID, Blocks.tomatoPlant.blockID).setUnlocalizedName("seedTomato");
 		Items.raspBerrySeeds = new FarmSeeds(Identifications.raspBerrySeedsID, Blocks.raspBerryPlant.blockID).setUnlocalizedName("seedRaspBerry");
 		Items.strawBerrySeeds = new FarmSeeds(Identifications.strawBerrySeedsID, Blocks.strawBerryPlant.blockID).setUnlocalizedName("seedStrawBerry");
+		Items.wasabiRoot = new FarmSeeds(Identifications.WasabiRootID, Blocks.wasabiPlant.blockID).setUnlocalizedName("wasabiRoot").setMaxStackSize(8);
 	}
 	
 	public static void loadCrops(){

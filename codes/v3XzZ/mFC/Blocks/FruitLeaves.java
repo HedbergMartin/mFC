@@ -33,7 +33,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class FruitLeaves extends BlockLeavesBase {
     int[] adjacentTreeBlocks;
     public final String[] names = new String[] {"leaves", "leaves_jungle"};
-    @SideOnly(Side.CLIENT)
     private Icon[] iconArray = new Icon[2];
     
     public FruitLeaves(int par1) {
@@ -217,11 +216,11 @@ public class FruitLeaves extends BlockLeavesBase {
     {
         return ColorizerFoliage.getFoliageColorBasic();
     }
-    
+
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getIcon(int par1, int par2)
     {
         return ((par2 & 3) == 3 ? this.iconArray[1] : this.iconArray[0]);
     }

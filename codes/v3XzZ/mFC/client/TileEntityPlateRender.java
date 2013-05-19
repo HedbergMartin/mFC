@@ -54,7 +54,7 @@ public class TileEntityPlateRender extends TileEntitySpecialRenderer {
 		}
 		/** =========================Rice============================= */
 		if(plate.baseFood != 0){
-			if(plate.baseFood == Items.boiledRice.itemID){
+			if(plate.baseFood == Items.bowlOfRice.itemID){
 				GL11.glPushMatrix();
 		        GL11.glTranslatef(i + 0.5F, j + 0.08F, k + 0.6F);
 		        GL11.glScalef(1.0F, -1.0F, -1.0F);

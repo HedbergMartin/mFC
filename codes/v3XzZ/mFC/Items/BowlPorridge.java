@@ -24,8 +24,8 @@ public class BowlPorridge extends BowlFood {
 	public Icon[] iconArray;
 	public String[] names = new String[]{"porridgeWheat", "porridgeRice"};
 
-	public BowlPorridge(int i, int j) {
-		super(i, j);
+	public BowlPorridge(int i, int j, float saturation) {
+		super(i, j, saturation);
 		this.setHasSubtypes(true);
 	}
 	
@@ -55,7 +55,7 @@ public class BowlPorridge extends BowlFood {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister par1IconRegister) {
+	public void registerIcons(IconRegister par1IconRegister) {
 		iconArray = new Icon[2];
 		for(int i = 0; i < iconArray.length; i++){
 			iconArray[i] = par1IconRegister.registerIcon("mFC:" + names[i]);

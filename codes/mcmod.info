@@ -1,0 +1,21 @@
+[
+{
+  "modid": "mFC",
+  "name": "mo' Food and crops",
+  "description": "mo' Food and Crops is a mod that adds a lot of food and crops. It have beer and wine brewing in a brewing keg as well. In the whole it, mo' Food and Crops is a special food mod. Thanks that you choose it :)",
+  "version": "1.2",
+  "mcversion": "1.5.1",
+  "url": "http://www.minecraftforum.net/topic/781133-1",
+  "updateUrl": "",
+  "authors": [
+    "v3XzZ"
+  ],
+  "credits": "Authored by v3XzZ",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

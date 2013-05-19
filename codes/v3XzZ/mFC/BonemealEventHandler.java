@@ -11,6 +11,7 @@ import v3XzZ.mFC.Blocks.FarmFlower;
 import v3XzZ.mFC.Blocks.FruitSaplings;
 import v3XzZ.mFC.lib.Blocks;
 import net.minecraft.block.Block;
+import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 
@@ -36,40 +37,57 @@ public class BonemealEventHandler {
 		if(block instanceof FarmFlower)
         {
             ((FarmFlower)block).growToOther(event.world, i, j, k);
+            event.setResult(Result.ALLOW);
         }
     	if(block instanceof CropBush)
         {
-            ((CropBush)block).fertilize(event.world, i, j, k);
+    		if(((CropBush)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
     	if(block instanceof FruitSaplings)
         {
-			((FruitSaplings)block).growTree(event.world, i, j, k, event.world.rand);
+    		if(((FruitSaplings)block).growTree(event.world, i, j, k, event.world.rand)){
+                event.setResult(Result.ALLOW);
+            }
         }
         if(block instanceof CropCorn)
         {
         	if(event.world.getBlockId(i, j-1, k) != Blocks.cornPlant.blockID){
-        		((CropCorn)block).fertilize(event.world, i, j, k);
+        		if(((CropCorn)block).fertilize(event.world, i, j, k)){
+                    event.setResult(Result.ALLOW);
+        		}
         	}
         }
         if(block instanceof CropRice)
         {
-            ((CropRice)block).fertilize(event.world, i, j, k);
+            if(((CropRice)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
         if(block instanceof CropLettuce)
         {
-            ((CropLettuce)block).fertilize(event.world, i, j, k);
+        	if(((CropLettuce)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
         if(block instanceof CropOnion)
         {
-            ((CropOnion)block).fertilize(event.world, i, j, k);
+        	if(((CropOnion)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
         if(block instanceof CropGrape)
         {
-            ((CropGrape)block).fertilize(event.world, i, j, k);
+        	if(((CropGrape)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
         if(block instanceof CropWasabi)
         {
-            ((CropWasabi)block).fertilize(event.world, i, j, k);
+        	if(((CropWasabi)block).fertilize(event.world, i, j, k)){
+                event.setResult(Result.ALLOW);
+            }
         }
     }
 }

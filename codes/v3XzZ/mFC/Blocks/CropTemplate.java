@@ -20,7 +20,6 @@ import net.minecraft.util.Icon;
 
 public class CropTemplate extends BlockFlower {
 
-	@SideOnly(Side.CLIENT)
 	public Icon[]	iconArray;
 
 	protected CropTemplate(int par1) {
@@ -40,7 +39,7 @@ public class CropTemplate extends BlockFlower {
 	/**
 	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
 	 */
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	public Icon getIcon(int par1, int par2) {
 		if(this.iconArray != null){
 			if (par2 < 0 || par2 > this.iconArray.length) {
 				par2 = this.iconArray.length;

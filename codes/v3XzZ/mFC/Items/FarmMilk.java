@@ -69,7 +69,7 @@ public class FarmMilk extends Item
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

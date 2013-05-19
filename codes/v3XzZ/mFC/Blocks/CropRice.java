@@ -61,16 +61,20 @@ public class CropRice extends CropTemplate
         }
     }
 
-    public void fertilize(World par1World, int par2, int par3, int par4)
+    public boolean fertilize(World par1World, int par2, int par3, int par4)
     {
     	if(!par1World.isRemote){
-    		int randomGrowth = 1+par1World.rand.nextInt(3);
-        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 4){
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
-        	}else{
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
-        	}
+    		if(par1World.getBlockMetadata(par2, par3, par4) != 4){
+	    		int randomGrowth = 1+par1World.rand.nextInt(3);
+	        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 4){
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
+	        	}else{
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
+	        	}
+	        	return true;
+    		}
     	}
+    	return false;
     }
 
     private float getGrowthRate(World par1World, int par2, int par3, int par4)

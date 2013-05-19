@@ -62,16 +62,20 @@ public class CropOnion extends CropTemplate
         }
     }
 
-    public void fertilize(World par1World, int par2, int par3, int par4)
+    public boolean fertilize(World par1World, int par2, int par3, int par4)
     {
     	if(!par1World.isRemote){
-    		int randomGrowth = 1+par1World.rand.nextInt(3);
-        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 4){
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
-        	}else{
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
-        	}
+    		if(par1World.getBlockMetadata(par2, par3, par4) != 4){
+	    		int randomGrowth = 1+par1World.rand.nextInt(3);
+	        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 4){
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
+	        	}else{
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
+	        	}
+	        	return true;
+    		}
     	}
+        return false;
     }
 
     private float getGrowthRate(World par1World, int par2, int par3, int par4)
@@ -127,29 +131,6 @@ public class CropOnion extends CropTemplate
     {
         return 6;
     }
-    
-    public void dropBlockAsItemWithChance(World world, int i, int j, int k, int l, float f, int i1)
-    {
-        super.dropBlockAsItemWithChance(world, i, j, k, l, f, i1);
-        if(world.isRemote)
-        {
-            return;
-        }
-        for(int i2 = 0; i2 < 3; i2++)
-        {
-            if(world.rand.nextInt(10) <= l)
-            {
-                float f1 = 0.7F;
-                float f2 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                float f3 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                float f4 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, (float)k + f4, new ItemStack(Items.onionSeeds));
-                entityitem.delayBeforeCanPickup = 10;
-                world.spawnEntityInWorld(entityitem);
-            }
-        }
-
-    }
 
     public int idDropped(int i, Random random, int j)
     {
@@ -165,11 +146,11 @@ public class CropOnion extends CropTemplate
 
     public int quantityDropped(Random random)
     {
-        return random.nextInt(2)+1;
+        return random.nextInt(1)+2;
     }
 	
 	@Override
 	public int idPicked(World par1World, int par2, int par3, int par4) {
-		return Items.onionSeeds.itemID;
+		return Items.onion.itemID;
 	}
 }

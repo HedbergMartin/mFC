@@ -1,5 +1,6 @@
 package v3XzZ.mFC;
 
+import net.minecraft.item.Item;
 import v3XzZ.mFC.lib.Blocks;
 import v3XzZ.mFC.lib.Items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -18,6 +19,7 @@ public class NameRegister
 {
 	public static void addName()
 	{
+		LanguageRegistry.addName(Item.appleRed, "Apple");
 		LanguageRegistry.addName(Items.money, "Dollar");
 		LanguageRegistry.addName(Items.moldEmpty, "Cheese Mold");
 		LanguageRegistry.addName(Items.moldMilk, "Cheese Mold(Milk)");
@@ -29,11 +31,11 @@ public class NameRegister
 		LanguageRegistry.addName(Items.Knife, "Kitchen Knife");
 		LanguageRegistry.addName(Items.baconRaw, "Raw Bacon");
 		LanguageRegistry.addName(Items.bacon, "Bacon");
-		LanguageRegistry.addName(Items.clayCup, "Unburned cup");
+		LanguageRegistry.addName(Items.clayCup, "Clay Cup");
 		LanguageRegistry.addName(Items.cup, "Cup");
 		LanguageRegistry.addName(Items.cupTea, "Cup of Tea");
 		LanguageRegistry.addName(Items.cupChocolate, "Cup of Choklate");
-		LanguageRegistry.addName(Items.clayTeapot, "Unburned Teapot");
+		LanguageRegistry.addName(Items.clayTeapot, "Clay Teapot");
 		LanguageRegistry.addName(Items.teapot, "Teapot");
 		LanguageRegistry.addName(Items.teapotCold, "Cold Tea");
 		LanguageRegistry.addName(Items.teapotHot, "Cooked Tea");
@@ -41,9 +43,9 @@ public class NameRegister
 		LanguageRegistry.addName(Items.breadSlice, "Bread Slice");
 		LanguageRegistry.addName(Items.sandwichEgg, "Egg Sandwich");
 		LanguageRegistry.addName(Items.sandwichBacon, "Egg 'n' BaconSandwich");
-		LanguageRegistry.addName(Items.woodenBucketWater, "TreeBucket with Water");
-		LanguageRegistry.addName(Items.woodenBucketMilk, "TreeBucket with Milk");
-		LanguageRegistry.addName(Items.woodenBucket, "TreeBucket");
+		LanguageRegistry.addName(Items.woodenBucketWater, "Wooden Bucket of Water");
+		LanguageRegistry.addName(Items.woodenBucketMilk, "Wooden Bucket of Milk");
+		LanguageRegistry.addName(Items.woodenBucket, "Wooden Bucket");
 		LanguageRegistry.addName(Items.sausageRaw, "Raw sausage");
 		LanguageRegistry.addName(Items.sausage, "Grilled sausage");
 		
@@ -56,7 +58,6 @@ public class NameRegister
 		LanguageRegistry.addName(Items.obsidianAxe, "Obsidian Axe");
 		LanguageRegistry.addName(Items.obsidianHoe, "Obsidian Hoe");
 		LanguageRegistry.addName(Items.obsidianSword, "Obsidian Sword");
-		
 		LanguageRegistry.addName(Blocks.woodenTrellis, "Wooden trellis");
 		
 		//Pies
@@ -65,21 +66,19 @@ public class NameRegister
 		LanguageRegistry.addName(Items.itemChocolateCake, "Chocolate Cake");
 		LanguageRegistry.addName(Items.itemMeatPie, "MeatPie");
 		
-		
-		
 		LanguageRegistry.addName(Items.glassAppleJuice, "Apple Juice");
 		LanguageRegistry.addName(Items.glassMelonJuice, "Melon Juice");
 		LanguageRegistry.addName(Items.saltPile, "Salt");
 		LanguageRegistry.addName(Items.pasta, "Pasta");
-		LanguageRegistry.addName(Items.pastaMeat, "Pasta with MeatSauce");
-		LanguageRegistry.addName(Items.saladChicken, "ChickenSallad");
-		LanguageRegistry.addName(Items.meatScrap, "MeatSauce");
+		LanguageRegistry.addName(Items.pastaMeat, "Pasta with Meatsauce");
+		LanguageRegistry.addName(Items.saladChicken, "Chicken Salad");
+		LanguageRegistry.addName(Items.meatScrap, "Meat Scrap");
 		LanguageRegistry.addName(Items.beefJerky, "Beef Jerky");
 		LanguageRegistry.addName(Items.sandwichChicken, "Chicken Sandwich");
-		LanguageRegistry.addName(Items.saladCeasar, "CeasarSallad");
+		LanguageRegistry.addName(Items.saladCeasar, "Ceasar Salad");
 		LanguageRegistry.addName(Items.mayonnaise, "Mayonnaise");
 		LanguageRegistry.addName(Items.bottleOfOil, "Oil");
-		LanguageRegistry.addName(Items.saladPasta, "PastaSallad");
+		LanguageRegistry.addName(Items.saladPasta, "Pasta Salad");
 		LanguageRegistry.addName(Items.wasabiRoot, "Wasabi root");
 		
 		//New
@@ -106,9 +105,9 @@ public class NameRegister
 		
 		LanguageRegistry.addName(Items.MakiLong, "Maki roll");
 		LanguageRegistry.addName(Items.MakiShort, "Maki piece");
-		LanguageRegistry.addName(Items.LaxSuchi, "Lax suchi");
+		LanguageRegistry.addName(Items.LaxSuchi, "Salmon suchi");
 		LanguageRegistry.addName(Items.bowlOfRice, "Bowl of rice");
-		LanguageRegistry.addName(Items.dogFood, "DogFood");
+		LanguageRegistry.addName(Items.dogFood, "Dog Food");
 		LanguageRegistry.addName(Items.wasabi, "Wasabi");
 		LanguageRegistry.addName(Items.jamJar, "Jamjar");
 		LanguageRegistry.addName(Items.StrawBerryjam, "Strawberry jam");
@@ -119,7 +118,6 @@ public class NameRegister
 		LanguageRegistry.addName(Items.tomatoStew, "Tomato and onion stew");
 		LanguageRegistry.addName(Items.macaroniAndCheese, "Macaroni and cheese");
 		LanguageRegistry.addName(Items.malt, "Malt");
-		LanguageRegistry.addName(Items.boiledRice, "Boiled Rice");
 		LanguageRegistry.addName(Items.carrotStew, "Carrot Stew");
 		LanguageRegistry.addName(Items.beefStew, "Beef Stew");
 		LanguageRegistry.addName(Items.onionStew, "Onion Stew");
@@ -129,7 +127,7 @@ public class NameRegister
 		LanguageRegistry.addName(Blocks.ricePlant, "Rice Crop");
 		LanguageRegistry.addName(Blocks.wasabiPlant, "Wasabi Plant");
 		LanguageRegistry.addName(Blocks.lettucePlant, "Lettuce Plant");
-		LanguageRegistry.addName(Blocks.cornPlant, "Corn Crop");
+		LanguageRegistry.addName(Blocks.cornPlant, "Corn Plant");
 		LanguageRegistry.addName(Blocks.strawBerryPlant, "StrawBerry Bush");
 		LanguageRegistry.addName(Blocks.raspBerryPlant, "RaspBerry Bush");
 		LanguageRegistry.addName(Blocks.tomatoPlant, "Tomato Plant");
@@ -137,9 +135,9 @@ public class NameRegister
 		LanguageRegistry.addName(Blocks.yellowSeedling, "Yellow Flower Seedling");
 		LanguageRegistry.addName(Items.pumpkinPiece, "Pumpkin Piece");
 		LanguageRegistry.addName(Items.CocoaFruit, "Cocoa Fruit");
-		LanguageRegistry.addName(Items.AppleSeeds, "Apple snufkin");
-		LanguageRegistry.addName(Items.OrangeSeeds, "Orange Cores");
-		LanguageRegistry.addName(Items.AvacadoSeeds, "Avacado nut");
+		LanguageRegistry.addName(Items.AppleSeeds, "Apple seed");
+		LanguageRegistry.addName(Items.OrangeSeeds, "Orange seeds");
+		LanguageRegistry.addName(Items.AvacadoSeeds, "Avacado seed");
 		LanguageRegistry.addName(Items.roastPumpkin, "Roast Pumpkin");
 		LanguageRegistry.addName(Items.yellowSeeds, "Yellow Flower Seeds");
 		LanguageRegistry.addName(Items.redSeeds, "Red Flower Seeds");
@@ -148,10 +146,8 @@ public class NameRegister
 		LanguageRegistry.addName(Items.strawBerrySeeds, "StrawBerry Seeds");
 		LanguageRegistry.addName(Items.cornSeeds, "Corn Seeds");
 		LanguageRegistry.addName(Items.lettuceSeeds, "Lettuce Seeds");
-		LanguageRegistry.addName(Items.wasabiSeeds, "Wasabi Seeds");
 		LanguageRegistry.addName(Items.riceSeeds, "Rice Seeds");
-		LanguageRegistry.addName(Items.onionSeeds, "Onion Seeds");
-		LanguageRegistry.addName(Items.cornCob, "Corn cob");
+		LanguageRegistry.addName(Items.cornCob, "Corncob");
 		LanguageRegistry.addName(Items.cornCobCooked, "Cooked Corncob");
 		LanguageRegistry.addName(Items.tomato, "Tomato");
 		LanguageRegistry.addName(Items.lettuce, "Lettuce");

@@ -70,7 +70,7 @@ public class FarmPie extends Block
         return AxisAlignedBB.getBoundingBox((float)i + f1, j, (float)k + f, (float)(i + 1) - f, (float)j + f2, (float)(k + 1) - f);
     }
 
-    public Icon getBlockTextureFromSideAndMetadata(int i, int j)
+    public Icon getIcon(int i, int j)
     {
         if(i == 1)
         {

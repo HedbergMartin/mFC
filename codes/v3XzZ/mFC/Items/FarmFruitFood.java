@@ -22,22 +22,24 @@ import net.minecraft.world.World;
 public class FarmFruitFood extends ItemFood {
 
 	private int drop;
-	public FarmFruitFood(int i, int j, int drop) {
-		super(i, j, false);
-		maxStackSize=64;
+	public FarmFruitFood(int i, int j, float saturation, int drop) {
+		super(i, j, saturation, false);
+		maxStackSize=16;
 		this.drop = drop;
 	}
 	
 	public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {	
-        super.onFoodEaten(itemstack, world, entityplayer);
-        entityplayer.dropPlayerItem(new ItemStack(drop, 1, 0));
+        super.onEaten(itemstack, world, entityplayer);
+        if(world.rand.nextInt(3) == 2){
+            entityplayer.dropPlayerItem(new ItemStack(drop, 1, 0));
+        }
         return itemstack;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

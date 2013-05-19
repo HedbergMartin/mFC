@@ -6,14 +6,12 @@ import v3XzZ.mFC.lib.Blocks;
 import v3XzZ.mFC.lib.Items;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
 /**
@@ -28,8 +26,7 @@ import net.minecraft.world.World;
 
 public class CropGrape extends CropTemplate
 {
-    public CropGrape(int i)
-    {
+    public CropGrape(int i) {
         super(i);
         this.iconArray = this.registerArray(3);
         setTickRandomly(true);
@@ -103,16 +100,20 @@ public class CropGrape extends CropTemplate
     /**
      * Apply bonemeal to the crops.
      */
-    public void fertilize(World par1World, int par2, int par3, int par4)
+    public boolean fertilize(World par1World, int par2, int par3, int par4)
     {
     	if(!par1World.isRemote){
-    		int randomGrowth = 1+par1World.rand.nextInt(2);
-        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 2){
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 2);
-        	}else{
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
-        	}
+    		if(par1World.getBlockMetadata(par2, par3, par4) != 2){
+	    		int randomGrowth = 1+par1World.rand.nextInt(2);
+	        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 2){
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 2);
+	        	}else{
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
+	        	}
+	        	return true;
+    		}
     	}
+        return false;
     }
 
     private float getGrowthRate(World par1World, int par2, int par3, int par4)

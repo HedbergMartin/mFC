@@ -79,11 +79,11 @@ public class FarmItem extends Item {
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
+    public void registerIcons(IconRegister par1IconRegister) {
     	if(this.getUnlocalizedName().endsWith("Base")){
-    		this.iconIndex = par1IconRegister.registerIcon("mFC:breawingBase");
+    		this.itemIcon = par1IconRegister.registerIcon("mFC:breawingBase");
     	}else {
-        	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+        	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     	}
     }
 }

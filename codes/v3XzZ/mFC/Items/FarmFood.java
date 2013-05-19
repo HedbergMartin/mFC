@@ -21,25 +21,25 @@ import net.minecraft.world.World;
 
 public class FarmFood extends ItemFood {
 	
-	public FarmFood(int i, int j, int k) {
-		super(i, j, false);
-		maxStackSize=k;
+	public FarmFood(int i, int j, int k, float saturation) {
+		super(i, j, saturation, false);
+		this.maxStackSize = k;
 	}
 	
-	public FarmFood(int i, int j, int k, boolean dogFoodzZ) {
-		super(i, j, dogFoodzZ);
-		maxStackSize=k;
+	public FarmFood(int i, int j, int k, float saturation, boolean dogFood) {
+		super(i, j, saturation, dogFood);
+		this.maxStackSize = k;
 	}
 	
 	public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {	
-        super.onFoodEaten(itemstack, world, entityplayer);
+        super.onEaten(itemstack, world, entityplayer);
         return itemstack;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

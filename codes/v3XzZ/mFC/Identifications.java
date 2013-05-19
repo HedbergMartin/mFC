@@ -197,7 +197,6 @@ public abstract class Identifications {
 	public static int grapesID;
 	public static int paltID;
 	public static int pancakesID;
-	public static int onionSeedsID;
 	public static int raspBerrySeedsID;
 	public static int strawBerrySeedsID;
 	public static int grapeSeedsID;
@@ -213,7 +212,7 @@ public abstract class Identifications {
 	public static int ChristmasMustBaseID;
 	public static int MakiLongID;
 	public static int MakiShortID;
-	public static int LaxSuchiID;
+	public static int SalmonSuchiID;
 	public static int BowlOfRiceID;
 	public static int dogFoodID;
 	public static int WasabiID;
@@ -235,8 +234,6 @@ public abstract class Identifications {
 	public static int macaroniAndCheeseID;
 	public static int porridgeID;
 	public static int MaltID;
-	public static int wasabiSeedsID;
-	public static int boiledRiceID;
 	public static int gingerBreadID;
 	public static int candyCaneID;
 	public static int forkID;
@@ -254,7 +251,7 @@ public abstract class Identifications {
 			HamBurgerFood = config.get("HealAmount", "HamBurger", 10).getInt();
 			CheeseBurgerFood = config.get("HealAmount", "CheeseBurger", 14).getInt();
 			CheesePieceFood = config.get("HealAmount", "CheesePiece", 1).getInt();
-			HamburgerBreadFood = config.get("HealAmount", "CheesePiece", 1).getInt();
+			HamburgerBreadFood = config.get("HealAmount", "HamburgerBread", 1).getInt();
 			BottleWaterFood = config.get("HealAmount", "BottleWater", 2).getInt();
 			RawHamburgerMeatFood = config.get("HealAmount", "RawHamburgerMeat", 4).getInt();
 			roastPumpkinFood = config.get("HealAmount", "roastPumpkin", 7).getInt();
@@ -296,7 +293,7 @@ public abstract class Identifications {
 			redWineFood = config.get("HealAmount", "redWine", 8).getInt();
 			ChristmasMustFood = config.get("HealAmount", "Christmas-must", 8).getInt();
 			MakiFood = config.get("HealAmount", "Maki", 6).getInt();
-			LaxSuchiFood = config.get("HealAmount", "LaxSuchi", 8).getInt();
+			LaxSuchiFood = config.get("HealAmount", "Salmon suchi", 8).getInt();
 			BowlOfRiceFood = config.get("HealAmount", "BowlOfRice", 6).getInt();
 			dogFoodFood = config.get("HealAmount", "dogFood", 3).getInt();
 			chocolateBarFood = config.get("HealAmount", "chocolateBar", 8).getInt();
@@ -313,163 +310,188 @@ public abstract class Identifications {
 			beefStewFood = config.get("HealAmount", "Beef stew", 8).getInt();
 			onionStewFood = config.get("HealAmount", "Onion stew", 6).getInt();
 			beefSoupFood = config.get("HealAmount", "Beef soup", 8).getInt();
-
-			cornPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "cornPlant", 3000).getInt();
-			yellowSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "yellowSeedling", 3002).getInt();
-			redSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "redSeedling", 3003).getInt();
-			tomatoPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "tomatoPlant", 3004).getInt();
-			appleBlock = config.get(Configuration.CATEGORY_BLOCK, "appleBlock", 3005).getInt();
-			avacadoBlock = config.get(Configuration.CATEGORY_BLOCK, "avacadoBlock", 3006).getInt();
-			orangeBlock = config.get(Configuration.CATEGORY_BLOCK, "orangeBlock", 3007).getInt();
-			cocoaBlock = config.get(Configuration.CATEGORY_BLOCK, "cocoaBlock", 3008).getInt();
-			ApplePieBlock = config.get(Configuration.CATEGORY_BLOCK, "ApplePie", 3009).getInt();
-			TacoPieBlock = config.get(Configuration.CATEGORY_BLOCK, "TacoPie", 3010).getInt();
-			ChocolateCakeBlock = config.get(Configuration.CATEGORY_BLOCK, "ChocolateCake", 3011).getInt();
-			MeatPieBlock = config.get(Configuration.CATEGORY_BLOCK, "MeatPie", 3012).getInt();
-			saltBlock = config.get(Configuration.CATEGORY_BLOCK, "saltBlock", 3013).getInt();
-			cheeseBlock = config.get(Configuration.CATEGORY_BLOCK, "cheeseBlock", 3014).getInt();
-			BakeTableBlock = config.get(Configuration.CATEGORY_BLOCK, "BakeTableBlock", 3015).getInt();
-			onionPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "onionPlant", 3017).getInt();
-			raspBerryPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "raspBerryPlant", 3018).getInt();
-			strawBerryPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "strawBerryPlant", 3019).getInt();
-			GrapeHolderBlock = config.get(Configuration.CATEGORY_BLOCK, "GrapeHolder", 3020).getInt();
-			grapesPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "grapesPlant", 3021).getInt();
-			beerKegBlockID = config.get(Configuration.CATEGORY_BLOCK, "beerKegBlockID", 3022).getInt();
-			wasabiPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "wasabiPlant", 3023).getInt();
-			Saplings = config.get(Configuration.CATEGORY_BLOCK, "Saplings", 3024).getInt();
-			ricePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "ricePlant", 3025).getInt();
-			lettucePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "lettucePlant", 3026).getInt();
-			leavesBlock = config.get(Configuration.CATEGORY_BLOCK, "leaves", 3027).getInt();
-			PlateBlock = config.get(Configuration.CATEGORY_BLOCK, "plate", 3028).getInt();
-			shelfBlock = config.get(Configuration.CATEGORY_BLOCK, "shelf", 3029).getInt();
-//			presentBlock = config.get(config.CATEGORY_BLOCK, "present", 3030).getInt();
 			
-			tomatoSeedsID = config.get(Configuration.CATEGORY_ITEM, "tomatoSeeds", 3397).getInt();
-			cornSeedsID = config.get(Configuration.CATEGORY_ITEM, "cornSeeds", 3398).getInt();
-			pumpkinPieceID = config.get(Configuration.CATEGORY_ITEM, "pumpkinPiece", 3400).getInt();
-			roastPumpkinID = config.get(Configuration.CATEGORY_ITEM, "roastPumpkin", 3401).getInt();
-			lettuceSeedsID = config.get(Configuration.CATEGORY_ITEM, "lettuceSeeds", 3402).getInt();
-			cornCobID = config.get(Configuration.CATEGORY_ITEM, "cornCob", 3403).getInt();
-			yellowSeedsID = config.get(Configuration.CATEGORY_ITEM, "yellowSeeds", 3405).getInt();
-			redSeedsID = config.get(Configuration.CATEGORY_ITEM, "redSeeds", 3406).getInt();
-			cornCobCookedID = config.get(Configuration.CATEGORY_ITEM, "cornCobCooked", 3407).getInt();
-			tomatoID = config.get(Configuration.CATEGORY_ITEM, "tomato", 3408).getInt();
-			lettuceID = config.get(Configuration.CATEGORY_ITEM, "lettuce", 3410).getInt();
-			orangeID = config.get(Configuration.CATEGORY_ITEM, "orange", 3411).getInt();
-			cocoaID = config.get(Configuration.CATEGORY_ITEM, "cocoa", 3412).getInt();
-			avacadoID = config.get(Configuration.CATEGORY_ITEM, "avacado", 3413).getInt();
-			orangeJuiceID = config.get(Configuration.CATEGORY_ITEM, "orangeJuice", 3414).getInt();
-			DollarID = config.get(Configuration.CATEGORY_ITEM, "Dollar", 3415).getInt();
-			HamBurgerID = config.get(Configuration.CATEGORY_ITEM, "HamBurger", 3416).getInt();
-			CheeseBurgerID = config.get(Configuration.CATEGORY_ITEM, "CheeseBurger", 3417).getInt();
-			CheeseMoldID = config.get(Configuration.CATEGORY_ITEM, "CheeseMold", 3418).getInt();
-			CheeseMoldMilkID = config.get(Configuration.CATEGORY_ITEM, "CheeseMoldMilk", 3419).getInt();
-			CheeseMoldCheeseID = config.get(Configuration.CATEGORY_ITEM, "CheeseMoldCheese", 3420).getInt();
-			CheeseBlockID = config.get(Configuration.CATEGORY_ITEM, "CheeseBlock", 3421).getInt();
-			CheesePieceID = config.get(Configuration.CATEGORY_ITEM, "CheesePiece", 3422).getInt();
-			HamburgerBreadID = config.get(Configuration.CATEGORY_ITEM, "HamburgerBread", 3423).getInt();
-			BottleWaterID = config.get(Configuration.CATEGORY_ITEM, "BottleWater", 3424).getInt();
-			DrinkingGlassID = config.get(Configuration.CATEGORY_ITEM, "DrinkingGlass", 3425).getInt();
-			KnifeID = config.get(Configuration.CATEGORY_ITEM, "Knife", 3426).getInt();
-			RawHamburgerMeatID = config.get(Configuration.CATEGORY_ITEM, "RawHamburgerMeat", 3427).getInt();
-			HamburgerMeatID = config.get(Configuration.CATEGORY_ITEM, "HamburgerMeat", 3428).getInt();
-			RawBaconID = config.get(Configuration.CATEGORY_ITEM, "RawBacon", 3429).getInt();
-			BaconID = config.get(Configuration.CATEGORY_ITEM, "Bacon", 3430).getInt();
-			StripsID = config.get(Configuration.CATEGORY_ITEM, "Strips", 3431).getInt();
-			CheeseBaconBurgerID = config.get(Configuration.CATEGORY_ITEM, "CheeseBaconBurger", 3432).getInt();
-			CupUnburnedID = config.get(Configuration.CATEGORY_ITEM, "CupUnburned", 3433).getInt();
-			CupID = config.get(Configuration.CATEGORY_ITEM, "Cup", 3434).getInt();
-			CupChoklateID = config.get(Configuration.CATEGORY_ITEM, "CupChoklate", 3435).getInt();
-			TeaCanUnburnedID = config.get(Configuration.CATEGORY_ITEM, "TeaCanUnburned", 3436).getInt();
-			TeaCanID = config.get(Configuration.CATEGORY_ITEM, "TeaCan", 3437).getInt();
-			friedEggID = config.get(Configuration.CATEGORY_ITEM, "friedEgg", 3438).getInt();
-			BreadSliceID = config.get(Configuration.CATEGORY_ITEM, "BreadSlice", 3439).getInt();
-			EggSandwichID = config.get(Configuration.CATEGORY_ITEM, "EggSandwich", 3440).getInt();
-			EggBaconSandwichID = config.get(Configuration.CATEGORY_ITEM, "EggBaconSandwich", 3441).getInt();
-			CupTeaID = config.get(Configuration.CATEGORY_ITEM, "CupTea", 3442).getInt();
-			ColdTeaCanID = config.get(Configuration.CATEGORY_ITEM, "ColdTeaCan", 3443).getInt();
-			HotTeaCanID = config.get(Configuration.CATEGORY_ITEM, "HotTeaCan", 3444).getInt();
-			HotDogRawID = config.get(Configuration.CATEGORY_ITEM, "HotDogRaw", 3445).getInt();
-			HotDogGrilledID = config.get(Configuration.CATEGORY_ITEM, "HotDogGrilled", 3446).getInt();
-			HotDogID = config.get(Configuration.CATEGORY_ITEM, "HotDog", 3447).getInt();
-			BucketID = config.get(Configuration.CATEGORY_ITEM, "Bucket", 3455).getInt();
-			bucketWaterID = config.get(Configuration.CATEGORY_ITEM, "bucketWater", 3456).getInt();
-			bucketMilkID = config.get(Configuration.CATEGORY_ITEM, "bucketMilk", 3457).getInt();
-			obsidianPickID = config.get(Configuration.CATEGORY_ITEM, "obsidianPick", 3458).getInt();
-			obsidianShovelID = config.get(Configuration.CATEGORY_ITEM, "obsidianShovel", 3459).getInt();
-			obsidianAxeID = config.get(Configuration.CATEGORY_ITEM, "obsidianAxe", 3460).getInt();
-			obsidianHoeID = config.get(Configuration.CATEGORY_ITEM, "obsidianHoe", 3461).getInt();
-			obsidianSwordID = config.get(Configuration.CATEGORY_ITEM, "obsidianSword", 3462).getInt();
-			guacamoleID = config.get(Configuration.CATEGORY_ITEM, "guacamole", 3463).getInt();
-			applesnufkinID = config.get(Configuration.CATEGORY_ITEM, "applesnufkin", 3464).getInt();
-			orangecoresID = config.get(Configuration.CATEGORY_ITEM, "orangecores", 3465).getInt();
-			avacadonutID = config.get(Configuration.CATEGORY_ITEM, "avacadonut", 3466).getInt();
-			ApplePieID = config.get(Configuration.CATEGORY_ITEM, "ApplePie", 3467).getInt();
-			TacoPieID = config.get(Configuration.CATEGORY_ITEM, "TacoPie", 3468).getInt();
-			ChocolateCakeID = config.get(Configuration.CATEGORY_ITEM, "ChocolateCake", 3469).getInt();
-			MeatPieID = config.get(Configuration.CATEGORY_ITEM, "MeatPie", 3470).getInt();
-			AppleJuiceID = config.get(Configuration.CATEGORY_ITEM, "AppleJuice", 3471).getInt();
-			SaltID = config.get(Configuration.CATEGORY_ITEM, "Salt", 3472).getInt();
-			PastaID = config.get(Configuration.CATEGORY_ITEM, "Pasta", 3473).getInt();
-			KetchupID = config.get(Configuration.CATEGORY_ITEM, "Ketchup", 3474).getInt();
-			PastaMeatsauceID = config.get(Configuration.CATEGORY_ITEM, "PastaMeatsauce", 3475).getInt();
-			ChickenSalladID = config.get(Configuration.CATEGORY_ITEM, "ChickenSallad", 3476).getInt();
-			HotDogKetchupID = config.get(Configuration.CATEGORY_ITEM, "HotDogKetchup", 3477).getInt();
-			MeatSauceID = config.get(Configuration.CATEGORY_ITEM, "MeatSauce", 3478).getInt();
-			BeefJerkyID = config.get(Configuration.CATEGORY_ITEM, "BeefJerky", 3479).getInt();
-			ChickenSandwichID = config.get(Configuration.CATEGORY_ITEM, "ChickenSandwich", 3480).getInt();
-			CeasarSalladID = config.get(Configuration.CATEGORY_ITEM, "CeasarSallad", 3481).getInt();
-			MayonnaiseID = config.get(Configuration.CATEGORY_ITEM, "Mayonnaise", 3482).getInt();
-			OilID = config.get(Configuration.CATEGORY_ITEM, "Oil", 3483).getInt();
-			MelonJuiceID = config.get(Configuration.CATEGORY_ITEM, "MelonJuice", 3484).getInt();
-			PastaSalladID = config.get(Configuration.CATEGORY_ITEM, "PastaSallad", 3485).getInt();
-			riceSeedsID = config.get(Configuration.CATEGORY_ITEM, "riceSeeds", 3486).getInt();
-			RiceID = config.get(Configuration.CATEGORY_ITEM, "Rice", 3487).getInt();
-			WasabiRootID = config.get(Configuration.CATEGORY_ITEM, "WasabiRoot", 3488).getInt();
-			onionID = config.get(Configuration.CATEGORY_ITEM, "onion", 3490).getInt();
-			strawBerryID = config.get(Configuration.CATEGORY_ITEM, "strawBerry", 3491).getInt();
-			raspBerryID = config.get(Configuration.CATEGORY_ITEM, "raspBerry", 3492).getInt();
-			grapesID = config.get(Configuration.CATEGORY_ITEM, "grapes", 3493).getInt();
-			paltID = config.get(Configuration.CATEGORY_ITEM, "palt", 3494).getInt();
-			pancakesID = config.get(Configuration.CATEGORY_ITEM, "pancakes", 3495).getInt();
-			onionSeedsID = config.get(Configuration.CATEGORY_ITEM, "onionSeeds", 3497).getInt();
-			raspBerrySeedsID = config.get(Configuration.CATEGORY_ITEM, "raspBerrySeeds", 3498).getInt();
-			strawBerrySeedsID = config.get(Configuration.CATEGORY_ITEM, "strawBerrySeeds", 3499).getInt();
-			grapeSeedsID = config.get(Configuration.CATEGORY_ITEM, "grapeSeeds", 3500).getInt();
-			beerCupID = config.get(Configuration.CATEGORY_ITEM, "beerCup", 3501).getInt();
-			beerID = config.get(Configuration.CATEGORY_ITEM, "beer", 3502).getInt();
-			redWineID = config.get(Configuration.CATEGORY_ITEM, "redWine", 3503).getInt();
-			whiteWineID = config.get(Configuration.CATEGORY_ITEM, "whiteWine", 3504).getInt();
-			beerBaseID = config.get(Configuration.CATEGORY_ITEM, "beerBase", 3505).getInt();
-			redWineBaseID = config.get(Configuration.CATEGORY_ITEM, "redWineBase", 3506).getInt();
-			whiteWineBaseID = config.get(Configuration.CATEGORY_ITEM, "whiteWineBase", 3507).getInt();
-			MakiLongID = config.get(Configuration.CATEGORY_ITEM, "MakiLong", 3508).getInt();
-			MakiShortID = config.get(Configuration.CATEGORY_ITEM, "MakiShort", 3509).getInt();
-			LaxSuchiID = config.get(Configuration.CATEGORY_ITEM, "LaxSuchi", 3510).getInt();
-			BowlOfRiceID = config.get(Configuration.CATEGORY_ITEM, "BowlOfRice", 3511).getInt();
-			dogFoodID = config.get(Configuration.CATEGORY_ITEM, "dogFood", 3512).getInt();
-			WasabiID = config.get(Configuration.CATEGORY_ITEM, "Wasabi", 3513).getInt();
-			jamJarID = config.get(Configuration.CATEGORY_ITEM, "jamJar", 3514).getInt();
-			RaspBerryjamID = config.get(Configuration.CATEGORY_ITEM, "RaspBerryjam", 3515).getInt();
-			StrawBerryjamID = config.get(Configuration.CATEGORY_ITEM, "StrawBerryjam", 3516).getInt();
-			chocolateBarID = config.get(Configuration.CATEGORY_ITEM, "chocolateBar", 3517).getInt();
-			RaspBerryJuiceID = config.get(Configuration.CATEGORY_ITEM, "RaspBerryJuice", 3519).getInt();
-			StrawBerryJuiceID = config.get(Configuration.CATEGORY_ITEM, "StrawBerryJuice", 3520).getInt();
-			tomatoAndOnionSalladID = config.get(Configuration.CATEGORY_ITEM, "tomatoAndOnionSallad", 3521).getInt();
-			macaroniAndCheeseID = config.get(Configuration.CATEGORY_ITEM, "macaroniAndCheese", 3522).getInt();
-			porridgeID = config.get(Configuration.CATEGORY_ITEM, "porridge", 3523).getInt();
-			MaltID = config.get(Configuration.CATEGORY_ITEM, "Malt", 3524).getInt();
-			wasabiSeedsID = config.get(Configuration.CATEGORY_ITEM, "wasabiSeeds", 3525).getInt();
-			boiledRiceID = config.get(Configuration.CATEGORY_ITEM, "boiledRice", 3527).getInt();
-			tallBottleID = config.get(Configuration.CATEGORY_ITEM, "tallbottle", 3528).getInt();
-			ChristmasMustID = config.get(Configuration.CATEGORY_ITEM, "Christmas-must", 3529).getInt();
-			ChristmasMustBaseID = config.get(Configuration.CATEGORY_ITEM, "Christmas-must base", 3530).getInt();
-			gingerBreadID = config.get(Configuration.CATEGORY_ITEM, "gingerBread", 3532).getInt();
-			candyCaneID = config.get(Configuration.CATEGORY_ITEM, "candycane", 3533).getInt();
-			carrotStewID = config.get(Configuration.CATEGORY_ITEM, "carrotStew", 3534).getInt();
-			forkID = config.get(Configuration.CATEGORY_ITEM, "Fork", 3535).getInt();
-			beefStewID = config.get(Configuration.CATEGORY_ITEM, "Beef stew", 3536).getInt();
-			onionStewID = config.get(Configuration.CATEGORY_ITEM, "Onion stew", 3537).getInt();
-			beefSoupID = config.get(Configuration.CATEGORY_ITEM, "Beef soup", 3538).getInt();
+			
+			/** Vegetables **/
+			orangeID = config.get(Configuration.CATEGORY_ITEM, "orange", 18001).getInt();
+			avacadoID = config.get(Configuration.CATEGORY_ITEM, "avacado", 18002).getInt();
+			cocoaID = config.get(Configuration.CATEGORY_ITEM, "cocoa", 18003).getInt();
+			lettuceID = config.get(Configuration.CATEGORY_ITEM, "lettuce", 18004).getInt();
+			tomatoID = config.get(Configuration.CATEGORY_ITEM, "tomato", 18005).getInt();
+			cornCobID = config.get(Configuration.CATEGORY_ITEM, "cornCob", 18006).getInt();
+			RiceID = config.get(Configuration.CATEGORY_ITEM, "Rice", 18007).getInt();
+			strawBerryID = config.get(Configuration.CATEGORY_ITEM, "strawBerry", 18008).getInt();
+			raspBerryID = config.get(Configuration.CATEGORY_ITEM, "raspBerry", 18009).getInt();
+			grapesID = config.get(Configuration.CATEGORY_ITEM, "grapes", 18010).getInt();
+			onionID = config.get(Configuration.CATEGORY_ITEM, "onion", 18011).getInt();
+
+			/** Seeds **/
+			lettuceSeedsID = config.get(Configuration.CATEGORY_ITEM, "lettuceSeeds", 18020).getInt();
+			tomatoSeedsID = config.get(Configuration.CATEGORY_ITEM, "tomatoSeeds", 18021).getInt();
+			cornSeedsID = config.get(Configuration.CATEGORY_ITEM, "cornSeeds", 18022).getInt();
+			yellowSeedsID = config.get(Configuration.CATEGORY_ITEM, "yellowSeeds", 18023).getInt();
+			redSeedsID = config.get(Configuration.CATEGORY_ITEM, "redSeeds", 18024).getInt();
+			applesnufkinID = config.get(Configuration.CATEGORY_ITEM, "applesnufkin", 18025).getInt();
+			orangecoresID = config.get(Configuration.CATEGORY_ITEM, "orangecores", 18026).getInt();
+			avacadonutID = config.get(Configuration.CATEGORY_ITEM, "avacadonut", 18027).getInt();
+			riceSeedsID = config.get(Configuration.CATEGORY_ITEM, "riceSeeds", 18028).getInt();
+			raspBerrySeedsID = config.get(Configuration.CATEGORY_ITEM, "raspBerrySeeds", 18029).getInt();
+			strawBerrySeedsID = config.get(Configuration.CATEGORY_ITEM, "strawBerrySeeds", 18030).getInt();
+			grapeSeedsID = config.get(Configuration.CATEGORY_ITEM, "grapeSeeds", 18031).getInt();
+			WasabiRootID = config.get(Configuration.CATEGORY_ITEM, "WasabiRoot", 18032).getInt();
+
+			/** Other food **/
+			pumpkinPieceID = config.get(Configuration.CATEGORY_ITEM, "pumpkinPiece", 18040).getInt();
+			roastPumpkinID = config.get(Configuration.CATEGORY_ITEM, "roastPumpkin", 18041).getInt();
+			cornCobCookedID = config.get(Configuration.CATEGORY_ITEM, "cornCobCooked", 18042).getInt();
+			MeatSauceID = config.get(Configuration.CATEGORY_ITEM, "MeatSauce", 18043).getInt();
+			BeefJerkyID = config.get(Configuration.CATEGORY_ITEM, "BeefJerky", 18044).getInt();
+			paltID = config.get(Configuration.CATEGORY_ITEM, "palt", 18045).getInt();
+			pancakesID = config.get(Configuration.CATEGORY_ITEM, "pancakes", 18046).getInt();
+			gingerBreadID = config.get(Configuration.CATEGORY_ITEM, "gingerBread", 18047).getInt();
+			candyCaneID = config.get(Configuration.CATEGORY_ITEM, "candycane", 18048).getInt();
+			dogFoodID = config.get(Configuration.CATEGORY_ITEM, "dogFood", 18049).getInt();
+			jamJarID = config.get(Configuration.CATEGORY_ITEM, "jamJar", 18050).getInt();
+			RaspBerryjamID = config.get(Configuration.CATEGORY_ITEM, "RaspBerryjam", 18051).getInt();
+			StrawBerryjamID = config.get(Configuration.CATEGORY_ITEM, "StrawBerryjam", 18052).getInt();
+			chocolateBarID = config.get(Configuration.CATEGORY_ITEM, "chocolateBar", 18053).getInt();
+			
+			/** Suchi **/
+			MakiLongID = config.get(Configuration.CATEGORY_ITEM, "MakiLong", 18060).getInt();
+			MakiShortID = config.get(Configuration.CATEGORY_ITEM, "MakiShort", 18061).getInt();
+			SalmonSuchiID = config.get(Configuration.CATEGORY_ITEM, "LaxSuchi", 18062).getInt();
+			WasabiID = config.get(Configuration.CATEGORY_ITEM, "Wasabi", 18063).getInt();
+
+			/** Sandwich **/
+			RawBaconID = config.get(Configuration.CATEGORY_ITEM, "RawBacon", 18070).getInt();
+			BaconID = config.get(Configuration.CATEGORY_ITEM, "Bacon", 18071).getInt();
+			friedEggID = config.get(Configuration.CATEGORY_ITEM, "friedEgg", 18072).getInt();
+			BreadSliceID = config.get(Configuration.CATEGORY_ITEM, "BreadSlice", 18073).getInt();
+			HotDogRawID = config.get(Configuration.CATEGORY_ITEM, "HotDogRaw", 18074).getInt();
+			HotDogGrilledID = config.get(Configuration.CATEGORY_ITEM, "HotDogGrilled", 18075).getInt();
+			EggSandwichID = config.get(Configuration.CATEGORY_ITEM, "EggSandwich", 18076).getInt();
+			EggBaconSandwichID = config.get(Configuration.CATEGORY_ITEM, "EggBaconSandwich", 18077).getInt();
+			ChickenSandwichID = config.get(Configuration.CATEGORY_ITEM, "ChickenSandwich", 18078).getInt();
+
+			/** Misc items **/
+			DollarID = config.get(Configuration.CATEGORY_ITEM, "Dollar", 18090).getInt();
+			KnifeID = config.get(Configuration.CATEGORY_ITEM, "Knife", 18091).getInt();
+			CupUnburnedID = config.get(Configuration.CATEGORY_ITEM, "CupUnburned", 18092).getInt();
+			CupID = config.get(Configuration.CATEGORY_ITEM, "Cup", 18093).getInt();
+			TeaCanUnburnedID = config.get(Configuration.CATEGORY_ITEM, "TeaCanUnburned", 18094).getInt();
+			TeaCanID = config.get(Configuration.CATEGORY_ITEM, "TeaCan", 18095).getInt();
+			SaltID = config.get(Configuration.CATEGORY_ITEM, "Salt", 18096).getInt();
+			PastaID = config.get(Configuration.CATEGORY_ITEM, "Pasta", 18097).getInt();
+			OilID = config.get(Configuration.CATEGORY_ITEM, "Oil", 18098).getInt();
+			MaltID = config.get(Configuration.CATEGORY_ITEM, "Malt", 18099).getInt();
+
+			/** Diary **/
+			CheeseMoldID = config.get(Configuration.CATEGORY_ITEM, "CheeseMold", 18120).getInt();
+			CheeseMoldMilkID = config.get(Configuration.CATEGORY_ITEM, "CheeseMoldMilk", 18121).getInt();
+			CheeseMoldCheeseID = config.get(Configuration.CATEGORY_ITEM, "CheeseMoldCheese", 18122).getInt();
+			CheeseBlockID = config.get(Configuration.CATEGORY_ITEM, "CheeseBlock", 18123).getInt();
+			CheesePieceID = config.get(Configuration.CATEGORY_ITEM, "CheesePiece", 18124).getInt();
+
+			/** Drinking **/
+			DrinkingGlassID = config.get(Configuration.CATEGORY_ITEM, "DrinkingGlass", 18130).getInt();
+			BottleWaterID = config.get(Configuration.CATEGORY_ITEM, "BottleWater", 18131).getInt();
+			orangeJuiceID = config.get(Configuration.CATEGORY_ITEM, "orangeJuice", 18132).getInt();
+			AppleJuiceID = config.get(Configuration.CATEGORY_ITEM, "AppleJuice", 18133).getInt();
+			MelonJuiceID = config.get(Configuration.CATEGORY_ITEM, "MelonJuice", 18134).getInt();
+			RaspBerryJuiceID = config.get(Configuration.CATEGORY_ITEM, "RaspBerryJuice", 18135).getInt();
+			StrawBerryJuiceID = config.get(Configuration.CATEGORY_ITEM, "StrawBerryJuice", 18136).getInt();
+			CupChoklateID = config.get(Configuration.CATEGORY_ITEM, "CupChoklate", 18137).getInt();
+			CupTeaID = config.get(Configuration.CATEGORY_ITEM, "CupTea", 18138).getInt();
+			ColdTeaCanID = config.get(Configuration.CATEGORY_ITEM, "ColdTeaCan", 18139).getInt();
+			HotTeaCanID = config.get(Configuration.CATEGORY_ITEM, "HotTeaCan", 18140).getInt();
+
+			/** Brewing **/
+			tallBottleID = config.get(Configuration.CATEGORY_ITEM, "tallbottle", 18150).getInt();
+			redWineID = config.get(Configuration.CATEGORY_ITEM, "redWine", 18151).getInt();
+			whiteWineID = config.get(Configuration.CATEGORY_ITEM, "whiteWine", 18152).getInt();
+			ChristmasMustID = config.get(Configuration.CATEGORY_ITEM, "Christmas-must", 18153).getInt();
+			beerCupID = config.get(Configuration.CATEGORY_ITEM, "beerCup", 18154).getInt();
+			beerID = config.get(Configuration.CATEGORY_ITEM, "beer", 18155).getInt();
+			beerBaseID = config.get(Configuration.CATEGORY_ITEM, "beerBase", 18156).getInt();
+			redWineBaseID = config.get(Configuration.CATEGORY_ITEM, "redWineBase", 18157).getInt();
+			whiteWineBaseID = config.get(Configuration.CATEGORY_ITEM, "whiteWineBase", 18158).getInt();
+			ChristmasMustBaseID = config.get(Configuration.CATEGORY_ITEM, "Christmas-must base", 18159).getInt();
+
+			/** Tools **/
+			BucketID = config.get(Configuration.CATEGORY_ITEM, "Bucket", 18170).getInt();
+			bucketWaterID = config.get(Configuration.CATEGORY_ITEM, "bucketWater", 18171).getInt();
+			bucketMilkID = config.get(Configuration.CATEGORY_ITEM, "bucketMilk", 18172).getInt();
+			obsidianPickID = config.get(Configuration.CATEGORY_ITEM, "obsidianPick", 18173).getInt();
+			obsidianShovelID = config.get(Configuration.CATEGORY_ITEM, "obsidianShovel", 18174).getInt();
+			obsidianAxeID = config.get(Configuration.CATEGORY_ITEM, "obsidianAxe", 18175).getInt();
+			obsidianHoeID = config.get(Configuration.CATEGORY_ITEM, "obsidianHoe", 18761).getInt();
+			obsidianSwordID = config.get(Configuration.CATEGORY_ITEM, "obsidianSword", 18177).getInt();
+			forkID = config.get(Configuration.CATEGORY_ITEM, "Fork", 18178).getInt();
+
+			/** Food blocks **/
+			ApplePieID = config.get(Configuration.CATEGORY_ITEM, "ApplePie", 18180).getInt();
+			TacoPieID = config.get(Configuration.CATEGORY_ITEM, "TacoPie", 18181).getInt();
+			ChocolateCakeID = config.get(Configuration.CATEGORY_ITEM, "ChocolateCake", 18182).getInt();
+			MeatPieID = config.get(Configuration.CATEGORY_ITEM, "MeatPie", 18183).getInt();
+			
+			/** BowlFood **/
+			guacamoleID = config.get(Configuration.CATEGORY_ITEM, "guacamole", 18190).getInt();
+			carrotStewID = config.get(Configuration.CATEGORY_ITEM, "carrotStew", 18191).getInt();
+			onionStewID = config.get(Configuration.CATEGORY_ITEM, "Onion stew", 18192).getInt();
+			tomatoAndOnionSalladID = config.get(Configuration.CATEGORY_ITEM, "tomatoAndOnionSallad", 18193).getInt();
+			beefStewID = config.get(Configuration.CATEGORY_ITEM, "Beef stew", 18194).getInt();
+			beefSoupID = config.get(Configuration.CATEGORY_ITEM, "Beef soup", 18195).getInt();
+			ChickenSalladID = config.get(Configuration.CATEGORY_ITEM, "ChickenSallad", 18196).getInt();
+			CeasarSalladID = config.get(Configuration.CATEGORY_ITEM, "CeasarSallad", 18197).getInt();
+			PastaSalladID = config.get(Configuration.CATEGORY_ITEM, "PastaSallad", 18198).getInt();
+			PastaMeatsauceID = config.get(Configuration.CATEGORY_ITEM, "PastaMeatsauce", 18199).getInt();
+			MayonnaiseID = config.get(Configuration.CATEGORY_ITEM, "Mayonnaise", 18200).getInt();
+			macaroniAndCheeseID = config.get(Configuration.CATEGORY_ITEM, "macaroniAndCheese", 18201).getInt();
+			BowlOfRiceID = config.get(Configuration.CATEGORY_ITEM, "BowlOfRice", 18202).getInt();
+			porridgeID = config.get(Configuration.CATEGORY_ITEM, "porridge", 18203).getInt();
+
+			cornPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "cornPlant", 3850).getInt();
+			yellowSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "yellowSeedling", 3851).getInt();
+			redSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "redSeedling", 3852).getInt();
+			tomatoPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "tomatoPlant", 3853).getInt();
+			appleBlock = config.get(Configuration.CATEGORY_BLOCK, "appleBlock", 3854).getInt();
+			avacadoBlock = config.get(Configuration.CATEGORY_BLOCK, "avacadoBlock", 3855).getInt();
+			orangeBlock = config.get(Configuration.CATEGORY_BLOCK, "orangeBlock", 3856).getInt();
+			cocoaBlock = config.get(Configuration.CATEGORY_BLOCK, "cocoaBlock", 3857).getInt();
+			ApplePieBlock = config.get(Configuration.CATEGORY_BLOCK, "ApplePie", 3858).getInt();
+			TacoPieBlock = config.get(Configuration.CATEGORY_BLOCK, "TacoPie", 3859).getInt();
+			ChocolateCakeBlock = config.get(Configuration.CATEGORY_BLOCK, "ChocolateCake", 3860).getInt();
+			MeatPieBlock = config.get(Configuration.CATEGORY_BLOCK, "MeatPie", 3861).getInt();
+			saltBlock = config.get(Configuration.CATEGORY_BLOCK, "saltBlock", 3862).getInt();
+			cheeseBlock = config.get(Configuration.CATEGORY_BLOCK, "cheeseBlock", 3863).getInt();
+			BakeTableBlock = config.get(Configuration.CATEGORY_BLOCK, "BakeTableBlock", 3864).getInt();
+			onionPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "onionPlant", 3865).getInt();
+			raspBerryPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "raspBerryPlant", 3866).getInt();
+			strawBerryPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "strawBerryPlant", 3867).getInt();
+			GrapeHolderBlock = config.get(Configuration.CATEGORY_BLOCK, "GrapeHolder", 3868).getInt();
+			grapesPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "grapesPlant", 3869).getInt();
+			beerKegBlockID = config.get(Configuration.CATEGORY_BLOCK, "beerKegBlockID", 3870).getInt();
+			wasabiPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "wasabiPlant", 3871).getInt();
+			Saplings = config.get(Configuration.CATEGORY_BLOCK, "Saplings", 3872).getInt();
+			ricePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "ricePlant", 3873).getInt();
+			lettucePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "lettucePlant", 3874).getInt();
+			leavesBlock = config.get(Configuration.CATEGORY_BLOCK, "leaves", 3875).getInt();
+			PlateBlock = config.get(Configuration.CATEGORY_BLOCK, "plate", 3876).getInt();
+			shelfBlock = config.get(Configuration.CATEGORY_BLOCK, "shelf", 3877).getInt();
+//			presentBlock = config.get(config.CATEGORY_BLOCK, "present", 3030).getInt();
+	}
+	
+	public static void initModernIDs(Configuration config){
+		/** Modern **/
+		HamBurgerID = config.get(Configuration.CATEGORY_ITEM, "HamBurger", 3416).getInt();
+		CheeseBurgerID = config.get(Configuration.CATEGORY_ITEM, "CheeseBurger", 3417).getInt();
+		HamburgerBreadID = config.get(Configuration.CATEGORY_ITEM, "HamburgerBread", 3423).getInt();
+		RawHamburgerMeatID = config.get(Configuration.CATEGORY_ITEM, "RawHamburgerMeat", 3427).getInt();
+		HamburgerMeatID = config.get(Configuration.CATEGORY_ITEM, "HamburgerMeat", 3428).getInt();
+		StripsID = config.get(Configuration.CATEGORY_ITEM, "Strips", 3431).getInt();
+		CheeseBaconBurgerID = config.get(Configuration.CATEGORY_ITEM, "CheeseBaconBurger", 3432).getInt();
+		HotDogID = config.get(Configuration.CATEGORY_ITEM, "HotDog", 3447).getInt();
+		HotDogKetchupID = config.get(Configuration.CATEGORY_ITEM, "HotDogKetchup", 3477).getInt();
+		KetchupID = config.get(Configuration.CATEGORY_ITEM, "Ketchup", 3474).getInt();
 	}
 }

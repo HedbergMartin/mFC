@@ -23,26 +23,26 @@ import net.minecraft.world.World;
 public class BowlFood extends ItemFood
 {
 
-    public BowlFood(int i, int j)
+    public BowlFood(int i, int j, float saturation)
     {
-        super(i, j, false);
+        super(i, j, saturation, false);
         setMaxStackSize(1);
     }
 
     public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {
-        super.onFoodEaten(itemstack, world, entityplayer);
+        super.onEaten(itemstack, world, entityplayer);
         return new ItemStack(Item.bowlEmpty);
     }
     
     @Override
     public Item setContainerItem(Item par1Item) {
-    	return Item.bowlEmpty;
+    	return super.setContainerItem(Item.bowlEmpty);
     }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

@@ -93,10 +93,10 @@ public class FarmSword extends Item
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
+    public void registerIcons(IconRegister par1IconRegister) {
     	if(TileEntityPlateRender.specialChickenIcon == null){
     		TileEntityPlateRender.specialChickenIcon = par1IconRegister.registerIcon("mFC:chickenLeg");
     	}
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

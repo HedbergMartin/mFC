@@ -96,6 +96,17 @@ public class mFC
 			RecipeRegister.loadModern();
 			NameRegister.nameModern();
 		}
+		Block.blocksList[Block.cauldron.blockID] = null;
+		Item.itemsList[Block.cauldron.blockID] = null;
+        Block newCauldron = new BlockNewCauldron(Block.cauldron.blockID).setUnlocalizedName("cauldron");
+        GameRegistry.registerBlock(newCauldron, "NewCauldron");
+        Common.OverrideBlock(Block.cauldron, newCauldron);
+		Item.itemsList[Item.appleRed.itemID-256] = null;
+		if(oldApple){
+			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID-256, 4, 0.05F, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitApple");
+		}else{
+			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID-256, 4, 0.05F, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitAppleNew");
+		}
 		Config.setShelfItems();
 		RecipeRegister.addRecipe();
 		NameRegister.addName();
@@ -103,18 +114,6 @@ public class mFC
 		new BoilingRecipes();
 		GameRegistry.registerWorldGenerator(worldGen);
 		Config.loadEntitys(this);
-		
-		Block.blocksList[Block.cauldron.blockID] = null;
-		Item.itemsList[Block.cauldron.blockID] = null;
-        Block newCauldron = new BlockNewCauldron(Block.cauldron.blockID).setUnlocalizedName("cauldron");
-        GameRegistry.registerBlock(newCauldron, "NewCauldron");
-        Common.OverrideBlock(Block.cauldron, newCauldron);
-		
-		if(oldApple){
-			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID, 4, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitApple");
-		}else{
-			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID, 4, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitAppleNew");
-		}
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHandler());
 		proxy.registerRenderInformation();
     }
@@ -127,6 +126,7 @@ public class mFC
         config.load();
         generalConfig(config);
         Identifications.InitID(config);
+        Identifications.initModernIDs(config);
         config.save();
         MinecraftForge.EVENT_BUS.register(new BonemealEventHandler());
     }

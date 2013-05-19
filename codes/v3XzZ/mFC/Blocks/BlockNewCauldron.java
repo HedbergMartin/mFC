@@ -1,6 +1,5 @@
 package v3XzZ.mFC.Blocks;
 
-import java.util.List;
 import java.util.Random;
 
 import v3XzZ.mFC.EntityCauldronItem;
@@ -22,7 +21,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 

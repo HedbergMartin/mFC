@@ -29,7 +29,7 @@ public class PlateRecipes {
 		instance = this;
 		/** 1 = BaseFood, 2 = Salad, 3 = Protine/Meat */
 		this.RegisterFood(Item.bakedPotato.itemID, 1, 6);
-		this.RegisterFood(Items.boiledRice.itemID, 1, 8);
+		this.RegisterFood(Items.bowlOfRice.itemID, 1, 8);
 		this.RegisterFood(Items.lettuce.itemID, 2, 3);
 		this.RegisterFood(Item.beefCooked.itemID, 3, 8);
 		this.RegisterFood(Item.porkCooked.itemID, 3, 8);

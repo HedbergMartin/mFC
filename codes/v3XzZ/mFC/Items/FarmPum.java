@@ -29,14 +29,14 @@ public class FarmPum extends ItemFood {
 	
 	public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {	
-        super.onFoodEaten(itemstack, world, entityplayer);
+        super.onEaten(itemstack, world, entityplayer);
         entityplayer.dropPlayerItem(new ItemStack(Item.pumpkinSeeds.itemID, 1, 0));
         return itemstack;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

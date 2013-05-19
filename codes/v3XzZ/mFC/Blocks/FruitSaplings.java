@@ -54,7 +54,7 @@ public class FruitSaplings extends BlockFlower
     	}
     }
     
-    public Icon getBlockTextureFromSideAndMetadata(int i, int j)
+    public Icon getIcon(int i, int j)
     {
     	if (j == 2)
         {
@@ -62,47 +62,56 @@ public class FruitSaplings extends BlockFlower
         }
         if (j == 3)
         {
-    		return this.iconArray[1];
+    		return this.iconArray[0];
         }
         if (j == 4)
         {
     		return this.iconArray[3];
         }
-        return this.iconArray[0];
+        return this.iconArray[1];
     }
 
-    public void growTree(World world, int i, int j, int k, Random random)
+    public boolean growTree(World world, int i, int j, int k, Random random)
     {
     	int mete = world.getBlockMetadata(i, j, k);
 		FarmFruitTree farmfruittree = new FarmFruitTree();
     	if (mete == 1){
-    		world.setBlockMetadataWithNotify(i, j, k, 0, 0);
+    		world.setBlock(i, j, k, 0, 0, 2);
     		if(!(farmfruittree).generate(world, random, i, j, k, Blocks.appleBlock.blockID, 0))
     		{
-    			world.setBlockMetadataWithNotify(i, j, k, blockID, 0);
+    			world.setBlock(i, j, k, this.blockID, 1, 2);
+    		}else{
+                return true;
     		}
     	}
     	else if (mete == 2){
-    		world.setBlockMetadataWithNotify(i, j, k, 0, 0);
+    		world.setBlock(i, j, k, 0, 0, 2);
     		if(!(farmfruittree).generate(world, random, i, j, k, Blocks.orangeBlock.blockID, 1))
     		{
-    			world.setBlockMetadataWithNotify(i, j, k, blockID, 1);
+    			world.setBlock(i, j, k, this.blockID, 2, 2);
+    		}else{
+                return true;
     		}
     	}
     	else if (mete == 3){
-    		world.setBlockMetadataWithNotify(i, j, k, 0, 0);
+    		world.setBlock(i, j, k, 0, 0, 2);
     		if(!(farmfruittree).generate(world, random, i, j, k, Blocks.avacadoBlock.blockID, 2))
     		{
-    			world.setBlockMetadataWithNotify(i, j, k, blockID, 2);
+    			world.setBlock(i, j, k, this.blockID, 3, 2);
+    		}else{
+                return true;
     		}
     	}
     	else if (mete == 4){
     		world.setBlockMetadataWithNotify(i, j, k, 0, 0);
     		if(!(farmfruittree).generate(world, random, i, j, k, Blocks.cocoaBlock.blockID, 3))
     		{
-    			world.setBlockMetadataWithNotify(i, j, k, blockID, 3);
+    			world.setBlock(i, j, k, this.blockID, 4, 2);
+    		}else{
+                return true;
     		}
     	}
+        return false;
     }
     
     public int idDropped(int i, Random random, int j)

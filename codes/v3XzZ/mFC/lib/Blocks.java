@@ -54,7 +54,6 @@ public class Blocks {
 	public static CropWasabi wasabiPlant;
 	public static CropBush strawBerryPlant;
 	public static CropBush raspBerryPlant;
-	public static Block WasabiPlant;
 	
 
 	//Christmas block, maybe next year again.

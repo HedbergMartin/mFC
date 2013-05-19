@@ -2,10 +2,8 @@ package v3XzZ.mFC.Items;
 
 import java.util.List;
 
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -21,8 +19,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class Pancake extends FarmFood {
 
-	public Pancake(int i, int j, int k) {
-		super(i, j, k);
+	public Pancake(int i, int j, int k, float saturation) {
+		super(i, j, k, saturation);
         this.setHasSubtypes(true);
 	}
 	

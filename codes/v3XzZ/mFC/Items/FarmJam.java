@@ -32,7 +32,7 @@ public class FarmJam extends ItemFood
 
     public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {
-        super.onFoodEaten(itemstack, world, entityplayer);
+        super.onEaten(itemstack, world, entityplayer);
         return new ItemStack(Items.jamJar);
     }
     
@@ -43,7 +43,7 @@ public class FarmJam extends ItemFood
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

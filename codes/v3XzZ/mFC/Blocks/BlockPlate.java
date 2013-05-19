@@ -16,7 +16,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -52,27 +55,58 @@ public class BlockPlate extends BlockContainer {
      */
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
+        ItemStack itemstack = par5EntityPlayer.inventory.getCurrentItem();
     	if (par1World.isRemote)
         {
             return true;
         }
-        else if(par5EntityPlayer.getCurrentEquippedItem() != null)
+        else if(itemstack != null)
 	    {
         	TileEntityPlate var6 = (TileEntityPlate)par1World.getBlockTileEntity(par2, par3, par4);
 	
 	        if (var6 != null)
 	        {
-	        	if(par5EntityPlayer.getCurrentEquippedItem().getItem() == Items.fork){
+	        	if(itemstack.getItem() == Items.fork){
 	        		eat(par1World, par2, par3, par4, par5EntityPlayer, var6.countFood());
 	    	    	var6.baseFood = 0;
 	    	    	var6.salad = 0;
 	    	    	var6.protien = 0;
 	    	    	return true;
 	        	}
-	        	switch(PlateRecipes.instance.isFoodRegistrated(par5EntityPlayer.getCurrentEquippedItem())){
-		        	case(1): if(var6.baseFood == 0){var6.baseFood = par5EntityPlayer.getCurrentEquippedItem().itemID; par5EntityPlayer.getCurrentEquippedItem().stackSize--;} break;
-		        	case(2): if(var6.salad == 0){var6.salad = par5EntityPlayer.getCurrentEquippedItem().itemID; par5EntityPlayer.getCurrentEquippedItem().stackSize--;} break;
-		        	case(3): if(var6.protien == 0){var6.protien = par5EntityPlayer.getCurrentEquippedItem().itemID; par5EntityPlayer.getCurrentEquippedItem().stackSize--;} break;
+	        	boolean worked = false;
+	        	switch(PlateRecipes.instance.isFoodRegistrated(itemstack)){
+		        	case(1): if(var6.baseFood == 0){
+		        		var6.baseFood = itemstack.itemID;
+		        		worked = true;
+		        	} break;
+		        	case(2): if(var6.salad == 0){
+		        		var6.salad = itemstack.itemID;
+		        		worked = true;
+		        	} break;
+		        	case(3): if(var6.protien == 0){
+		        		var6.protien = itemstack.itemID;
+		        		worked = true;
+		        	} break;
+	        	}
+	        	if(worked){
+	        		ItemStack containerItem = null;
+	        		if(itemstack.getItem().getContainerItem() != null){
+		        		containerItem = new ItemStack(itemstack.getItem().getContainerItem());
+	        		}
+	        		itemstack.stackSize--;
+	        		if(containerItem != null){
+	                    if (itemstack.stackSize <= 0)
+	                    {
+	                        par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, containerItem);
+	                    }else if (!par5EntityPlayer.inventory.addItemStackToInventory(containerItem))
+	                    {
+	                        par1World.spawnEntityInWorld(new EntityItem(par1World, (double)par2 + 0.5D, (double)par3 + 1.5D, (double)par4 + 0.5D, containerItem));
+	                    }
+	                    else if (par5EntityPlayer instanceof EntityPlayerMP)
+	                    {
+	                        ((EntityPlayerMP)par5EntityPlayer).sendContainerToPlayer(par5EntityPlayer.inventoryContainer);
+	                    }
+	        		}
 	        	}
 	        }
 	        return true;

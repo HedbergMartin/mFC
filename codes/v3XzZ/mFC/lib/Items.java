@@ -69,9 +69,10 @@ public class Items {
 	public static Item grapes;
 	public static Item palt;
 	public static Item porridge;
-	public static Item creamIron;
-	public static Item creamWood;
-	public static Item butter;
+	//These will be implemented.
+	//public static Item creamIron;
+	//public static Item creamWood;
+	//public static Item butter;
 	public static Item tomatoStew;
 	public static Item potatoSallad;
 	public static Item StrawBerryjam;
@@ -93,7 +94,6 @@ public class Items {
 	public static Item bowlOfRice;
 	public static Item malt;
 	public static Item macaroniAndCheese;
-	public static Item boiledRice;
 	public static Item beerCup;
 	public static Item beer;
 	public static Item redWine;
@@ -123,6 +123,7 @@ public class Items {
 	public static Item obsidianAxe;
 	public static Item obsidianHoe;
 	public static Item obsidianSword;
+	public static Item fork;
 	
 	public static Item pumpkinPiece;
 	public static Item roastPumpkin;
@@ -132,10 +133,8 @@ public class Items {
 	public static Item cornSeeds;
 	public static Item cottonSeeds;
 	public static Item lettuceSeeds;
-	public static Item onionSeeds;
 	public static Item raspBerrySeeds;
 	public static Item strawBerrySeeds;
-	public static Item wasabiSeeds;
 	public static Item cornCob;
 	public static Item cornCobCooked;
 	public static Item tomato;
@@ -151,7 +150,5 @@ public class Items {
 	public static Item riceSeeds;
 	public static Item Rice;
 	public static Item grapeSeeds;
-	
-	public static Item fork;
 
 }

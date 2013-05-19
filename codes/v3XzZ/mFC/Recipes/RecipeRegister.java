@@ -6,7 +6,6 @@ import v3XzZ.mFC.lib.Items;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -256,15 +255,6 @@ public class RecipeRegister {
 		GameRegistry.addRecipe(new ItemStack(Items.glassStrawBerryJuice, 1), new Object[] {
             "B", "B", "E", Character.valueOf('B'), Items.strawBerry, Character.valueOf('E'), Items.drinkingGlass
 		});
-		GameRegistry.addRecipe(new ItemStack(Items.bowlOfRice, 1), new Object[] {
-            "R", "B", Character.valueOf('B'), Item.bowlEmpty, Character.valueOf('R'), Items.boiledRice
-		});
-		GameRegistry.addRecipe(new ItemStack(Items.porridge, 1), new Object[] {
-            "R M", " B ", Character.valueOf('B'), Item.bowlEmpty, Character.valueOf('R'), Items.boiledRice, Character.valueOf('M'), Items.woodenBucketMilk
-		});
-		GameRegistry.addRecipe(new ItemStack(Items.porridge, 1), new Object[] {
-            "R M", " B ", Character.valueOf('B'), Item.bowlEmpty, Character.valueOf('R'), Items.boiledRice, Character.valueOf('M'), Item.bucketMilk
-		});
 		GameRegistry.addRecipe(new ItemStack(Items.macaroniAndCheese, 1), new Object[] {
             "C M", " B ", Character.valueOf('B'), Item.bowlEmpty, Character.valueOf('C'), Items.cheesePiece, Character.valueOf('M'), Items.pasta
 		});
@@ -275,13 +265,13 @@ public class RecipeRegister {
 			new ItemStack(Items.wasabiRoot, 1)
 		});
 		GameRegistry.addRecipe(new ItemStack(Items.MakiLong, 1), new Object[]{
-			"LRL", "LWL", "LRL", Character.valueOf('L'), Block.waterlily, Character.valueOf('R'), Items.boiledRice, Character.valueOf('W'), Items.wasabi
+			"LRL", "LWL", "LRL", Character.valueOf('L'), Block.waterlily, Character.valueOf('R'), Items.bowlOfRice, Character.valueOf('W'), Items.wasabi
 		});
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.MakiShort, 4), new Object[]{
 			new ItemStack(Items.MakiLong, 1), new ItemStack(Items.Knife, 1)
 		});
-		GameRegistry.addRecipe(new ItemStack(Items.LaxSuchi, 5), new Object[]{
-			"FFF", "W W", "RRR", Character.valueOf('F'), Item.fishRaw, Character.valueOf('R'), Items.boiledRice, Character.valueOf('W'), Items.wasabi
+		GameRegistry.addRecipe(new ItemStack(Items.LaxSuchi, 6), new Object[]{
+			"FFF", "W W", "RRR", Character.valueOf('F'), Item.fishRaw, Character.valueOf('R'), Items.bowlOfRice, Character.valueOf('W'), Items.wasabi
 		});
 		GameRegistry.addRecipe(new ItemStack(Items.chocolateBar, 1), new Object[] {
 			"S", "C", "M", Character.valueOf('S'), Item.sugar, Character.valueOf('C'), new ItemStack(Item.dyePowder, 1, 3), Character.valueOf('M'), Items.woodenBucketMilk
@@ -320,7 +310,6 @@ public class RecipeRegister {
 		GameRegistry.addSmelting(Item.bucketWater.itemID, new ItemStack(Items.saltPile, 1), 0);
 		GameRegistry.addSmelting(Items.pumpkinPiece.itemID, new ItemStack(Items.roastPumpkin, 1), 0);
 		GameRegistry.addSmelting(Item.seeds.itemID, new ItemStack(Items.malt, 1), 0);
-		GameRegistry.addSmelting(Items.Rice.itemID, new ItemStack(Items.boiledRice, 1), 0);
 		GameRegistry.addSmelting(Items.cornCob.itemID, new ItemStack(Items.cornCobCooked), 0);
 		
 		MinecraftForge.addGrassSeed(new ItemStack(Items.redSeeds), 10);

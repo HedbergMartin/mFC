@@ -3,22 +3,19 @@ package v3XzZ.mFC.Blocks;
 import java.util.ArrayList;
 import java.util.Random;
 
-import v3XzZ.mFC.Identifications;
-import v3XzZ.mFC.lib.Items;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import v3XzZ.mFC.Identifications;
+import v3XzZ.mFC.lib.Items;
 
 /**
  * Project: mFC
@@ -35,8 +32,7 @@ public class CropBush extends CropTemplate {
 	private boolean isBush = false;
 	private int drop, stage, seed, rendertype;
 	
-	public CropBush(int i, int stage, int drop, int seed, boolean bush)
-    {
+	public CropBush(int i, int stage, int drop, int seed, boolean bush) {
         super(i, Material.plants);
         float f = 0.4F;
         setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
@@ -60,9 +56,9 @@ public class CropBush extends CropTemplate {
         {
     		/*EntityItem item = new EntityItem(world, d, d1, d2, new ItemStack(mFC.grapes));
 	        world.spawnEntityInWorld(item);*/
-	        if(isBush && l == stage) {
+	        if(isBush && l == stage-1) {
 	        	world.setBlockMetadataWithNotify(i, j, k, stage-2, 2);
-	        }else if(l == stage) {
+	        }else if(l == stage-1) {
 	        	world.setBlockMetadataWithNotify(i, j, k, stage-3, 2);
 	        }
         }
@@ -90,19 +86,39 @@ public class CropBush extends CropTemplate {
         }
     }
     
+    @Override
+	@SideOnly(Side.CLIENT)
+	/**
+	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
+	 */
+	public Icon getIcon(int par1, int par2) {
+		if(this.iconArray != null){
+			if (par2 < 0 || par2 > this.iconArray.length) {
+				par2 = this.iconArray.length;
+			}
+	
+			return par2 >= stage ? this.iconArray[par2-1] : this.iconArray[par2];
+		}
+		return null;
+	}
+    
     /**
      * Apply bonemeal to the crops.
      */
-    public void fertilize(World par1World, int par2, int par3, int par4)
+    public boolean fertilize(World par1World, int par2, int par3, int par4)
     {
     	if(!par1World.isRemote){
-    		int randomGrowth = 1+par1World.rand.nextInt(3);
-        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= stage){
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, stage-1, 2);
-        	}else{
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
-        	}
+    		if(par1World.getBlockMetadata(par2, par3, par4) != stage-1){
+	    		int randomGrowth = 1+par1World.rand.nextInt(3);
+	        	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= stage){
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, stage-1, 2);
+	        	}else{
+	                par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
+	        	}
+	        	return true;
+    		}
     	}
+        return false;
     }
     
     /**

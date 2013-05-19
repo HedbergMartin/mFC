@@ -32,7 +32,7 @@ public class FarmDrink extends ItemFood {
 	@Override
 	public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {	
-        super.onFoodEaten(itemstack, world, entityplayer);
+        super.onEaten(itemstack, world, entityplayer);
         return new ItemStack(Items.drinkingGlass);
     }
 	
@@ -49,15 +49,15 @@ public class FarmDrink extends ItemFood {
     {
         return EnumAction.drink;
     }
-	
-	@Override
-	public Item setContainerItem(Item par1Item) {
-		return Items.drinkingGlass;
-	}
+    
+    @Override
+    public Item setContainerItem(Item par1Item) {
+    	return super.setContainerItem(Items.drinkingGlass);
+    }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }

@@ -6,12 +6,10 @@ import v3XzZ.mFC.lib.Blocks;
 import v3XzZ.mFC.lib.Items;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
 /**
@@ -69,24 +67,26 @@ public class CropCorn extends CropTemplate {
         }
     }
     
-    public void fertilize(World par1World, int par2, int par3, int par4)
-    {
+    public boolean fertilize(World par1World, int par2, int par3, int par4) {
     	if(!par1World.isRemote){
     		if(par1World.getBlockId(par2, par3+1, par4) == 0){
         		int randomGrowth = 1+par1World.rand.nextInt(3);
             	if(par1World.getBlockMetadata(par2, par3, par4)+randomGrowth >= 7){
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
-                    par1World.setBlockMetadataWithNotify(par2, par3+1, par4, 7, 2);
+                    par1World.setBlock(par2, par3+1, par4, Blocks.cornPlant.blockID, 7, 2);
             	}else if (par1World.getBlockMetadata(par2, par3, par4)+randomGrowth > 4){
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
-                    par1World.setBlockMetadataWithNotify(par2, par3+1, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
+                    par1World.setBlock(par2, par3+1, par4, Blocks.cornPlant.blockID, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
             	}else {
                     par1World.setBlockMetadataWithNotify(par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4)+randomGrowth, 2);
             	}
-    		}else {
-                par1World.setBlockMetadataWithNotify(par2, par3+1, par4, 7, 2);
+            	return true;
+    		}else if(par1World.getBlockMetadata(par2, par3+1, par4) != 7) {
+    			par1World.setBlock(par2, par3+1, par4, Blocks.cornPlant.blockID, 7, 2);
+            	return true;
     		}
     	}
+		return false;
     }
 
     private float getGrowthRate(World par1World, int par2, int par3, int par4)

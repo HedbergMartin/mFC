@@ -44,7 +44,7 @@ public class ItemTallBottleDrink extends ItemFood {
         	itemstack.damageItem(1, entityplayer);
         	entityplayer.getFoodStats().addStats(this);
         	world.playSoundAtEntity(entityplayer, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
-            this.onFoodEaten(itemstack, world, entityplayer);
+            this.onEaten(itemstack, world, entityplayer);
             if(itemstack.getItemDamage() < 3){
                 return itemstack;
             }else{
@@ -76,7 +76,7 @@ public class ItemTallBottleDrink extends ItemFood {
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister) {
-    	this.iconIndex = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
+    public void registerIcons(IconRegister par1IconRegister) {
+    	this.itemIcon = par1IconRegister.registerIcon("mFC:"+Common.getItemName(this.getUnlocalizedName()));
     }
 }
