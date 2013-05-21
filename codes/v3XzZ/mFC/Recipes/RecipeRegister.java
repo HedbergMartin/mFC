@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -65,7 +66,7 @@ public class RecipeRegister {
 			"  U", " U ", "X  ", Character.valueOf('X'), Item.stick, Character.valueOf('U'), Item.ingotIron
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack( Items.baconRaw, 1 ), new Object[] {
-			new ItemStack(Items.Knife, 1), new ItemStack(Item.porkRaw)
+			new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.porkRaw)
 		});
 		GameRegistry.addRecipe( new ItemStack( Items.clayCup, 1 ), new Object[] {
 			"P P", "XPX", Character.valueOf('X'), Block.sand, Character.valueOf('P'), Item.clay
@@ -86,7 +87,7 @@ public class RecipeRegister {
 			new ItemStack(Items.woodenBucketWater, 1), new ItemStack(Block.dirt, 1), new ItemStack(Block.sand, 1),
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack( Items.breadSlice, 4 ), new Object[] {
-			new ItemStack(Items.Knife, 1), new ItemStack(Item.bread)
+			new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.bread)
 		});
 		GameRegistry.addRecipe( new ItemStack( Items.sandwichEgg, 1 ), new Object[] {
 			" X ", " CP", " X ", Character.valueOf('X'), Items.breadSlice, Character.valueOf('P'), Items.friedEgg, Character.valueOf('C'), Items.cheesePiece
@@ -120,7 +121,7 @@ public class RecipeRegister {
             "AAA", "BAB", "C C", Character.valueOf('A'), Item.leather, Character.valueOf('B'), Item.silk, Character.valueOf('C'), Item.ingotIron,
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack(Items.pumpkinPiece, 4), new Object[] {
-			new ItemStack(Block.pumpkin, 1), new ItemStack(Items.Knife, 1)
+			new ItemStack(Block.pumpkin, 1), new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE)
 		});
 		GameRegistry.addRecipe( new ItemStack( Items.guacamole, 1), new Object[] {
 			"X", "#", Character.valueOf('#'), Item.bowlEmpty, Character.valueOf('X'), Items.avacado
@@ -163,10 +164,10 @@ public class RecipeRegister {
             "BBB", " E ", Character.valueOf('B'), Item.seeds, Character.valueOf('E'), Item.glassBottle
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack(Items.meatScrap, 1), new Object[] {
-			new ItemStack(Item.beefCooked, 1), new ItemStack(Items.Knife, 1)
+			new ItemStack(Item.beefCooked, 1), new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE)
 		});
-		GameRegistry.addShapelessRecipe( new ItemStack(Items.beefJerky, 1), new Object[] {
-			new ItemStack(Item.beefRaw, 1), new ItemStack(Items.Knife, 1), new ItemStack(Items.saltPile, 1)
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.beefJerky, 1), new Object[] {
+			new ItemStack(Item.beefRaw, 1), new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.saltPile, 1)
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack(Items.pasta, 2), new Object[] {
 			new ItemStack(Item.bucketWater, 1), new ItemStack(Item.egg, 1), new ItemStack(Item.wheat, 1)
@@ -268,7 +269,7 @@ public class RecipeRegister {
 			"LRL", "LWL", "LRL", Character.valueOf('L'), Block.waterlily, Character.valueOf('R'), Items.bowlOfRice, Character.valueOf('W'), Items.wasabi
 		});
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.MakiShort, 4), new Object[]{
-			new ItemStack(Items.MakiLong, 1), new ItemStack(Items.Knife, 1)
+			new ItemStack(Items.MakiLong, 1), new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE)
 		});
 		GameRegistry.addRecipe(new ItemStack(Items.LaxSuchi, 6), new Object[]{
 			"FFF", "W W", "RRR", Character.valueOf('F'), Item.fishRaw, Character.valueOf('R'), Items.bowlOfRice, Character.valueOf('W'), Items.wasabi

@@ -101,7 +101,7 @@ public class mFC
         Block newCauldron = new BlockNewCauldron(Block.cauldron.blockID).setUnlocalizedName("cauldron");
         GameRegistry.registerBlock(newCauldron, "NewCauldron");
         Common.OverrideBlock(Block.cauldron, newCauldron);
-		Item.itemsList[Item.appleRed.itemID-256] = null;
+		Item.itemsList[Item.appleRed.itemID] = null;
 		if(oldApple){
 			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID-256, 4, 0.05F, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitApple");
 		}else{
@@ -114,6 +114,7 @@ public class mFC
 		new BoilingRecipes();
 		GameRegistry.registerWorldGenerator(worldGen);
 		Config.loadEntitys(this);
+		GameRegistry.registerCraftingHandler(new CraftingHandler());
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHandler());
 		proxy.registerRenderInformation();
     }

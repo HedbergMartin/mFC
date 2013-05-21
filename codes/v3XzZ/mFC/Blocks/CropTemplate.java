@@ -3,10 +3,13 @@ package v3XzZ.mFC.Blocks;
 import v3XzZ.util.Common;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 /**
  * Project: mFC
@@ -33,6 +36,16 @@ public class CropTemplate extends BlockFlower {
 	public Icon[] registerArray(int size) {
 		return new Icon[size];
 	}
+	
+    /**
+     * Can this block stay at this position.  Similar to canPlaceBlockAt except gets checked often with plants.
+     */
+    public boolean canBlockStay(World par1World, int par2, int par3, int par4)
+    {
+        Block soil = blocksList[par1World.getBlockId(par2, par3 - 1, par4)];
+        return (par1World.getFullBlockLightValue(par2, par3, par4) >= 8 || par1World.canBlockSeeTheSky(par2, par3, par4)) && 
+                ((soil != null && soil.canSustainPlant(par1World, par2, par3 - 1, par4, ForgeDirection.UP, this)) || soil == Block.grass || soil == Block.dirt);
+    }
 
 	@Override
 	@SideOnly(Side.CLIENT)

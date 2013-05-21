@@ -1,11 +1,5 @@
 package v3XzZ.mFC.Items;
 
-import v3XzZ.mFC.FarmToolMat;
-import v3XzZ.mFC.client.TileEntityPlateRender;
-import v3XzZ.mFC.lib.Items;
-import v3XzZ.util.Common;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,6 +10,11 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import v3XzZ.mFC.FarmToolMat;
+import v3XzZ.mFC.client.TileEntityPlateRender;
+import v3XzZ.util.Common;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -33,7 +32,7 @@ public class FarmSword extends Item
     public FarmSword(int i, FarmToolMat farmtoolmat)
     {
         super(i);
-        maxStackSize = 1;
+        setMaxStackSize(1);
         setMaxDamage(farmtoolmat.getMaxUses());
         weaponDamage = 4 + farmtoolmat.getDamageVsEntity() * 2;
         this.setCreativeTab(CreativeTabs.tabCombat);
@@ -46,15 +45,13 @@ public class FarmSword extends Item
 
     public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1)
     {
-    	if(itemstack.itemID != Items.Knife.itemID)
         itemstack.damageItem(1, entityliving1);
         return true;
     }
 
-    public boolean onBlockDestroyed(ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving)
-    {
-    	if(itemstack.itemID != Items.Knife.itemID)
-        itemstack.damageItem(2, entityliving);
+    @Override
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving) {
+    	par1ItemStack.damageItem(2, par7EntityLiving);
         return true;
     }
 

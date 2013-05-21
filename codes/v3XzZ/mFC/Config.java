@@ -73,7 +73,7 @@ public class Config {
 		Items.obsidianAxe = new FarmAxe(Identifications.obsidianAxeID, FarmToolMat.OBSIDIAN).setUnlocalizedName("axeObsidian");
 		Items.obsidianHoe = new FarmHoe(Identifications.obsidianHoeID, FarmToolMat.OBSIDIAN).setUnlocalizedName("hoeObsidian");
 		Items.obsidianSword = new FarmSword(Identifications.obsidianSwordID, FarmToolMat.OBSIDIAN).setUnlocalizedName("swordObsidian");
-		Items.Knife = (new FarmSword(Identifications.KnifeID, FarmToolMat.IRON)).setMaxStackSize(1).setUnlocalizedName("knife").setFull3D().setMaxStackSize(1).setContainerItem(Items.Knife);
+		Items.Knife = (new FarmSword(Identifications.KnifeID, FarmToolMat.IRON)).setUnlocalizedName("knife").setFull3D();
 	}
 	
 	public static void loadModern(){

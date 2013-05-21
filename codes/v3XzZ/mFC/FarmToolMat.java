@@ -14,7 +14,7 @@ public enum FarmToolMat
 {
     WOOD("WOOD", 0, 0, 59, 2.0F, 0),
     STONE("STONE", 1, 1, 131, 4F, 1),
-    IRON("IRON", 2, 0, -1, 1F, -1),
+    IRON("IRON", 2, 0, 256, 6F, 2),
     EMERALD("EMERALD", 3, 3, 1561, 8F, 3),
     OBSIDIAN("OBSIDIAN", 2, 2, 3000, 6F, 2),
     GOLD("GOLD", 4, 0, 32, 12F, 0);
