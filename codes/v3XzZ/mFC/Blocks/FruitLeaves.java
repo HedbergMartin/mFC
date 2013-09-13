@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.List;
 import java.util.Random;
@@ -251,26 +251,22 @@ public class FruitLeaves extends BlockLeavesBase {
      */
     public int colorMultiplier(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
-        int var5 = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
+        int var6 = 0;
+        int var7 = 0;
+        int var8 = 0;
 
-        
-            int var6 = 0;
-            int var7 = 0;
-            int var8 = 0;
-
-            for (int var9 = -1; var9 <= 1; ++var9)
+        for (int var9 = -1; var9 <= 1; ++var9)
+        {
+            for (int var10 = -1; var10 <= 1; ++var10)
             {
-                for (int var10 = -1; var10 <= 1; ++var10)
-                {
-                    int var11 = par1IBlockAccess.getBiomeGenForCoords(par2 + var10, par4 + var9).getBiomeFoliageColor();
-                    var6 += (var11 & 16711680) >> 16;
-                    var7 += (var11 & 65280) >> 8;
-                    var8 += var11 & 255;
-                }
+                int var11 = par1IBlockAccess.getBiomeGenForCoords(par2 + var10, par4 + var9).getBiomeFoliageColor();
+                var6 += (var11 & 16711680) >> 16;
+                var7 += (var11 & 65280) >> 8;
+                var8 += var11 & 255;
             }
+        }
 
-            return (var6 / 9 & 255) << 16 | (var7 / 9 & 255) << 8 | var8 / 9 & 255;
-        
+        return (var6 / 9 & 255) << 16 | (var7 / 9 & 255) << 8 | var8 / 9 & 255;
     }
     
     @Override
@@ -282,7 +278,8 @@ public class FruitLeaves extends BlockLeavesBase {
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
         par3List.add(new ItemStack(par1, 1, 0));
         par3List.add(new ItemStack(par1, 1, 1));

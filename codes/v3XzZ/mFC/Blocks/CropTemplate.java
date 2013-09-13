@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import v3XzZ.util.Common;
 import cpw.mods.fml.relauncher.Side;

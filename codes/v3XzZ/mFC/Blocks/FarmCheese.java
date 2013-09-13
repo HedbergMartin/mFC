@@ -1,14 +1,7 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.List;
 import java.util.Random;
-
-import v3XzZ.mFC.mFC;
-import v3XzZ.mFC.lib.Items;
-import v3XzZ.util.Common;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -20,6 +13,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import v3XzZ.mFC.mFC;
+import v3XzZ.mFC.lib.Items;
+import v3XzZ.util.Common;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -65,7 +63,8 @@ public class FarmCheese extends Block
         return super.shouldSideBeRendered(iblockaccess, i, j, k, l);
     }
 
-    public void addCollisionBoxesToList(World par1World, int i, int j, int k, AxisAlignedBB par5AxisAlignedBB, List arraylist, Entity par7Entity)
+    @SuppressWarnings("rawtypes")
+	public void addCollisionBoxesToList(World par1World, int i, int j, int k, AxisAlignedBB par5AxisAlignedBB, List arraylist, Entity par7Entity)
     {
         int l = par1World.getBlockMetadata(i, j, k);
         if (l == 0)

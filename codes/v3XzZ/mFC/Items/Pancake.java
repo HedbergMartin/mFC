@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Items;
+package v3XzZ.mFC.items;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
  * 
  */
 
-public class Pancake extends FarmFood {
+public class Pancake extends mFCFood {
 
 	public Pancake(int i, int j, int k, float saturation) {
 		super(i, j, k, saturation);
@@ -34,6 +34,7 @@ public class Pancake extends FarmFood {
         return "";
     }
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 
     /**

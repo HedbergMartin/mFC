@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.Random;
 
@@ -43,7 +43,7 @@ public class FarmFlower extends CropTemplate
         if(world.getBlockLightValue(i, j + 1, k) >= 9 && random.nextInt(7) == 0)
         {
             int metadata = world.getBlockMetadata(i, j, k);
-            if(metadata < 3) 
+            if(metadata < 2) 
             {
             	world.setBlockMetadataWithNotify(i, j, k, metadata + 1, 2);
             } else

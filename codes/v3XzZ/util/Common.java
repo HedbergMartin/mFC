@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
 
-import cpw.mods.fml.common.FMLLog;
+import v3XzZ.mFC.lib.References;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -13,7 +13,9 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import cpw.mods.fml.common.FMLLog;
 
 /**
  * Project: mFC
@@ -26,6 +28,13 @@ import net.minecraft.world.World;
  */
 
 public class Common {
+	
+	/**
+	 * Gets an item form a selected mod.
+	 * @param mod
+	 * @param classname
+	 * @return
+	 */
 	public static Item getFromMod(String mod, String classname) {
 		try {
 			Class<?> c = Class.forName(mod);
@@ -37,13 +46,18 @@ public class Common {
 				}
 			} 
 		} catch (Exception e) {
-			System.err.println("FarmBase: couldn't get item "+classname+" from mod "+mod);
+            FMLLog.severe("[mFC] Couldn't get item " + classname + " from mod " + mod + "!", e);
 			e.printStackTrace();
 		}
 		
 		return null;
 	}
 	
+	/**
+	 * Overrides a final block, so it can be modified. Null the block in blockList and itemList first!
+	 * @param oldBlock
+	 * @param newBlock
+	 */
 	public static void OverrideBlock(Block oldBlock, Block newBlock){
 		try {
             Field modifiersField = Field.class.getDeclaredField("modifiers");
@@ -63,15 +77,20 @@ public class Common {
                 }
             }
         } catch (Exception e) {
-            FMLLog.severe("Couldn't override " + oldBlock + " block!", e);
+            FMLLog.severe("[mFC] Couldn't override " + oldBlock + " block!", e);
         }
 	}
 
+	/**
+	 * Return the unlocalized name of an item without the tile. infront of it. Uses when register an items icon.
+	 * @param item
+	 * @return
+	 */
 	public static String getItemName(String item){
 		String[] name = item.split("\\.");
 		return name[1];
 	}
-
+	
 	public static boolean isNearWater(World world, int x, int y, int z) {
 		int radius = 3;
 		boolean foundWater = false;
@@ -87,12 +106,25 @@ public class Common {
 				}
 			}
 		}
-		
 		return foundWater;
 	}
 	
+	/**
+	 * Creates a resource path.
+	 * @param path
+	 * @return
+	 */
+	public static ResourceLocation getLocation(String path){
+		return new ResourceLocation(References.MOD_ID.toLowerCase(), path);
+	}
+	
+	/**
+	 * Removes all recipies for a choosen item.
+	 * @param resultItem
+	 */
 	public static void removeRecipe(ItemStack resultItem) {
-    List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
+    @SuppressWarnings("unchecked")
+	List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
     for (int i = 0; i < recipes.size(); i++) {
          IRecipe tmpRecipe = recipes.get(i);
          if (tmpRecipe instanceof ShapelessRecipes) {

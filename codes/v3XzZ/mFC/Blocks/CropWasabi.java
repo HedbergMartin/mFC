@@ -1,15 +1,11 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.Random;
 
-import v3XzZ.mFC.lib.Items;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import v3XzZ.mFC.lib.Items;
 
 /**
  * Project: mFC

@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ import net.minecraft.item.Item;
 
 public class BlockPresent extends Block {
 	
-	Map randomloot = new HashMap();
+	Map<Integer, Integer> randomloot = new HashMap<Integer, Integer>();
 
 	public BlockPresent(int par1, Material par3Material) {
 		super(par1, par3Material);

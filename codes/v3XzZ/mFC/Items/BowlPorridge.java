@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Items;
+package v3XzZ.mFC.items;
 
 import java.util.List;
 
@@ -40,6 +40,7 @@ public class BowlPorridge extends BowlFood {
         return "";
     }
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {

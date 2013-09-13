@@ -1,14 +1,6 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.Random;
-
-import v3XzZ.mFC.EntityCauldronItem;
-import v3XzZ.mFC.mFC;
-import v3XzZ.mFC.Blocks.TileEntitys.TileEntityCauldron;
-import v3XzZ.mFC.lib.Items;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCauldron;
@@ -23,6 +15,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import v3XzZ.mFC.EntityCauldronItem;
+import v3XzZ.mFC.mFC;
+import v3XzZ.mFC.blocks.tileentity.TileEntityCauldron;
+import v3XzZ.mFC.lib.Items;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -44,6 +42,7 @@ public class BlockNewCauldron extends BlockCauldron implements ITileEntityProvid
 	public BlockNewCauldron(int id) {
 		super(id);
         this.isBlockContainer = true;
+        this.func_111022_d("cauldron");
         //this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 	}
 	
@@ -221,8 +220,8 @@ public class BlockNewCauldron extends BlockCauldron implements ITileEntityProvid
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-    	liquidIcon = par1IconRegister.registerIcon("mFC:cauldron");
     	super.registerIcons(par1IconRegister);
+    	liquidIcon = par1IconRegister.registerIcon("mfc:cauldron");
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import v3XzZ.mFC.Identifications;
+import v3XzZ.mFC.core.handlers.IdentificationHandler;
 import v3XzZ.mFC.lib.Items;
 
 /**
@@ -239,11 +239,11 @@ public class CropBush extends CropTemplate {
     }
     
     private Item getSeed() {
-    	if(seed == Identifications.raspBerrySeedsID){
+    	if(seed == IdentificationHandler.raspBerrySeedsID){
     		return Items.raspBerrySeeds;
-    	}else if(seed == Identifications.strawBerrySeedsID){
+    	}else if(seed == IdentificationHandler.strawBerrySeedsID){
     		return Items.strawBerrySeeds;
-    	}else if(seed == Identifications.tomatoSeedsID){
+    	}else if(seed == IdentificationHandler.tomatoSeedsID){
     		return Items.tomatoSeeds;
     	}else{
     		return null;

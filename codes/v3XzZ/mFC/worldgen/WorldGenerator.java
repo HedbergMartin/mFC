@@ -69,7 +69,7 @@ public class WorldGenerator implements IWorldGenerator {
 	        }
 		}
         if(world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.jungle || world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.jungleHills) {
-	        for(int k = 0; k < 20; k++)
+	        for(int k = 0; k < 40; k++)
 	        {
 	            int l = random.nextInt(66) + 63;
 	            int i1 = chunkX + random.nextInt(16);

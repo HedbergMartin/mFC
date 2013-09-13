@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Items;
+package v3XzZ.mFC.items;
 
 import v3XzZ.mFC.lib.Items;
 import v3XzZ.util.Common;

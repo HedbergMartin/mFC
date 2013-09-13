@@ -65,7 +65,8 @@ public class VillageFieldGrapes extends ComponentVillage
         }
     }
 
-    public static VillageFieldGrapes func_74902_a(ComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+    @SuppressWarnings("rawtypes")
+	public static VillageFieldGrapes func_74902_a(ComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
     {
         StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 7, 4, 9, par6);
         return canVillageGoDeeper(var8) && StructureComponent.findIntersecting(par1List, var8) == null ? new VillageFieldGrapes(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;

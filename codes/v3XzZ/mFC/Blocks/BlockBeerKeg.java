@@ -1,24 +1,20 @@
-package v3XzZ.mFC.Blocks;
-
-import java.util.Random;
-
-import v3XzZ.mFC.mFC;
-import v3XzZ.mFC.Blocks.TileEntitys.TileEntityBeerKeg;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+package v3XzZ.mFC.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import v3XzZ.mFC.mFC;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -32,16 +28,6 @@ import net.minecraft.world.World;
 
 public class BlockBeerKeg extends BlockContainer
 {
-    /**
-     * Is the random generator used by beerKeg to drop the inventory contents in random directions.
-     */
-    private Random beerKegRand = new Random();
-
-    /**
-     * This flag is used to prevent the beerKeg inventory to be dropped upon block removal, is used internally when the
-     * beerKeg block changes from idle to active and vice-versa.
-     */
-    private static boolean keepbeerKegInventory = false;
 
     public BlockBeerKeg(int par1)
     {
@@ -146,7 +132,8 @@ public class BlockBeerKeg extends BlockContainer
     /**
      * Called when the block is placed in the world.
      */
-    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
+    @Override
+    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLivingBase par5EntityLiving, ItemStack par6ItemStack)
     {
         int var6 = MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
@@ -174,7 +161,7 @@ public class BlockBeerKeg extends BlockContainer
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-    	this.blockIcon = par1IconRegister.registerIcon("wood_spruce");
+    	this.blockIcon = par1IconRegister.registerIcon("planks_spruce");
     }
 
     /**

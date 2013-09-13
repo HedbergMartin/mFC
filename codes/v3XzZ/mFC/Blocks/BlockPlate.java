@@ -1,20 +1,8 @@
-package v3XzZ.mFC.Blocks;
-
-import org.lwjgl.input.Keyboard;
-
-import v3XzZ.mFC.mFC;
-import v3XzZ.mFC.Blocks.TileEntitys.TileEntityPlate;
-import v3XzZ.mFC.Recipes.PlateRecipes;
-import v3XzZ.mFC.lib.Items;
-import v3XzZ.util.Common;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+package v3XzZ.mFC.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +10,12 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import v3XzZ.mFC.blocks.tileentity.TileEntityPlate;
+import v3XzZ.mFC.items.crafting.PlateRecipes;
+import v3XzZ.mFC.lib.Items;
+import v3XzZ.util.Common;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC

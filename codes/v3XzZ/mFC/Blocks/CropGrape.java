@@ -1,4 +1,4 @@
-package v3XzZ.mFC.Blocks;
+package v3XzZ.mFC.blocks;
 
 import java.util.Random;
 
@@ -86,7 +86,7 @@ public class CropGrape extends CropTemplate
 	                }
 	            }
 	            if(var6 < 3){
-	            	float var7 = this.getGrowthRate(par1World, par2, par3, par4);
+	            	//float var7 = this.getGrowthRate(par1World, par2, par3, par4);
 	            	if(0 < var6 && par1World.getBlockId(par2, par3+1, par4) == Blocks.woodenTrellis.blockID){
 	                	if (par5Random.nextInt((int)(30.0F / 3.125) + 1) == 0){
 	                		par1World.setBlock(par2, par3+1, par4, Blocks.grapePlant.blockID);

@@ -7,32 +7,41 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import v3XzZ.mFC.blocks.BlockNewCauldron;
+import v3XzZ.mFC.client.render.RenderOnScreen;
+import v3XzZ.mFC.core.Config;
+import v3XzZ.mFC.core.handlers.CraftingHandler;
+import v3XzZ.mFC.core.handlers.EntityHandler;
+import v3XzZ.mFC.core.handlers.IdentificationHandler;
+import v3XzZ.mFC.core.handlers.NameHandler;
+import v3XzZ.mFC.core.proxy.CommonProxy;
+import v3XzZ.mFC.event.BonemealEventHandler;
+import v3XzZ.mFC.items.FarmFruitFood;
+import v3XzZ.mFC.items.crafting.BoilingRecipes;
+import v3XzZ.mFC.items.crafting.PlateRecipes;
+import v3XzZ.mFC.items.crafting.RecipeRegister;
+import v3XzZ.mFC.lib.Items;
+import v3XzZ.mFC.lib.References;
+import v3XzZ.mFC.network.ClientPacketHandler;
+import v3XzZ.mFC.network.ServerPacketHandler;
+import v3XzZ.mFC.worldgen.WorldGenerator;
+import v3XzZ.mFC.worldgen.village.VillageHandler;
+import v3XzZ.util.Common;
+import v3XzZ.util.PacketCrafter;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
-import v3XzZ.mFC.Blocks.BlockNewCauldron;
-import v3XzZ.mFC.Items.FarmFruitFood;
-import v3XzZ.mFC.Recipes.BoilingRecipes;
-import v3XzZ.mFC.Recipes.PlateRecipes;
-import v3XzZ.mFC.Recipes.RecipeRegister;
-import v3XzZ.mFC.client.ClientPacketHandler;
-import v3XzZ.mFC.lib.Items;
-import v3XzZ.mFC.lib.References;
-import v3XzZ.mFC.worldgen.WorldGenerator;
-import v3XzZ.mFC.worldgen.village.VillageHandler;
-import v3XzZ.util.Common;
-import v3XzZ.util.PacketCrafter;
+import cpw.mods.fml.relauncher.Side;
 
 /**
  * Project: mFC
@@ -44,7 +53,7 @@ import v3XzZ.util.PacketCrafter;
  * 
  */
 
-@Mod( modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
+@Mod(modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
 @NetworkMod(
 	    clientSideRequired = true,
 	    serverSideRequired = false, 
@@ -70,7 +79,7 @@ public class mFC
 	public static boolean GrassDropPumpkin;
 	public static boolean modernFood;
 	
-	@Init
+	@EventHandler
     public void Load(FMLInitializationEvent event)
     {
 		proxy.init();
@@ -94,7 +103,7 @@ public class mFC
 		if(modernFood){
 			Config.loadModern();
 			RecipeRegister.loadModern();
-			NameRegister.nameModern();
+			NameHandler.nameModern();
 		}
 		Block.blocksList[Block.cauldron.blockID] = null;
 		Item.itemsList[Block.cauldron.blockID] = null;
@@ -109,30 +118,32 @@ public class mFC
 		}
 		Config.setShelfItems();
 		RecipeRegister.addRecipe();
-		NameRegister.addName();
+		NameHandler.addName();
 		new PlateRecipes();
 		new BoilingRecipes();
 		GameRegistry.registerWorldGenerator(worldGen);
 		Config.loadEntitys(this);
 		GameRegistry.registerCraftingHandler(new CraftingHandler());
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHandler());
+		TickRegistry.registerTickHandler(new RenderOnScreen(), Side.CLIENT);
 		proxy.registerRenderInformation();
     }
-	
-	@PreInit
+
+	@EventHandler
     public void PreInit(FMLPreInitializationEvent event)
     { 
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 
         config.load();
         generalConfig(config);
-        Identifications.InitID(config);
-        Identifications.initModernIDs(config);
+        IdentificationHandler.InitID(config);
+        IdentificationHandler.initModernIDs(config);
         config.save();
         MinecraftForge.EVENT_BUS.register(new BonemealEventHandler());
+        MinecraftForge.EVENT_BUS.register(new EntityHandler());
     }
 
-    @PostInit // Like the modsLoaded thing from ModLoader
+	@EventHandler
     public void PostInit(FMLPostInitializationEvent event)
     { 
     	Common.removeRecipe(new ItemStack(Item.bowlSoup));

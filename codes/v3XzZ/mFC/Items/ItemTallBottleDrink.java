@@ -1,15 +1,17 @@
-package v3XzZ.mFC.Items;
+package v3XzZ.mFC.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import v3XzZ.mFC.api.ItemThirst;
+import v3XzZ.mFC.entity.PlayerData;
+import v3XzZ.mFC.lib.CommonIds;
 import v3XzZ.mFC.lib.Items;
+import v3XzZ.mFC.lib.References;
 import v3XzZ.util.Common;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
 /**
  * Project: mFC
@@ -21,57 +23,46 @@ import net.minecraft.world.World;
  * 
  */
 
-public class ItemTallBottleDrink extends ItemFood {
+public class ItemTallBottleDrink extends ItemThirst {
 
-	boolean isAlco = false;
-	boolean beer = false;
-	public ItemTallBottleDrink(int i, int j) {
-		super(i, j, false);
-		maxStackSize=1;
+	String type;
+	
+	public ItemTallBottleDrink(int i, int j, String type) {
+		super(i, j);
+		this.setStats(type, 1);
 	}
-	public ItemTallBottleDrink(int i, int j, boolean isAlco, boolean beer) {
-		super(i, j, false);
+	
+	public ItemTallBottleDrink(int i, int j, float k, String type) {
+		super(i, j, k);
+		this.setStats(type, 1);
+	}
+	
+	private void setStats(String type, int stackSize){
 		this.setMaxDamage(3);
 		this.setNoRepair();
-		this.isAlco = isAlco;
-		this.beer = beer;
-		maxStackSize=1;
+		this.type = type;
+		maxStackSize = stackSize;
 	}
 	
 	public ItemStack onEaten(ItemStack itemstack, World world, EntityPlayer entityplayer)
     {	
-        if(isAlco){
+        if(type.equals(CommonIds.DRINK_WHITEWINE) || type.equals(CommonIds.DRINK_REDWINE) || type.equals(CommonIds.DRINK_JULMUST)){
         	itemstack.damageItem(1, entityplayer);
-        	entityplayer.getFoodStats().addStats(this);
+            ((PlayerData) entityplayer.getExtendedProperties(References.ENTITY_IDENTIFYER)).getThirstStat().addStats(this);
         	world.playSoundAtEntity(entityplayer, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
-            this.onEaten(itemstack, world, entityplayer);
             if(itemstack.getItemDamage() < 3){
                 return itemstack;
             }else{
             	itemstack.stackSize--;
             	return new ItemStack(Items.tallBottle);
             }
-        }else if(beer){
-            super.onFoodEaten(itemstack, world, entityplayer);
+        }else if(type.equals(CommonIds.DRINK_BEER)){
+        	super.onEaten(itemstack, world, entityplayer);
         	return new ItemStack(Items.beerCup);
         }else {
-            super.onFoodEaten(itemstack, world, entityplayer);
+        	super.onEaten(itemstack, world, entityplayer);
             return new ItemStack(Items.drinkingGlass);
         }
-    }
-	
-	/**
-     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
-     */
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
-        par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
-        return par1ItemStack;
-    }
-    
-	public EnumAction getItemUseAction(ItemStack par1ItemStack)
-    {
-        return EnumAction.drink;
     }
     
     @Override

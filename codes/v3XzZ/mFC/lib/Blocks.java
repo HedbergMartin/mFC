@@ -1,14 +1,14 @@
 package v3XzZ.mFC.lib;
 
-import v3XzZ.mFC.Blocks.CropBush;
-import v3XzZ.mFC.Blocks.CropCorn;
-import v3XzZ.mFC.Blocks.CropGrape;
-import v3XzZ.mFC.Blocks.CropLettuce;
-import v3XzZ.mFC.Blocks.CropOnion;
-import v3XzZ.mFC.Blocks.CropRice;
-import v3XzZ.mFC.Blocks.CropWasabi;
-import v3XzZ.mFC.Blocks.FarmFlower;
-import v3XzZ.mFC.Blocks.FruitLeaves;
+import v3XzZ.mFC.blocks.CropBush;
+import v3XzZ.mFC.blocks.CropCorn;
+import v3XzZ.mFC.blocks.CropGrape;
+import v3XzZ.mFC.blocks.CropLettuce;
+import v3XzZ.mFC.blocks.CropOnion;
+import v3XzZ.mFC.blocks.CropRice;
+import v3XzZ.mFC.blocks.CropWasabi;
+import v3XzZ.mFC.blocks.FarmFlower;
+import v3XzZ.mFC.blocks.FruitLeaves;
 import net.minecraft.block.Block;
 
 /**
