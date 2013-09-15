@@ -9,6 +9,16 @@ import net.minecraft.world.World;
 import v3XzZ.mFC.entity.PlayerData;
 import v3XzZ.mFC.lib.References;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ItemThirst
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ItemThirst extends Item {
 
 	public int thistLevel;

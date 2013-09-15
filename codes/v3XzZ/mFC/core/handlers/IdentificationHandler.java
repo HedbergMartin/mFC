@@ -5,7 +5,7 @@ import net.minecraftforge.common.Configuration;
 /**
  * Project: mFC
  * 
- * Class: Identifications
+ * Class: IdentificationHandler
  * 
  * @author v3XzZ
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)

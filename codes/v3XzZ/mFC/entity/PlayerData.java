@@ -11,6 +11,16 @@ import v3XzZ.util.DataWriter;
 import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.relauncher.Side;
 
+/**
+ * Project: mFC
+ * 
+ * Class: PlayerData
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class PlayerData implements IExtendedEntityProperties{
 	
 	ThirstStat thirst = new ThirstStat();

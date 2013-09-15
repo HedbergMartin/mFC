@@ -7,6 +7,16 @@ import v3XzZ.mFC.api.ItemThirst;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Project: mFC
+ * 
+ * Class: ThirstStat
+ * 
+ * @author v3XzZ
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ThirstStat
 {
     /** The player's thirst level. */
@@ -69,16 +79,18 @@ public class ThirstStat
                 this.addExhaustion(3.0F);
                 this.thirstTimer = 0;
             }*/
-        }else if(this.thirstLevel <= 4){
+        }
+        if(this.thirstLevel <= 6){
         	par1EntityPlayer.setSprinting(false);
-        } else if (this.thirstLevel <= 0) {
+        } 
+        if (this.thirstLevel <= 0) {
             ++this.thirstTimer;
 
             if (this.thirstTimer >= 80)
             {
                 if (par1EntityPlayer.func_110143_aJ() > 10.0F || i >= 3 || par1EntityPlayer.func_110143_aJ() > 1.0F && i >= 2)
                 {
-                    par1EntityPlayer.attackEntityFrom(DamageSource.drown, 1.0F);
+                    par1EntityPlayer.attackEntityFrom(DamageSource.starve, 1.0F);
                 }
 
                 this.thirstTimer = 0;

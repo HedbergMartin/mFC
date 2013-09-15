@@ -26,6 +26,10 @@ import v3XzZ.mFC.blocks.FarmSalt;
 import v3XzZ.mFC.blocks.FruitLeaves;
 import v3XzZ.mFC.blocks.FruitSaplings;
 import v3XzZ.mFC.blocks.WoodenTrellis;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
+import v3XzZ.mFC.blocks.tileentity.TileEntityCauldron;
+import v3XzZ.mFC.blocks.tileentity.TileEntityPlate;
+import v3XzZ.mFC.blocks.tileentity.TileEntityShelf;
 import v3XzZ.mFC.core.handlers.IdentificationHandler;
 import v3XzZ.mFC.items.BowlFood;
 import v3XzZ.mFC.items.BowlPorridge;
@@ -274,10 +278,10 @@ public class Config {
 	}
 	
 	public static void loadTileEntitys(){
-		GameRegistry.registerTileEntity(v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg.class, "BeerKeg");
-		GameRegistry.registerTileEntity(v3XzZ.mFC.blocks.tileentity.TileEntityPlate.class, "Plate");
-		GameRegistry.registerTileEntity(v3XzZ.mFC.blocks.tileentity.TileEntityShelf.class, "Shelf");
-		GameRegistry.registerTileEntity(v3XzZ.mFC.blocks.tileentity.TileEntityCauldron.class, "BoilCauldron");
+		GameRegistry.registerTileEntity(TileEntityBeerKeg.class, "BeerKeg");
+		GameRegistry.registerTileEntity(TileEntityPlate.class, "Plate");
+		GameRegistry.registerTileEntity(TileEntityShelf.class, "Shelf");
+		GameRegistry.registerTileEntity(TileEntityCauldron.class, "BoilCauldron");
 	}
 	
 	public static void loadEntitys(mFC mfc){
