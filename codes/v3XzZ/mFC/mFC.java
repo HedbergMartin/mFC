@@ -1,7 +1,5 @@
 package v3XzZ.mFC;
 
-import java.util.ArrayList;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -73,7 +71,6 @@ public class mFC
 	@Instance(References.MOD_ID)
 	public static mFC instance;
 	WorldGenerator worldGen = new WorldGenerator();
-	public static ArrayList<Item> shelfItems = new ArrayList<Item>();
 	public static boolean oldApple;
 	public static boolean GrassDropMelon;
 	public static boolean GrassDropPumpkin;

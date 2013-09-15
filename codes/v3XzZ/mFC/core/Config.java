@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import v3XzZ.mFC.EntityCauldronItem;
 import v3XzZ.mFC.mFC;
+import v3XzZ.mFC.api.ApiCommon;
 import v3XzZ.mFC.blocks.BlockBeerKeg;
 import v3XzZ.mFC.blocks.BlockPlate;
 import v3XzZ.mFC.blocks.BlockShelf;
@@ -289,15 +290,15 @@ public class Config {
 	}
 	
 	public static void setShelfItems(){
-		mFC.shelfItems.add(Item.potion);
-		mFC.shelfItems.add(Item.glassBottle);
-		mFC.shelfItems.add(Items.tallBottle);
-		mFC.shelfItems.add(Items.whiteWine);
-		mFC.shelfItems.add(Items.redWine);
-		mFC.shelfItems.add(Items.christmasMust);
-		mFC.shelfItems.add(Items.jamJar);
-		mFC.shelfItems.add(Items.StrawBerryjam);
-		mFC.shelfItems.add(Items.RaspBerryjam);
+		ApiCommon.shelfItems.add(Item.potion);
+		ApiCommon.shelfItems.add(Item.glassBottle);
+		ApiCommon.shelfItems.add(Items.tallBottle);
+		ApiCommon.shelfItems.add(Items.whiteWine);
+		ApiCommon.shelfItems.add(Items.redWine);
+		ApiCommon.shelfItems.add(Items.christmasMust);
+		ApiCommon.shelfItems.add(Items.jamJar);
+		ApiCommon.shelfItems.add(Items.StrawBerryjam);
+		ApiCommon.shelfItems.add(Items.RaspBerryjam);
 	}
 	
 	public static void registerBlocks(){
