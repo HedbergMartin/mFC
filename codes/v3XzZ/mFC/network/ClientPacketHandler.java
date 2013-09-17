@@ -164,10 +164,17 @@ public class ClientPacketHandler implements IPacketHandler {
 		int y = data.getInt();
 		int z = data.getInt();
 		boolean isOpen = data.getBoolean();
+		boolean isItem = data.getBoolean();
 		
 		TileEntityBarrel barrel = (TileEntityBarrel) ModLoader.getMinecraftInstance().theWorld.getBlockTileEntity(x, y, z);
 		if(barrel != null){
 			barrel.isOpen = isOpen;
+			if(isItem){
+				int item = data.getInt();
+				int size = data.getInt();
+				int metadata = data.getInt();
+				barrel.content[0] = new ItemStack(item, size, metadata);
+			}
 		}
 	}
 }

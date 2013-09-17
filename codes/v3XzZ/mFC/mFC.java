@@ -18,6 +18,7 @@ import v3XzZ.mFC.items.FarmFruitFood;
 import v3XzZ.mFC.items.crafting.BoilingRecipes;
 import v3XzZ.mFC.items.crafting.PlateRecipes;
 import v3XzZ.mFC.items.crafting.RecipeRegister;
+import v3XzZ.mFC.lib.CommonIds;
 import v3XzZ.mFC.lib.Items;
 import v3XzZ.mFC.lib.References;
 import v3XzZ.mFC.network.ClientPacketHandler;
@@ -114,6 +115,7 @@ public class mFC
 			Item.appleRed = (new FarmFruitFood(Item.appleRed.itemID-256, 4, 0.05F, Items.AppleSeeds.itemID)).setUnlocalizedName("fruitAppleNew");
 		}
 		Config.setShelfItems();
+		Config.setBarrelItems();
 		RecipeRegister.addRecipe();
 		NameHandler.addName();
 		new PlateRecipes();
@@ -144,6 +146,7 @@ public class mFC
     public void PostInit(FMLPostInitializationEvent event)
     { 
     	Common.removeRecipe(new ItemStack(Item.bowlSoup));
+    	Item.wheat.setMaxStackSize(CommonIds.MAX_GRAIN_STACK);
     }
     
     public static void generalConfig(Configuration config){

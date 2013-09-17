@@ -214,7 +214,7 @@ public class Config {
 		Items.cornCob = new mFCFood(IdentificationHandler.cornCobID,IdentificationHandler.cornCobFood, 8, 0.05F).setUnlocalizedName("vegCorn");
 		Items.tomato = new mFCFood(IdentificationHandler.tomatoID,IdentificationHandler.tomatoFood, 8, 0.05F).setUnlocalizedName("vegTomato");
 		Items.lettuce = new mFCFood(IdentificationHandler.lettuceID, IdentificationHandler.lettuceFood, 8, 0.05F).setUnlocalizedName("vegLettuce");
-		Items.Rice = new mFCItem(IdentificationHandler.RiceID).setUnlocalizedName("rice");
+		Items.Rice = new mFCItem(IdentificationHandler.RiceID).setUnlocalizedName("rice").setMaxStackSize(CommonIds.MAX_GRAIN_STACK);
 	}
 	
 	public static void loadSeeds(){
@@ -304,6 +304,11 @@ public class Config {
 		ApiCommon.shelfItems.add(Items.jamJar);
 		ApiCommon.shelfItems.add(Items.StrawBerryjam);
 		ApiCommon.shelfItems.add(Items.RaspBerryjam);
+	}
+	
+	public static void setBarrelItems(){
+		ApiCommon.barrelItem.add(Item.wheat);
+		ApiCommon.barrelItem.add(Items.Rice);
 	}
 	
 	public static void registerBlocks(){

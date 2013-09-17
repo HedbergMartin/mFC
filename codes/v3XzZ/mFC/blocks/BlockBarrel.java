@@ -12,6 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import v3XzZ.mFC.mFC;
+import v3XzZ.mFC.api.ApiCommon;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -88,6 +89,7 @@ public class BlockBarrel extends BlockContainer
      */
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
+        ItemStack itemstack = par5EntityPlayer.inventory.getCurrentItem();
     	if (par1World.isRemote)
         {
             return true;
@@ -100,10 +102,32 @@ public class BlockBarrel extends BlockContainer
             		}else{
             			barrel.isOpen = true;
             		}
+            		return true;
             	}
+    			if(itemstack != null){
+    				if(ApiCommon.barrelItem.contains(itemstack.getItem())){
+    					if(barrel.content[0] == null){
+        					barrel.content[0] = new ItemStack(itemstack.itemID, 1, itemstack.getItemDamage());
+							this.decreseStackSize(itemstack);
+    					}else{
+    						if(barrel.content[0].itemID == itemstack.itemID){
+    							barrel.content[0].stackSize++;
+    							this.decreseStackSize(itemstack);
+    						}
+    					}
+    					return true;
+    				}
+    			}
     		}
 	        return false;
 	    }
+    }
+    
+    private void decreseStackSize(ItemStack itemstack){
+    	itemstack.stackSize--;
+    	if(itemstack.stackSize <= 0){
+    		itemstack = null;
+    	}
     }
 
     /**

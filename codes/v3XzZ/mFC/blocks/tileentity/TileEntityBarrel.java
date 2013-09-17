@@ -27,7 +27,7 @@ public class TileEntityBarrel extends TileEntity implements IInventory, ISidedIn
     /**
      * The ItemStacks that hold the items currently being used in the furnace
      */
-    private ItemStack[] content = new ItemStack[1];
+    public ItemStack[] content = new ItemStack[1];
     
     public boolean isOpen = false;
 
@@ -181,6 +181,14 @@ public class TileEntityBarrel extends TileEntity implements IInventory, ISidedIn
     	data.addInt(yCoord);
     	data.addInt(zCoord);
     	data.addBoolean(isOpen);
+    	if(content[0] == null){
+    		data.addBoolean(false);
+    	}else{
+        	data.addBoolean(true);
+        	data.addInt(content[0].itemID);
+        	data.addInt(content[0].stackSize);
+        	data.addInt(content[0].getItemDamage());
+    	}
     	mFC.proxy.packetcrafter.sendPacketToAllPlayers(mFC.proxy.packetcrafter.createToClientPacket(data.finalizeData()), Side.SERVER);
     }
 

@@ -65,7 +65,7 @@ public class ModelBarrel extends ModelBase {
 	  	setRotation(Side4, 0F, 1.570796F, 0F);
       	Content = new ModelRenderer(this, 22, 11);
       	Content.addBox(-5F, 0F, -5F, 10, 1, 10);
-      	Content.setRotationPoint(0F, 13F, 0F);
+      	Content.setRotationPoint(0F, 21F, 0F);
       	Content.setTextureSize(64, 32);
       	Content.mirror = true;
       	setRotation(Content, 0F, 0F, 0F);
@@ -97,7 +97,7 @@ public class ModelBarrel extends ModelBase {
   	}
   	
   	public void renderContent(){
-  		Top.render(0.0625F);
+  		Content.render(0.0625F);
   	}
   
 	private void setRotation(ModelRenderer model, float x, float y, float z) {

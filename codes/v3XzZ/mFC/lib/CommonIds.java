@@ -33,4 +33,6 @@ public class CommonIds {
 	public static final String DRINK_REDWINE = "redwine";
 	public static final String DRINK_JULMUST = "julmust";
 	public static final String DRINK_WATER = "water";
+	
+	public static final int MAX_GRAIN_STACK = 4;
 }

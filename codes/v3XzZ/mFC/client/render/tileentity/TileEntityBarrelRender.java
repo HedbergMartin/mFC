@@ -66,6 +66,12 @@ public class TileEntityBarrelRender extends TileEntitySpecialRenderer {
 		this.model.renderAll();
 		
 		if(tileentity.isOpen){
+			if(tileentity.content[0] != null){
+				GL11.glPushMatrix();
+				GL11.glTranslatef(0F, (float)-(tileentity.content[0].stackSize/16F), 0F);
+				this.model.renderContent();
+				GL11.glPopMatrix();
+			}
 			GL11.glTranslatef(-0.17F, 1.5F, 0.0F);
 			GL11.glRotatef(-110F, 0F, 0F, 1F);
 		}

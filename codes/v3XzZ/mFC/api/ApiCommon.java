@@ -16,4 +16,5 @@ import net.minecraft.item.Item;
 
 public class ApiCommon {
 	public static ArrayList<Item> shelfItems = new ArrayList<Item>();
+	public static ArrayList<Item> barrelItem = new ArrayList<Item>();
 }
