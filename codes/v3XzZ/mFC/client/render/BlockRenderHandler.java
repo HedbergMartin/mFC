@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import v3XzZ.mFC.mFC;
 import v3XzZ.mFC.blocks.BlockNewCauldron;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
 import v3XzZ.mFC.blocks.tileentity.TileEntityShelf;
 import v3XzZ.mFC.lib.Blocks;
@@ -38,6 +39,9 @@ public class BlockRenderHandler implements ISimpleBlockRenderingHandler
     	}else if(block.blockID == Blocks.shelf.blockID){
             GL11.glTranslatef(-0.5F, -0.4F, -0.5F);
     		TileEntityRenderer.instance.renderTileEntityAt(new TileEntityShelf(), 0.0D, 0.0D, 0.0D, 0.0F);
+    	}else if(block.blockID == Blocks.barrel.blockID){
+            GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+    		TileEntityRenderer.instance.renderTileEntityAt(new TileEntityBarrel(), 0.0D, 0.0D, 0.0D, 0.0F);
     	}
     }
 

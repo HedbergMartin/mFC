@@ -23,6 +23,7 @@ public class Textures {
     public static final ResourceLocation VANILLA_ITEM_TEXTURE = TextureMap.field_110576_c;
 
     public static final ResourceLocation MODEL_KEG = Common.getLocation(MODEL_LOCATION + "Model_Keg.png");
+    public static final ResourceLocation MODEL_BARREL = Common.getLocation(MODEL_LOCATION + "Model_Barrel.png");
     public static final ResourceLocation MODEL_SHELF = Common.getLocation(MODEL_LOCATION + "Model_Shelf.png");
     public static final ResourceLocation MODEL_PLATE = Common.getLocation(MODEL_LOCATION + "Model_Plate.png");
 

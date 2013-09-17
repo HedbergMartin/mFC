@@ -8,6 +8,7 @@ import net.minecraft.potion.Potion;
 import v3XzZ.mFC.EntityCauldronItem;
 import v3XzZ.mFC.mFC;
 import v3XzZ.mFC.api.ApiCommon;
+import v3XzZ.mFC.blocks.BlockBarrel;
 import v3XzZ.mFC.blocks.BlockBeerKeg;
 import v3XzZ.mFC.blocks.BlockPlate;
 import v3XzZ.mFC.blocks.BlockShelf;
@@ -27,6 +28,7 @@ import v3XzZ.mFC.blocks.FarmSalt;
 import v3XzZ.mFC.blocks.FruitLeaves;
 import v3XzZ.mFC.blocks.FruitSaplings;
 import v3XzZ.mFC.blocks.WoodenTrellis;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
 import v3XzZ.mFC.blocks.tileentity.TileEntityCauldron;
 import v3XzZ.mFC.blocks.tileentity.TileEntityPlate;
@@ -274,6 +276,8 @@ public class Config {
 		Blocks.leaves = (FruitLeaves) new FruitLeaves(IdentificationHandler.leavesBlock).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
 		Blocks.plate = new BlockPlate(IdentificationHandler.PlateBlock, Material.wood).setUnlocalizedName("plate").setStepSound(Block.soundWoodFootstep);
 		Blocks.shelf = new BlockShelf(IdentificationHandler.shelfBlock, Material.wood).setUnlocalizedName("shelf").setStepSound(Block.soundWoodFootstep);
+		Blocks.barrel = new BlockBarrel(IdentificationHandler.barrelBlock).setUnlocalizedName("barrel").setStepSound(Block.soundWoodFootstep);
+		
 		//Christmas special, maybe next year again.
 		//present = new BlockPresent(FarmBase.presentBlock, 91, Material.cloth).setUnlocalizedName("present").setCreativeTab(CreativeTabs.tabDecorations).setTextureFile(mFC.BlockTex).setStepSound(Block.soundClothFootstep);
 	}
@@ -283,6 +287,7 @@ public class Config {
 		GameRegistry.registerTileEntity(TileEntityPlate.class, "Plate");
 		GameRegistry.registerTileEntity(TileEntityShelf.class, "Shelf");
 		GameRegistry.registerTileEntity(TileEntityCauldron.class, "BoilCauldron");
+		GameRegistry.registerTileEntity(TileEntityBarrel.class, "Barrel");
 	}
 	
 	public static void loadEntitys(mFC mfc){
@@ -324,6 +329,7 @@ public class Config {
 		GameRegistry.registerBlock(Blocks.woodenTrellis, "Wooden trellis");
 		GameRegistry.registerBlock(Blocks.plate, "Plate");
 		GameRegistry.registerBlock(Blocks.shelf, "Shelf");
+		GameRegistry.registerBlock(Blocks.barrel, "Barrel");
 //		GameRegistry.registerBlock(mFC.present);
 	}
 }

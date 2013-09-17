@@ -18,6 +18,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import v3XzZ.mFC.mFC;
 import v3XzZ.mFC.blocks.tileentity.TileEntityShelf;
+import v3XzZ.mFC.lib.CommonIds;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -54,7 +55,7 @@ public class BlockShelf extends BlockContainer {
 	
 	        if (var6 != null)
 	        {
-	        	par5EntityPlayer.openGui(mFC.instance, 88, par1World, par2, par3, par4);
+	        	par5EntityPlayer.openGui(mFC.instance, CommonIds.GUI_SHELF, par1World, par2, par3, par4);
 	        }
 	
 	        return true;

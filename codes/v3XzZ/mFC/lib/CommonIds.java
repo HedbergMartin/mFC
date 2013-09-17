@@ -26,6 +26,7 @@ public class CommonIds {
 	public static final byte PACKET_CAULDRON = 2;
 	public static final byte PACKET_RENDER = 3;
 	public static final byte PACKET_PLAYERDATA = 4;
+	public static final byte PACKET_BARREL = 5;
 	
 	public static final String DRINK_BEER = "beer";
 	public static final String DRINK_WHITEWINE = "whitewine";

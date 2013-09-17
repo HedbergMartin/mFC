@@ -1,5 +1,12 @@
 package v3XzZ.mFC.network;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.INetworkManager;
+import net.minecraft.network.packet.Packet250CustomPayload;
+import net.minecraft.src.ModLoader;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import v3XzZ.mFC.blocks.tileentity.TileEntityCauldron;
 import v3XzZ.mFC.blocks.tileentity.TileEntityPlate;
 import v3XzZ.mFC.blocks.tileentity.TileEntityShelf;
@@ -8,12 +15,6 @@ import v3XzZ.mFC.lib.CommonIds;
 import v3XzZ.mFC.lib.References;
 import v3XzZ.util.DataReader;
 import v3XzZ.util.PacketCrafter;
-import net.minecraft.client.Minecraft;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.INetworkManager;
-import net.minecraft.network.packet.Packet250CustomPayload;
-import net.minecraft.src.ModLoader;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
@@ -39,6 +40,7 @@ public class ClientPacketHandler implements IPacketHandler {
 				case CommonIds.PACKET_CAULDRON : this.handleCauldron(packet); break;
 				case CommonIds.PACKET_RENDER : this.handleRenderUpdate(packet); break;
 				case CommonIds.PACKET_PLAYERDATA : this.handlePlayerData(packet); break;
+				case CommonIds.PACKET_BARREL : this.handleBarrelData(packet); break;
 			}
 		}
 	}
@@ -154,5 +156,18 @@ public class ClientPacketHandler implements IPacketHandler {
 		float satur = data.getFloat();
 		((PlayerData) Minecraft.getMinecraft().thePlayer.getExtendedProperties(References.ENTITY_IDENTIFYER)).getThirstStat().setThirstLevel(thirst);
 		((PlayerData) Minecraft.getMinecraft().thePlayer.getExtendedProperties(References.ENTITY_IDENTIFYER)).getThirstStat().setThirstSaturationLevel(satur);
+	}
+
+	private void handleBarrelData(Packet250CustomPayload packet) {
+		DataReader data = new DataReader(packet.data);
+		int x = data.getInt();
+		int y = data.getInt();
+		int z = data.getInt();
+		boolean isOpen = data.getBoolean();
+		
+		TileEntityBarrel barrel = (TileEntityBarrel) ModLoader.getMinecraftInstance().theWorld.getBlockTileEntity(x, y, z);
+		if(barrel != null){
+			barrel.isOpen = isOpen;
+		}
 	}
 }

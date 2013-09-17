@@ -35,6 +35,7 @@ public class Blocks {
 	public static FruitLeaves leaves;
 	public static Block plate;
 	public static Block shelf;
+	public static Block barrel;
 	
 	//Pies
 	public static Block ApplePie;

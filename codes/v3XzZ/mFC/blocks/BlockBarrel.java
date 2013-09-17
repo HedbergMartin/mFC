@@ -12,25 +12,24 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import v3XzZ.mFC.mFC;
-import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
-import v3XzZ.mFC.lib.CommonIds;
+import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
  * 
- * Class: BlockBeerKeg
+ * Class: BlockBarrel
  * 
  * @author v3XzZ
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
 
-public class BlockBeerKeg extends BlockContainer
+public class BlockBarrel extends BlockContainer
 {
 
-    public BlockBeerKeg(int par1)
+    public BlockBarrel(int par1)
     {
         super(par1, Material.wood);
         this.setCreativeTab(CreativeTabs.tabDecorations);
@@ -92,19 +91,19 @@ public class BlockBeerKeg extends BlockContainer
     	if (par1World.isRemote)
         {
             return true;
-        }
-        else if(!par5EntityPlayer.isSneaking())
-	    {
-	    TileEntityBeerKeg var6 = (TileEntityBeerKeg)par1World.getBlockTileEntity(par2, par3, par4);
-	
-	        if (var6 != null)
-	        {
-	        	par5EntityPlayer.openGui(mFC.instance, CommonIds.GUI_KEG, par1World, par2, par3, par4);
-	        }
-	
-	        return true;
+        } else {
+    		TileEntityBarrel barrel = (TileEntityBarrel) par1World.getBlockTileEntity(par2, par3, par4);
+    		if(barrel != null){
+    			if(par5EntityPlayer.isSneaking()){
+            		if(barrel.isOpen){
+            			barrel.isOpen = false;
+            		}else{
+            			barrel.isOpen = true;
+            		}
+            	}
+    		}
+	        return false;
 	    }
-    	return false;
     }
 
     /**
@@ -112,7 +111,7 @@ public class BlockBeerKeg extends BlockContainer
      */
     public TileEntity createNewTileEntity(World world)
     {
-        return new TileEntityBeerKeg();
+        return new TileEntityBarrel();
     }
     
     public boolean isOpaqueCube()

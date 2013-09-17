@@ -240,6 +240,7 @@ public abstract class IdentificationHandler {
 	
 	public static int PlateBlock;
 	public static int shelfBlock;
+	public static int barrelBlock;
 	
 	public static void InitID(Configuration config) {
 			cornCobFood = config.get("HealAmount", "cornCob", 1).getInt();
@@ -478,6 +479,7 @@ public abstract class IdentificationHandler {
 			leavesBlock = config.get(Configuration.CATEGORY_BLOCK, "leaves", 3875).getInt();
 			PlateBlock = config.get(Configuration.CATEGORY_BLOCK, "plate", 3876).getInt();
 			shelfBlock = config.get(Configuration.CATEGORY_BLOCK, "shelf", 3877).getInt();
+			barrelBlock = config.get(Configuration.CATEGORY_BLOCK, "barrel", 3878).getInt();
 //			presentBlock = config.get(config.CATEGORY_BLOCK, "present", 3030).getInt();
 	}
 	
