@@ -105,7 +105,7 @@ public class BlockBarrel extends BlockContainer
             		return true;
             	}
     			if(itemstack != null){
-    				if(ApiCommon.barrelItem.contains(itemstack.getItem())){
+    				if(ApiCommon.barrelItem.contains(itemstack.getItem()) && !barrel.isFull()){
     					if(barrel.content[0] == null){
         					barrel.content[0] = new ItemStack(itemstack.itemID, 1, itemstack.getItemDamage());
 							this.decreseStackSize(itemstack);

@@ -1,9 +1,6 @@
 package v3XzZ.mFC.blocks.tileentity;
 
-import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -11,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import v3XzZ.mFC.mFC;
 import v3XzZ.mFC.lib.CommonIds;
 import v3XzZ.util.DataWriter;
+import cpw.mods.fml.relauncher.Side;
 
 /**
  * Project: mFC
@@ -22,7 +20,7 @@ import v3XzZ.util.DataWriter;
  * 
  */
 
-public class TileEntityBarrel extends TileEntity implements IInventory, ISidedInventory
+public class TileEntityBarrel extends TileEntity
 {
     /**
      * The ItemStacks that hold the items currently being used in the furnace
@@ -37,87 +35,6 @@ public class TileEntityBarrel extends TileEntity implements IInventory, ISidedIn
     public int getSizeInventory()
     {
         return this.content.length;
-    }
-    
-    /**
-     * Returns the stack in slot i
-     */
-    public ItemStack getStackInSlot(int par1)
-    {
-        return this.content[par1];
-    }
-
-    /**
-     * Decrease the size of the stack in slot (first int arg) by the amount of the second int arg. Returns the new
-     * stack.
-     */
-    public ItemStack decrStackSize(int par1, int par2)
-    {
-        if (this.content[par1] != null)
-        {
-            ItemStack var3;
-
-            if (this.content[par1].stackSize <= par2)
-            {
-                var3 = this.content[par1];
-                this.content[par1] = null;
-                return var3;
-            }
-            else
-            {
-                var3 = this.content[par1].splitStack(par2);
-
-                if (this.content[par1].stackSize == 0)
-                {
-                    this.content[par1] = null;
-                }
-
-                return var3;
-            }
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    /**
-     * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
-     * like when you close a workbench GUI.
-     */
-    public ItemStack getStackInSlotOnClosing(int par1)
-    {
-        if (this.content[par1] != null)
-        {
-            ItemStack var2 = this.content[par1];
-            this.content[par1] = null;
-            return var2;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    /**
-     * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
-     */
-    public void setInventorySlotContents(int par1, ItemStack par2ItemStack)
-    {
-        this.content[par1] = par2ItemStack;
-
-        if (par2ItemStack != null && par2ItemStack.stackSize > this.getInventoryStackLimit())
-        {
-            par2ItemStack.stackSize = this.getInventoryStackLimit();
-        }
-    }
-
-    /**
-     * Returns the name of the inventory.
-     */
-    public String getInvName()
-    {
-        return "BeerKeg";
     }
 
     /**
@@ -171,7 +88,11 @@ public class TileEntityBarrel extends TileEntity implements IInventory, ISidedIn
      */
     public int getInventoryStackLimit()
     {
-        return 1;
+        return 64;
+    }
+    
+    public boolean isFull(){
+    	return this.content[0] != null ? this.content[0].stackSize >= getInventoryStackLimit() : false;
     }
     
     public void sendBarrelData(){
@@ -222,29 +143,4 @@ public class TileEntityBarrel extends TileEntity implements IInventory, ISidedIn
     public void openChest() {}
 
     public void closeChest() {}
-
-	@Override
-	public boolean isInvNameLocalized() {
-		return false;
-	}
-
-	@Override
-	public int[] getAccessibleSlotsFromSide(int var1) {
-		return null;
-	}
-
-	@Override
-	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		return false;
-	}
-
-	@Override
-	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
-		return false;
-	}
-
-	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		return false;
-	}
 }

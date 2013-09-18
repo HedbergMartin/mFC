@@ -68,7 +68,7 @@ public class TileEntityBarrelRender extends TileEntitySpecialRenderer {
 		if(tileentity.isOpen){
 			if(tileentity.content[0] != null){
 				GL11.glPushMatrix();
-				GL11.glTranslatef(0F, (float)-(tileentity.content[0].stackSize/16F), 0F);
+				GL11.glTranslatef(0F, (float)-(tileentity.content[0].stackSize/(float)(tileentity.getInventoryStackLimit()*2)), 0F);
 				this.model.renderContent();
 				GL11.glPopMatrix();
 			}
