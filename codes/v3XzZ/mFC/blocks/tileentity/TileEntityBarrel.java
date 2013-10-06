@@ -88,7 +88,7 @@ public class TileEntityBarrel extends TileEntity
      */
     public int getInventoryStackLimit()
     {
-        return 64;
+        return 128;
     }
     
     public boolean isFull(){

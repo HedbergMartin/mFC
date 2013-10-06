@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import v3XzZ.mFC.api.ItemThirst;
+import v3XzZ.util.Common;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -57,7 +58,7 @@ public class ThirstStat
         int i = par1EntityPlayer.worldObj.difficultySetting;
         this.prevThirstLevel = this.thirstLevel;
 
-        if (par1EntityPlayer.getFoodStats().getExhaustionLevel() > 4.0F)
+        if (Common.getPlayerExhaustion(par1EntityPlayer.getFoodStats()) > 4.0F)
         {
             if (this.thistSaturationLevel > 0.0F)
             {
@@ -112,7 +113,6 @@ public class ThirstStat
             this.thirstLevel = par1NBTTagCompound.getInteger("thirstLevel");
             this.thirstTimer = par1NBTTagCompound.getInteger("thirstTickTimer");
             this.thistSaturationLevel = par1NBTTagCompound.getFloat("thirstSaturationLevel");
-            //this.thirstExhaustionLevel = par1NBTTagCompound.getFloat("thirstExhaustionLevel");
         }
     }
 
@@ -124,7 +124,6 @@ public class ThirstStat
         par1NBTTagCompound.setInteger("thirstLevel", this.thirstLevel);
         par1NBTTagCompound.setInteger("thirstTickTimer", this.thirstTimer);
         par1NBTTagCompound.setFloat("thirstSaturationLevel", this.thistSaturationLevel);
-        //par1NBTTagCompound.setFloat("thirstExhaustionLevel", this.thirstExhaustionLevel);
     }
 
     /**
@@ -147,14 +146,6 @@ public class ThirstStat
     public boolean needThirst()
     {
         return this.thirstLevel < 20;
-    }
-
-    /**
-     * adds input to thirstExhaustionLevel to a max of 40
-     */
-    public void addExhaustion(float par1)
-    {
-        //this.thirstExhaustionLevel = Math.min(this.thirstExhaustionLevel + par1, 40.0F);
     }
 
     /**

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import v3XzZ.mFC.blocks.tileentity.TileEntityCauldron;
 import v3XzZ.mFC.lib.Items;
+import v3XzZ.util.ColorCode;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -12,7 +13,7 @@ import net.minecraft.item.ItemStack;
 /**
  * Project: mFC
  * 
- * Class: BoilingRecipes, ColorCode
+ * Class: BoilingRecipes
  * 
  * @author v3XzZ
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
@@ -87,27 +88,6 @@ public class BoilingRecipes {
 	}
 	
 	public int getBoilColor(ItemStack inv){
-		int var6;
-		for (var6 = 0; var6 < this.colors.size(); ++var6)
-        {
-			ColorCode var12 = (ColorCode) this.colors.get(var6);
-
-            if (var12.item.itemID == inv.itemID && var12.item.getItemDamage() == inv.getItemDamage())
-            {
-                return var12.color;
-            }
-        }
-		return 0;
-	}
-}
-
-class ColorCode {
-	
-	public ItemStack item;
-	public int color;
-	
-	public ColorCode(ItemStack i, int c) {
-		this.item = i;
-		this.color = c;
+		return ColorCode.getColor(inv, colors);
 	}
 }

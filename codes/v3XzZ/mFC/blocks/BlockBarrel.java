@@ -97,24 +97,34 @@ public class BlockBarrel extends BlockContainer
     		TileEntityBarrel barrel = (TileEntityBarrel) par1World.getBlockTileEntity(par2, par3, par4);
     		if(barrel != null){
     			if(par5EntityPlayer.isSneaking()){
-            		if(barrel.isOpen){
-            			barrel.isOpen = false;
-            		}else{
-            			barrel.isOpen = true;
-            		}
+    				if(itemstack == null) {
+                		if(barrel.isOpen){
+                			barrel.isOpen = false;
+                		}else{
+                			barrel.isOpen = true;
+                		}
+    				}
             		return true;
             	}
     			if(itemstack != null){
     				if(ApiCommon.barrelItem.contains(itemstack.getItem()) && !barrel.isFull()){
     					if(barrel.content[0] == null){
-        					barrel.content[0] = new ItemStack(itemstack.itemID, 1, itemstack.getItemDamage());
-							this.decreseStackSize(itemstack);
-    					}else{
-    						if(barrel.content[0].itemID == itemstack.itemID){
-    							barrel.content[0].stackSize++;
-    							this.decreseStackSize(itemstack);
-    						}
+        					barrel.content[0] = new ItemStack(itemstack.itemID, Math.min(itemstack.stackSize, 4), itemstack.getItemDamage());
+							this.decreseStackSize(itemstack, Math.min(itemstack.stackSize, 4));
+							return true;
+    					}else if(barrel.content[0].itemID == itemstack.itemID){
+							barrel.content[0].stackSize+=Math.min(itemstack.stackSize, 4);
+							this.decreseStackSize(itemstack, Math.min(itemstack.stackSize, 4));
+							return true;
     					}
+    					return false;
+    				}
+    			}else {
+    				if(barrel.content[0] != null) {
+    					if (!par5EntityPlayer.inventory.addItemStackToInventory(new ItemStack(barrel.content[0].getItem(), Math.min(4, barrel.content[0].stackSize), barrel.content[0].getItemDamage()))) {
+	                        par5EntityPlayer.dropPlayerItem(new ItemStack(barrel.content[0].getItem(), Math.min(4, barrel.content[0].stackSize), barrel.content[0].getItemDamage()));
+	                    }
+    					this.decreseStackSize(barrel.content[0], Math.min(4, barrel.content[0].stackSize));
     					return true;
     				}
     			}
@@ -123,8 +133,8 @@ public class BlockBarrel extends BlockContainer
 	    }
     }
     
-    private void decreseStackSize(ItemStack itemstack){
-    	itemstack.stackSize--;
+    private void decreseStackSize(ItemStack itemstack, int ammount){
+    	itemstack.stackSize -= ammount;
     	if(itemstack.stackSize <= 0){
     		itemstack = null;
     	}

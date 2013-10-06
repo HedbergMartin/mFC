@@ -307,8 +307,8 @@ public class Config {
 	}
 	
 	public static void setBarrelItems(){
-		ApiCommon.barrelItem.add(Item.wheat);
-		ApiCommon.barrelItem.add(Items.Rice);
+		ApiCommon.addBarrelItem(Item.wheat, 0x716125);
+		ApiCommon.addBarrelItem(Items.Rice, 0xFFFFFF);
 	}
 	
 	public static void registerBlocks(){

@@ -4,8 +4,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
 
-import v3XzZ.mFC.lib.References;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,8 +11,10 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.util.FoodStats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import v3XzZ.mFC.lib.References;
 import cpw.mods.fml.common.FMLLog;
 
 /**
@@ -79,6 +79,21 @@ public class Common {
         } catch (Exception e) {
             FMLLog.severe("[mFC] Couldn't override " + oldBlock + " block!", e);
         }
+	}
+	
+	public static float getPlayerExhaustion(FoodStats stats){
+		return (float) getField(stats, "foodExhaustionLevel");
+	}
+	
+	public static Object getField(Object obj, String fieldName){
+		try {
+            Field field = obj.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            return field.get(obj);
+        } catch (Exception e) {
+            FMLLog.severe("[mFC] Couldn't return "+obj.toString() + "." + fieldName + "!", e);
+        }
+		return null;
 	}
 
 	/**

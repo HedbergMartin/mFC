@@ -173,7 +173,11 @@ public class ClientPacketHandler implements IPacketHandler {
 				int item = data.getInt();
 				int size = data.getInt();
 				int metadata = data.getInt();
-				barrel.content[0] = new ItemStack(item, size, metadata);
+				if(size != 0) {
+					barrel.content[0] = new ItemStack(item, size, metadata);
+				}else {
+					barrel.content[0] = null;
+				}
 			}
 		}
 	}
