@@ -1,2 +1,2 @@
 cmd /k ant
-exit
+close
