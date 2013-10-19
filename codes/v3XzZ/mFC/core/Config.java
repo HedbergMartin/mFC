@@ -20,13 +20,11 @@ import v3XzZ.mFC.blocks.CropOnion;
 import v3XzZ.mFC.blocks.CropRice;
 import v3XzZ.mFC.blocks.CropWasabi;
 import v3XzZ.mFC.blocks.FarmCheese;
-import v3XzZ.mFC.blocks.FarmCocoa;
 import v3XzZ.mFC.blocks.FarmFlower;
-import v3XzZ.mFC.blocks.FarmFruit;
 import v3XzZ.mFC.blocks.FarmPie;
 import v3XzZ.mFC.blocks.FarmSalt;
-import v3XzZ.mFC.blocks.FruitLeaves;
 import v3XzZ.mFC.blocks.FruitSaplings;
+import v3XzZ.mFC.blocks.FruitTreeLeaves;
 import v3XzZ.mFC.blocks.WoodenTrellis;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
@@ -201,27 +199,27 @@ public class Config {
 		Items.chocolateBar = new mFCFood(IdentificationHandler.chocolateBarID, IdentificationHandler.chocolateBarFood, 4, 0.4F).setUnlocalizedName("chocolateBar");
 		Items.pumpkinPiece = new mFCItem(IdentificationHandler.pumpkinPieceID).setUnlocalizedName("pumpkinPiece");
 		Items.roastPumpkin = new FarmPum(IdentificationHandler.roastPumpkinID,IdentificationHandler.roastPumpkinFood).setUnlocalizedName("pumpkinRoast");
-		Items.cornCobCooked = new mFCFood(IdentificationHandler.cornCobCookedID,IdentificationHandler.cornCobCookedFood, 8, 0.5F).setUnlocalizedName("cornCob");
+		Items.cornCobCooked = new mFCFood(IdentificationHandler.cornCobCookedID,IdentificationHandler.cornCobCookedFood, 4, 0.5F).setUnlocalizedName("cornCob");
 	}
 	
 	public static void loadVegetables(){
-		Items.onion = new ItemSeedFood_mFC(IdentificationHandler.onionID, IdentificationHandler.onionFood, 0.05F, Blocks.onionPlant.blockID, Block.tilledField.blockID).setUnlocalizedName("vegOnion").setMaxStackSize(8);
+		Items.onion = new ItemSeedFood_mFC(IdentificationHandler.onionID, IdentificationHandler.onionFood, 0.05F, Blocks.onionPlant.blockID, Block.tilledField.blockID).setUnlocalizedName("vegOnion").setMaxStackSize(4);
 		Items.strawBerry = new mFCFood(IdentificationHandler.strawBerryID, IdentificationHandler.strawBerryFood, 8, 0.05F).setUnlocalizedName("vegStrawBerry");
 		Items.raspBerry = new mFCFood(IdentificationHandler.raspBerryID, IdentificationHandler.raspBerryFood, 8, 0.05F).setUnlocalizedName("vegRaspBerry");
 		Items.grapes = new mFCFood(IdentificationHandler.grapesID, IdentificationHandler.grapesFood, 16, 0.05F).setUnlocalizedName("fruitGrape");
 		Items.avacado = new FarmFruitFood(IdentificationHandler.avacadoID, IdentificationHandler.avacadoFood, 0.05F, Items.AvacadoSeeds.itemID).setUnlocalizedName("fruitAvocado");
 		Items.orange = new FarmFruitFood(IdentificationHandler.orangeID, IdentificationHandler.orangeFood, 0.05F, Items.OrangeSeeds.itemID).setUnlocalizedName("fruitOrange");
-		Items.cornCob = new mFCFood(IdentificationHandler.cornCobID,IdentificationHandler.cornCobFood, 8, 0.05F).setUnlocalizedName("vegCorn");
-		Items.tomato = new mFCFood(IdentificationHandler.tomatoID,IdentificationHandler.tomatoFood, 8, 0.05F).setUnlocalizedName("vegTomato");
+		Items.cornCob = new mFCFood(IdentificationHandler.cornCobID,IdentificationHandler.cornCobFood, 4, 0.05F).setUnlocalizedName("vegCorn");
+		Items.tomato = new mFCFood(IdentificationHandler.tomatoID,IdentificationHandler.tomatoFood, 4, 0.05F).setUnlocalizedName("vegTomato");
 		Items.lettuce = new mFCFood(IdentificationHandler.lettuceID, IdentificationHandler.lettuceFood, 8, 0.05F).setUnlocalizedName("vegLettuce");
 		Items.Rice = new mFCItem(IdentificationHandler.RiceID).setUnlocalizedName("rice").setMaxStackSize(CommonIds.MAX_GRAIN_STACK);
 	}
 	
 	public static void loadSeeds(){
-		Items.AvacadoSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.avacadonutID, 3)).setUnlocalizedName("seedAvocado");
-		Items.OrangeSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.orangecoresID, 2)).setUnlocalizedName("seedOrange");
-		Items.CocoaFruit = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.cocoaID, 4)).setUnlocalizedName("fruitCocoa");
-		Items.AppleSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.applesnufkinID, 1)).setUnlocalizedName("seedApple");
+		Items.AvacadoSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.avacadonutID, 2)).setUnlocalizedName("seedAvocado");
+		Items.OrangeSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.orangecoresID, 1)).setUnlocalizedName("seedOrange");
+		Items.CocoaFruit = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.cocoaID, 3)).setUnlocalizedName("fruitCocoa");
+		Items.AppleSeeds = (FarmTreeSeed) (new FarmTreeSeed(IdentificationHandler.applesnufkinID, 0)).setUnlocalizedName("seedApple");
 		Items.yellowSeeds = new FarmSeeds(IdentificationHandler.yellowSeedsID, Blocks.yellowSeedling.blockID).setUnlocalizedName("seedYellow");
 		Items.redSeeds = new FarmSeeds(IdentificationHandler.redSeedsID, Blocks.redSeedling.blockID).setUnlocalizedName("seedRed");
 		Items.cornSeeds = new FarmSeeds(IdentificationHandler.cornSeedsID, Blocks.cornPlant.blockID).setUnlocalizedName("seedCorn");
@@ -262,21 +260,17 @@ public class Config {
 	
 	public static void loadMiscBlocks(){
 		Blocks.woodenTrellis = new WoodenTrellis(IdentificationHandler.GrapeHolderBlock, 64).setUnlocalizedName("woodenTrellis");
-		Blocks.fruitSaplings = (new FruitSaplings(IdentificationHandler.Saplings)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("sapling");
-		Blocks.avacadoBlock = (new FarmFruit(IdentificationHandler.avacadoBlock, Items.avacado.itemID)).setUnlocalizedName("fruitAvocado").setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
-		Blocks.orangeBlock = (new FarmFruit(IdentificationHandler.orangeBlock, Items.orange.itemID)).setUnlocalizedName("fruitOrange").setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
-		Blocks.cocoaBlock = (new FarmCocoa(IdentificationHandler.cocoaBlock)).setUnlocalizedName("fruitCocoa").setHardness(0.5F).setStepSound(Block.soundWoodFootstep);
+		Blocks.fruitSaplings = new FruitSaplings(IdentificationHandler.Saplings).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("sapling");
+		Blocks.avocadoLeaves = new FruitTreeLeaves(IdentificationHandler.avacadoLeaves, 2, CommonIds.avocadoColors).setUnlocalizedName("avocadoLeaves").setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
+		Blocks.orangeLeaves = new FruitTreeLeaves(IdentificationHandler.orangeLeaves, 1, CommonIds.orangeColors).setUnlocalizedName("orangeLeaves").setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
+//		Blocks.cocoaBlock = (new FarmCocoa(IdentificationHandler.cocoaBlock)).setUnlocalizedName("fruitCocoa").setHardness(0.5F).setStepSound(Block.soundWoodFootstep);
 		Blocks.saltBlock = (new FarmSalt(IdentificationHandler.saltBlock)).setUnlocalizedName("blockSalt").setHardness(0.0F).setStepSound(Block.soundSandFootstep);
 		Blocks.cheeseWheelBlock = (new FarmCheese(IdentificationHandler.cheeseBlock, 68)).setUnlocalizedName("blockCheese").setHardness(0.2F).setStepSound(Block.soundPowderFootstep);
-		if(mFC.oldApple){
-			Blocks.appleBlock = (new FarmFruit(IdentificationHandler.appleBlock, Item.appleRed.itemID)).setUnlocalizedName("fruitApple").setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
-		}else{
-			Blocks.appleBlock = (new FarmFruit(IdentificationHandler.appleBlock, Item.appleRed.itemID)).setUnlocalizedName("fruitAppleNew").setHardness(0.0F).setStepSound(Block.soundGrassFootstep);
-		}
-		Blocks.leaves = (FruitLeaves) new FruitLeaves(IdentificationHandler.leavesBlock).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
+		Blocks.appleLeaves = new FruitTreeLeaves(IdentificationHandler.appleLeaves, 0, CommonIds.appleColors).setUnlocalizedName("appleLeaves").setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
+		
 		Blocks.plate = new BlockPlate(IdentificationHandler.PlateBlock, Material.wood).setUnlocalizedName("plate").setStepSound(Block.soundWoodFootstep);
 		Blocks.shelf = new BlockShelf(IdentificationHandler.shelfBlock, Material.wood).setUnlocalizedName("shelf").setStepSound(Block.soundWoodFootstep);
-		Blocks.barrel = new BlockBarrel(IdentificationHandler.barrelBlock).setUnlocalizedName("barrel").setStepSound(Block.soundWoodFootstep);
+		Blocks.barrel = new BlockBarrel(IdentificationHandler.barrelBlock).setUnlocalizedName("barrel").setHardness(1F).setStepSound(Block.soundWoodFootstep);
 		
 		//Christmas special, maybe next year again.
 		//present = new BlockPresent(FarmBase.presentBlock, 91, Material.cloth).setUnlocalizedName("present").setCreativeTab(CreativeTabs.tabDecorations).setTextureFile(mFC.BlockTex).setStepSound(Block.soundClothFootstep);
@@ -309,6 +303,9 @@ public class Config {
 	public static void setBarrelItems(){
 		ApiCommon.addBarrelItem(Item.wheat, 0x716125);
 		ApiCommon.addBarrelItem(Items.Rice, 0xFFFFFF);
+		ApiCommon.addBarrelItem(Items.cornCob, 0xFFD402);
+		ApiCommon.addBarrelItem(Items.tomato, 0xFF1000);
+		ApiCommon.addBarrelItem(Items.onion, 0xFFE47A);
 	}
 	
 	public static void registerBlocks(){
@@ -327,10 +324,10 @@ public class Config {
 		GameRegistry.registerBlock(Blocks.saltBlock, "Salt block");
 		GameRegistry.registerBlock(Blocks.cheeseWheelBlock, "Cheese wheel");
 		GameRegistry.registerBlock(Blocks.fruitSaplings, "Fruit tree sapling");
-		GameRegistry.registerBlock(Blocks.appleBlock, "Apple block");
-		GameRegistry.registerBlock(Blocks.avacadoBlock, "Avocado block");
-		GameRegistry.registerBlock(Blocks.orangeBlock, "Orange block");
-		GameRegistry.registerBlock(Blocks.cocoaBlock, "Cocoa block");
+		GameRegistry.registerBlock(Blocks.appleLeaves, "Apple leaves");
+		GameRegistry.registerBlock(Blocks.avocadoLeaves, "Avocado leaves");
+		GameRegistry.registerBlock(Blocks.orangeLeaves, "Orange leaves");
+//		GameRegistry.registerBlock(Blocks.cocoaBlock, "Cocoa block");
 		GameRegistry.registerBlock(Blocks.woodenTrellis, "Wooden trellis");
 		GameRegistry.registerBlock(Blocks.plate, "Plate");
 		GameRegistry.registerBlock(Blocks.shelf, "Shelf");

@@ -35,4 +35,8 @@ public class CommonIds {
 	public static final String DRINK_WATER = "water";
 	
 	public static final int MAX_GRAIN_STACK = 4;
+	
+	public static final Integer[] appleColors = new Integer[]{0x75FF83, 0xFFE270, 0xFF0000};
+	public static final Integer[] orangeColors = new Integer[]{0x008C00, 0x6BFF68, 0xFFD400};
+	public static final Integer[] avocadoColors = new Integer[]{0x9DFF96, 0x74BC6F, 0x467043};
 }

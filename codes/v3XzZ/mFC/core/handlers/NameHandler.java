@@ -49,10 +49,9 @@ public class NameHandler
 		LanguageRegistry.addName(Items.sausageRaw, "Raw sausage");
 		LanguageRegistry.addName(Items.sausage, "Grilled sausage");
 		
-		LanguageRegistry.addName(Blocks.appleBlock, "Apple on a block!");
-		LanguageRegistry.addName(Blocks.avacadoBlock, "Avocado on a block!");
-		LanguageRegistry.addName(Blocks.orangeBlock, "Orange on a block!");
-		LanguageRegistry.addName(Blocks.cocoaBlock, "cocoa on a block!");
+		LanguageRegistry.addName(Blocks.appleLeaves, "Apple Leaves");
+		LanguageRegistry.addName(Blocks.avocadoLeaves, "Avocado Leaves");
+		LanguageRegistry.addName(Blocks.orangeLeaves, "Orange Leaves");
 		LanguageRegistry.addName(Items.obsidianPick, "Obsidian Pickaxe");
 		LanguageRegistry.addName(Items.obsidianShovel, "Obsidian Shovel");
 		LanguageRegistry.addName(Items.obsidianAxe, "Obsidian Axe");
@@ -102,6 +101,7 @@ public class NameHandler
 		
 		LanguageRegistry.addName(Blocks.beerKeg, "Beer Keg");
 		LanguageRegistry.addName(Blocks.shelf, "Shelf");
+		LanguageRegistry.addName(Blocks.barrel, "Barrel");
 		
 		LanguageRegistry.addName(Items.MakiLong, "Maki roll");
 		LanguageRegistry.addName(Items.MakiShort, "Maki piece");

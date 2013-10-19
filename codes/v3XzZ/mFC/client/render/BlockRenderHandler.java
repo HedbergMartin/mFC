@@ -4,10 +4,12 @@ import org.lwjgl.opengl.GL11;
 
 import v3XzZ.mFC.mFC;
 import v3XzZ.mFC.blocks.BlockNewCauldron;
+import v3XzZ.mFC.blocks.FruitTreeLeaves;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBarrel;
 import v3XzZ.mFC.blocks.tileentity.TileEntityBeerKeg;
 import v3XzZ.mFC.blocks.tileentity.TileEntityShelf;
 import v3XzZ.mFC.lib.Blocks;
+import v3XzZ.util.BlockRender;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCauldron;
 import net.minecraft.client.renderer.EntityRenderer;
@@ -28,10 +30,9 @@ import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
  * 
  */
 
-public class BlockRenderHandler implements ISimpleBlockRenderingHandler
+public class BlockRenderHandler extends BlockRender implements ISimpleBlockRenderingHandler
 {
-    public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
-    {
+    public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
     	if(block.blockID == Blocks.beerKeg.blockID){
             GL11.glTranslatef(-0.5F, -0.2F, -0.5F);
             GL11.glScalef(0.625F, 0.625F, 0.5F);
@@ -55,6 +56,9 @@ public class BlockRenderHandler implements ISimpleBlockRenderingHandler
     	if(block.blockID == Block.cauldron.blockID){
     		return this.renderCustomCauldron((BlockNewCauldron) block, i, j, k, rend, iblockAccess);
     	}
+    	if(block instanceof FruitTreeLeaves){
+    		return this.renderLeaves((FruitTreeLeaves) block, i, j, k, iblockAccess, rend);
+    	}
     	/*if (modelId == mFC.beerKegID)
 		{
 			return renderBlockBeerKeg(block, i, j, k, iblockAccess, rend);
@@ -71,13 +75,24 @@ public class BlockRenderHandler implements ISimpleBlockRenderingHandler
          return true;
     }
 
-    public int getRenderId()
-    {
+    public int getRenderId() {
          return mFC.RenderID;
     }
     
-    public boolean renderBlockCheese(Block block, int i, int j, int k, IBlockAccess blockAccess, RenderBlocks rend)
-    {
+    public boolean renderLeaves(FruitTreeLeaves block, int i, int j, int k, IBlockAccess blockAccess, RenderBlocks rend) {
+        rend.renderAllFaces = true;
+        int l = blockAccess.getBlockMetadata(i, j, k);
+        rend.setRenderBounds(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+        rend.renderStandardBlock(block, i, j, k);
+        Tessellator tes = Tessellator.instance;
+        if((l & 3) > 0 && (l & 3) < 4){
+            tes.setColorOpaque_I(block.colors[(l & 3)-1]);
+            this.drawAllSides(blockAccess, i, j, k, block, block.iconArray[(l & 3)-1], rend);
+        }
+        return true;
+    }
+    
+    public boolean renderBlockCheese(Block block, int i, int j, int k, IBlockAccess blockAccess, RenderBlocks rend) {
         boolean flag = false;
         rend.renderAllFaces = true;
         int l = blockAccess.getBlockMetadata(i, j, k);

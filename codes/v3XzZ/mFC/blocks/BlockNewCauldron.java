@@ -60,8 +60,8 @@ public class BlockNewCauldron extends BlockCauldron implements ITileEntityProvid
 			}else if(tile.zCoord + this.maxZ < par5Entity.posZ){
 				par5Entity.motionZ = -0.1D;
 			}else {
-				par5Entity.motionX += (rand.nextDouble() - rand.nextDouble()) * 0.002D;
-				par5Entity.motionZ += (rand.nextDouble() - rand.nextDouble()) * 0.002D;
+				par5Entity.motionX += (rand.nextDouble() - rand.nextDouble()) * 0.0002D;
+				par5Entity.motionZ += (rand.nextDouble() - rand.nextDouble()) * 0.0002D;
 			}
 		}
 	}

@@ -36,7 +36,7 @@ public class FarmTreeSeed extends Item {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-		if(world.isRemote){
+		if(world.isRemote) {
 			return itemstack;
 		}
 		Vec3 var4 = entityplayer.getLook(2.0F);
@@ -54,12 +54,12 @@ public class FarmTreeSeed extends Item {
                 k = movingobjectposition.blockZ;
                 l = movingobjectposition.sideHit;
                 switch(l){
-                case 0 : j -= 2; break;
-                case 1 : j++; break;
-                case 2 : k--; break;
-                case 3 : k++; break;
-                case 4 : i--; break;
-                case 5 : i++; break;
+	                case 0 : j -= 2; break;
+	                case 1 : j++; break;
+	                case 2 : k--; break;
+	                case 3 : k++; break;
+	                case 4 : i--; break;
+	                case 5 : i++; break;
                 }
             }
         }

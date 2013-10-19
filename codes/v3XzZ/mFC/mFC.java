@@ -1,8 +1,11 @@
 package v3XzZ.mFC;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.Session;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import v3XzZ.mFC.blocks.BlockNewCauldron;
@@ -34,6 +37,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -65,8 +69,8 @@ import cpw.mods.fml.relauncher.Side;
 	            packetHandler = ServerPacketHandler.class
 	            )
 	     )
-public class mFC
-{	
+public class mFC {
+	
 	@SidedProxy(clientSide = References.CLIENT_PROXY, serverSide = References.COMMON_PROXY)
 	public static CommonProxy proxy;
 	@Instance(References.MOD_ID)
@@ -77,9 +81,19 @@ public class mFC
 	public static boolean GrassDropPumpkin;
 	public static boolean modernFood;
 	
+	public String[] betaTesters = new String[]{"Marre_96", "johnne95", "Ryan_Leanardoe", "F22RaptorDude", "Inferno0214", "Katta_Lord"};
+	public boolean isBeta = false;
+	public boolean isAllowed = true;
+	
+	/** GOD DAMN IMPORTENT! **/
+	public static boolean isEclipse = true;
+	
 	@EventHandler
     public void Load(FMLInitializationEvent event)
     {
+		if(!this.isAllowed){
+			return;
+		}
 		proxy.init();
 		NetworkRegistry.instance().registerGuiHandler(this, proxy);
 		Config.loadCrops();
@@ -105,7 +119,7 @@ public class mFC
 		}
 		Block.blocksList[Block.cauldron.blockID] = null;
 		Item.itemsList[Block.cauldron.blockID] = null;
-        Block newCauldron = new BlockNewCauldron(Block.cauldron.blockID).setUnlocalizedName("cauldron");
+        Block newCauldron = new BlockNewCauldron(Block.cauldron.blockID).setUnlocalizedName("cauldron").setHardness(2.0F);
         GameRegistry.registerBlock(newCauldron, "NewCauldron");
         Common.OverrideBlock(Block.cauldron, newCauldron);
 		Item.itemsList[Item.appleRed.itemID] = null;
@@ -130,7 +144,21 @@ public class mFC
 
 	@EventHandler
     public void PreInit(FMLPreInitializationEvent event)
-    { 
+    {
+		if(isBeta){
+			if(event.getSide() == Side.CLIENT) {
+				for(int i = 0; i < betaTesters.length; i++) {
+					if(betaTesters[i].equalsIgnoreCase(((Session) Common.getField(Minecraft.getMinecraft(), "session")).func_111285_a())){
+						this.isAllowed = true;
+						break;
+					}
+					this.isAllowed = false;
+				}
+			}
+		}
+		if(!this.isAllowed){
+			return;
+		}
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 
         config.load();
@@ -144,10 +172,32 @@ public class mFC
 
 	@EventHandler
     public void PostInit(FMLPostInitializationEvent event)
-    { 
+    {
+		if(!this.isAllowed){
+			return;
+		}
     	Common.removeRecipe(new ItemStack(Item.bowlSoup));
     	Item.wheat.setMaxStackSize(CommonIds.MAX_GRAIN_STACK);
     }
+
+	@EventHandler
+	public void ServerStarted(FMLServerStartingEvent event){
+		if(isBeta){
+			if(event.getSide() == Side.SERVER) {
+				MinecraftServer.getServer().getConfigurationManager().setWhiteListEnabled(true);
+				for(int i = 0; i < betaTesters.length; i++) {
+					MinecraftServer.getServer().getConfigurationManager().addToWhiteList(betaTesters[i].toLowerCase());
+				}
+			}
+		}else {
+			if(event.getSide() == Side.SERVER) {
+				MinecraftServer.getServer().getConfigurationManager().setWhiteListEnabled(false);
+				for(int i = 0; i < betaTesters.length; i++) {
+					MinecraftServer.getServer().getConfigurationManager().removeFromWhitelist(betaTesters[i].toLowerCase());
+				}
+			}
+		}
+	}
     
     public static void generalConfig(Configuration config){
     	oldApple = config.get(Configuration.CATEGORY_GENERAL, "Old apple texture", false).getBoolean(false);

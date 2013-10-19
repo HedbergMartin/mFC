@@ -1,14 +1,14 @@
 package v3XzZ.mFC.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import v3XzZ.mFC.api.ItemThirst;
 import v3XzZ.mFC.lib.Items;
 import v3XzZ.util.Common;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
 /**
  * Project: mFC
@@ -20,10 +20,10 @@ import net.minecraft.world.World;
  * 
  */
 
-public class FarmCup extends ItemFood {
+public class FarmCup extends ItemThirst {
 
 	public FarmCup(int i, int j) {
-		super(i, j, false);
+		super(i, j, 2.4F);
 		if (this.getItemStackLimit()<3) maxStackSize=3;
 	}
 	

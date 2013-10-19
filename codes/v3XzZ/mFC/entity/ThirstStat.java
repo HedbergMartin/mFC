@@ -53,13 +53,11 @@ public class ThirstStat
     /**
      * Handles the thirst game logic.
      */
-    public void onUpdate(EntityPlayer par1EntityPlayer)
-    {
+    public void onUpdate(EntityPlayer par1EntityPlayer) {
         int i = par1EntityPlayer.worldObj.difficultySetting;
         this.prevThirstLevel = this.thirstLevel;
 
-        if (Common.getPlayerExhaustion(par1EntityPlayer.getFoodStats()) > 4.0F)
-        {
+        if (Common.getPlayerExhaustion(par1EntityPlayer.getFoodStats()) > 4.0F) {
             if (this.thistSaturationLevel > 0.0F)
             {
                 this.thistSaturationLevel = Math.max(this.thistSaturationLevel - 1.0F, 0.0F);

@@ -50,16 +50,15 @@ public class CropBush extends CropTemplate {
     }
 
 	@Override
-    public void onBlockDestroyedByPlayer(World world, int i, int j, int k, int l)
-    {
+    public void onBlockDestroyedByPlayer(World world, int i, int j, int k, int l) {
     	if(!world.isRemote)
         {
     		/*EntityItem item = new EntityItem(world, d, d1, d2, new ItemStack(mFC.grapes));
 	        world.spawnEntityInWorld(item);*/
 	        if(isBush && l == stage-1) {
-	        	world.setBlockMetadataWithNotify(i, j, k, stage-2, 2);
+	        	world.setBlock(i, j, k, this.blockID, stage-2, 2);
 	        }else if(l == stage-1) {
-	        	world.setBlockMetadataWithNotify(i, j, k, stage-3, 2);
+	        	world.setBlock(i, j, k, this.blockID, stage-3, 2);
 	        }
         }
     }
@@ -214,24 +213,24 @@ public class CropBush extends CropTemplate {
         }
         for(int i2 = 0; i2 < 3; i2++)
         {
-            if(world.rand.nextInt(4) <= 1 && l != stage)
+            if(world.rand.nextInt(3) <= 1 && l != stage-1)
             {
                 float f1 = 0.7F;
                 float f2 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                 float f3 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                 float f4 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, (float)k + f4, new ItemStack(getSeed()));
+                EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, (float)k + f4, new ItemStack(Item.itemsList[seed+256]));
                 entityitem.delayBeforeCanPickup = 10;
                 world.spawnEntityInWorld(entityitem);
             }
         }
-        if(l == stage){
+        if(l == stage-1){
         	for(int w = 0; w < 1+rand.nextInt(2); w++){
         		float f1 = 0.7F;
                 float f2 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                 float f3 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                 float f4 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, (float)k + f4, new ItemStack(getDrop()));
+                EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, (float)k + f4, new ItemStack(Item.itemsList[drop]));
                 entityitem.delayBeforeCanPickup = 10;
                 world.spawnEntityInWorld(entityitem);
         	}
@@ -248,20 +247,6 @@ public class CropBush extends CropTemplate {
     	}else{
     		return null;
     	}
-      
-    }
-    
-    private Item getDrop() {
-    	if(drop == Items.raspBerry.itemID){
-    		return Items.raspBerry;
-    	}else if(drop == Items.strawBerry.itemID){
-    		return Items.strawBerry;
-    	}else if(drop == Items.tomato.itemID){
-    		return Items.tomato;
-    	}else{
-    		return null;
-    	}
-      
     }
     
     @Override

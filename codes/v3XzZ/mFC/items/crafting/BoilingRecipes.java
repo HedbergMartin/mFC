@@ -31,14 +31,14 @@ public class BoilingRecipes {
 	public BoilingRecipes() {
 		instance = this;
 		
-		this.addBoilRecipe(new ItemStack(Items.carrotStew), 5, TileEntityCauldron.LIQ_MILK, 0xFF8060, new Object[] {new ItemStack(Item.carrot), new ItemStack(Item.egg), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.bowlOfRice), 5, TileEntityCauldron.LIQ_WATER, 0xECFF82, new Object[] {new ItemStack(Items.Rice), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.beefStew), 5, TileEntityCauldron.LIQ_WATER, 0x72480D, new Object[] {new ItemStack(Item.potato), new ItemStack(Block.mushroomBrown), new ItemStack(Item.beefCooked), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.beefSoup), 5, TileEntityCauldron.LIQ_WATER, 0x82520F, new Object[] {new ItemStack(Item.potato), new ItemStack(Item.carrot), new ItemStack(Item.beefCooked), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.onionStew), 5, TileEntityCauldron.LIQ_MILK, 0xF7FFA0, new Object[] {new ItemStack(Items.onion), new ItemStack(Item.egg), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.tomatoStew), 5, TileEntityCauldron.LIQ_WATER, 0xFF2833, new Object[] {new ItemStack(Items.tomato), new ItemStack(Items.onion), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.porridge, 1, 0), 5, TileEntityCauldron.LIQ_WATER, 0xFFAB51, new Object[] {new ItemStack(Item.wheat), new ItemStack(Items.saltPile)});
-		this.addBoilRecipe(new ItemStack(Items.porridge, 1, 1), 5, TileEntityCauldron.LIQ_MILK, 0xD3F4FF, new Object[] {new ItemStack(Items.Rice), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.carrotStew), 30, TileEntityCauldron.LIQ_MILK, 0xFF8060, new Object[] {new ItemStack(Item.carrot), new ItemStack(Item.egg), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.bowlOfRice), 30, TileEntityCauldron.LIQ_WATER, 0xECFF82, new Object[] {new ItemStack(Items.Rice), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.beefStew), 30, TileEntityCauldron.LIQ_WATER, 0x72480D, new Object[] {new ItemStack(Item.potato), new ItemStack(Block.mushroomBrown), new ItemStack(Item.beefCooked), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.beefSoup), 30, TileEntityCauldron.LIQ_WATER, 0x82520F, new Object[] {new ItemStack(Item.potato), new ItemStack(Item.carrot), new ItemStack(Item.beefCooked), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.onionStew), 30, TileEntityCauldron.LIQ_MILK, 0xF7FFA0, new Object[] {new ItemStack(Items.onion), new ItemStack(Item.egg), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.tomatoStew), 30, TileEntityCauldron.LIQ_WATER, 0xFF2833, new Object[] {new ItemStack(Items.tomato), new ItemStack(Items.onion), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.porridge, 1, 0), 30, TileEntityCauldron.LIQ_WATER, 0xFFAB51, new Object[] {new ItemStack(Item.wheat), new ItemStack(Items.saltPile)});
+		this.addBoilRecipe(new ItemStack(Items.porridge, 1, 1), 30, TileEntityCauldron.LIQ_MILK, 0xD3F4FF, new Object[] {new ItemStack(Items.Rice), new ItemStack(Items.saltPile)});
 	}
 	
 	public void addBoilRecipe(ItemStack output, int time, int reqLiquid, int color, Object ... par2ArrayOfObj)

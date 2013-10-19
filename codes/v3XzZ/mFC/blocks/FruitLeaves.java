@@ -3,8 +3,6 @@ package v3XzZ.mFC.blocks;
 import java.util.List;
 import java.util.Random;
 
-import v3XzZ.mFC.lib.Items;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
@@ -71,15 +69,13 @@ public class FruitLeaves extends BlockLeavesBase {
 		        float f3 = par1World.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
 		        float f4 = par1World.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
 		        EntityItem entityitem = null;
-		        switch(par1World.getBlockMetadata(par2, par3, par4)){
-			        case(0) : entityitem = new EntityItem(par1World, (float)par2 + f2, (float)par3 + f3, (float)par4 + f4, new ItemStack(Item.appleRed)); break;
-			        case(1) : entityitem = new EntityItem(par1World, (float)par2 + f2, (float)par3 + f3, (float)par4 + f4, new ItemStack(Items.orange)); break;
-			        case(2) : entityitem = new EntityItem(par1World, (float)par2 + f2, (float)par3 + f3, (float)par4 + f4, new ItemStack(Items.avacado)); break;
-			        case(3) : entityitem = new EntityItem(par1World, (float)par2 + f2, (float)par3 + f3, (float)par4 + f4, new ItemStack(Items.CocoaFruit)); break;
+		        if(par1World.getBlockMetadata(par2, par3, par4) == 3){
+			        entityitem = new EntityItem(par1World, (float)par2 + f2, (float)par3 + f3, (float)par4 + f4, new ItemStack(Item.appleRed));
 			    }
 		        if(entityitem != null){
 			        entityitem.delayBeforeCanPickup = 10;
 			        par1World.spawnEntityInWorld(entityitem);
+			        par1World.setBlockMetadataWithNotify(par2, par3, par4, 0, 2);
 		        }
 			}
 	   

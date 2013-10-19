@@ -47,9 +47,10 @@ public class BonemealEventHandler {
         }
     	if(block instanceof FruitSaplings)
         {
-    		if(((FruitSaplings)block).growTree(event.world, i, j, k, event.world.rand)){
-                event.setResult(Result.ALLOW);
+            if ((double)event.world.rand.nextFloat() < 0.45D) {
+        		((FruitSaplings) block).growTree(event.world, i, j, k, event.world.rand, true);
             }
+            event.setResult(Result.ALLOW);
         }
         if(block instanceof CropCorn)
         {

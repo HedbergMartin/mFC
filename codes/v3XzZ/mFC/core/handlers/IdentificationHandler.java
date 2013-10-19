@@ -87,10 +87,10 @@ public abstract class IdentificationHandler {
 	public static int yellowSeedlingBlock;
 	public static int redSeedlingBlock;
 	public static int tomatoPlantBlock;
-	public static int appleBlock;
-	public static int avacadoBlock;
-	public static int orangeBlock;
-	public static int cocoaBlock;
+	public static int appleLeaves;
+	public static int avacadoLeaves;
+	public static int orangeLeaves;
+//	public static int cocoaBlock;
 	public static int ApplePieBlock;
 	public static int TacoPieBlock;
 	public static int ChocolateCakeBlock;
@@ -105,7 +105,6 @@ public abstract class IdentificationHandler {
 	public static int grapesPlantBlock;
 	public static int beerKegBlockID;
 	public static int wasabiPlantBlock;
-	public static int leavesBlock;
 //	public static int presentBlock;
 	
 	
@@ -455,10 +454,10 @@ public abstract class IdentificationHandler {
 			yellowSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "yellowSeedling", 3851).getInt();
 			redSeedlingBlock = config.get(Configuration.CATEGORY_BLOCK, "redSeedling", 3852).getInt();
 			tomatoPlantBlock = config.get(Configuration.CATEGORY_BLOCK, "tomatoPlant", 3853).getInt();
-			appleBlock = config.get(Configuration.CATEGORY_BLOCK, "appleBlock", 3854).getInt();
-			avacadoBlock = config.get(Configuration.CATEGORY_BLOCK, "avacadoBlock", 3855).getInt();
-			orangeBlock = config.get(Configuration.CATEGORY_BLOCK, "orangeBlock", 3856).getInt();
-			cocoaBlock = config.get(Configuration.CATEGORY_BLOCK, "cocoaBlock", 3857).getInt();
+			appleLeaves = config.get(Configuration.CATEGORY_BLOCK, "appleLeaves", 3854).getInt();
+			avacadoLeaves = config.get(Configuration.CATEGORY_BLOCK, "avacadoLeaves", 3855).getInt();
+			orangeLeaves = config.get(Configuration.CATEGORY_BLOCK, "orangeLeaves", 3856).getInt();
+//			cocoaBlock = config.get(Configuration.CATEGORY_BLOCK, "cocoaBlock", 3857).getInt();
 			ApplePieBlock = config.get(Configuration.CATEGORY_BLOCK, "ApplePie", 3858).getInt();
 			TacoPieBlock = config.get(Configuration.CATEGORY_BLOCK, "TacoPie", 3859).getInt();
 			ChocolateCakeBlock = config.get(Configuration.CATEGORY_BLOCK, "ChocolateCake", 3860).getInt();
@@ -476,10 +475,10 @@ public abstract class IdentificationHandler {
 			Saplings = config.get(Configuration.CATEGORY_BLOCK, "Saplings", 3872).getInt();
 			ricePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "ricePlant", 3873).getInt();
 			lettucePlantBlock = config.get(Configuration.CATEGORY_BLOCK, "lettucePlant", 3874).getInt();
-			leavesBlock = config.get(Configuration.CATEGORY_BLOCK, "leaves", 3875).getInt();
-			PlateBlock = config.get(Configuration.CATEGORY_BLOCK, "plate", 3876).getInt();
-			shelfBlock = config.get(Configuration.CATEGORY_BLOCK, "shelf", 3877).getInt();
-			barrelBlock = config.get(Configuration.CATEGORY_BLOCK, "barrel", 3878).getInt();
+//			leavesBlock = config.get(Configuration.CATEGORY_BLOCK, "leaves", 3875).getInt();
+			PlateBlock = config.get(Configuration.CATEGORY_BLOCK, "plate", 3875).getInt();
+			shelfBlock = config.get(Configuration.CATEGORY_BLOCK, "shelf", 3876).getInt();
+			barrelBlock = config.get(Configuration.CATEGORY_BLOCK, "barrel", 3877).getInt();
 //			presentBlock = config.get(config.CATEGORY_BLOCK, "present", 3030).getInt();
 	}
 	

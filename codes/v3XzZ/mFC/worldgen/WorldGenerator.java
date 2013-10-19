@@ -34,62 +34,44 @@ public class WorldGenerator implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
 		if(world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.forest) {
-			for(int k = 0; k < 14; k++)
-	        {
+			for(int k = 0; k < 14; k++) {
 	            int l = random.nextInt(66) + 63;
 	            int i1 = chunkX + random.nextInt(16);
 	            int j1 = chunkZ + random.nextInt(16);
-	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1)
-	            {
-	                (new FarmFruitTree()).generate(world, random, i1, l, j1, Blocks.appleBlock.blockID, 0);
+	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1) {
+	                new FruitTreeGen(false, 4, 0, Blocks.appleLeaves.blockID, false, false).generate(world, random, i1, l, j1);
 	            }
 	        }
 		}
 		
 		if(world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.plains) {
-	        for(int k = 0; k < 4; k++)
-	        {
+	        for(int k = 0; k < 4; k++) {
 	            int l = random.nextInt(66) + 63;
 	            int i1 = chunkX + random.nextInt(16);
 	            int j1 = chunkZ + random.nextInt(16);
-	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1)
-	            {
-	                (new FarmFruitTree()).generate(world, random, i1, l, j1, Blocks.orangeBlock.blockID, 1);
+	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1) {
+	            	new FruitTreeGen(false, 4, 0, Blocks.orangeLeaves.blockID, false, false).generate(world, random, i1, l, j1);
 	            }
 	        }
-	        for(int k = 0; k < 4; k++)
-	        {
+	        for(int k = 0; k < 4; k++) {
 	            int l = random.nextInt(66) + 63;
 	            int i1 = chunkX + random.nextInt(16);
 	            int j1 = chunkZ + random.nextInt(16);
-	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1)
-	            {
-	                (new FarmFruitTree()).generate(world, random, i1, l, j1, Blocks.appleBlock.blockID, 0);
+	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1) {
+	                new FruitTreeGen(false, 4, 0, Blocks.appleLeaves.blockID, false, false).generate(world, random, i1, l, j1);
 	            }
 	        }
 		}
         if(world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.jungle || world.getBiomeGenForCoords(chunkX, chunkZ) == BiomeGenBase.jungleHills) {
-	        for(int k = 0; k < 40; k++)
-	        {
+	        for(int k = 0; k < 40; k++) {
 	            int l = random.nextInt(66) + 63;
 	            int i1 = chunkX + random.nextInt(16);
 	            int j1 = chunkZ + random.nextInt(16);
-	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1)
-	            {
-	                (new FarmFruitTree()).generate(world, random, i1, l, j1, Blocks.avacadoBlock.blockID, 2);
+	            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1) {
+	            	new FruitTreeGen(false, 4 + random.nextInt(7), 3, Blocks.avocadoLeaves.blockID, true, false).generate(world, random, i1, l, j1);
 	            }
 	        }
         }
-        /*for(int k = 0; k < 10; k++)
-        {
-            int l = random.nextInt(66) + 63;
-            int i1 = chunkX + random.nextInt(16);
-            int j1 = chunkZ + random.nextInt(16);
-            if((world.getBlockId(i1, l - 1, j1) == 2 || world.getBlockId(i1, l - 1, j1) == 3) && random.nextInt(5) < 1)
-            {
-                (new FarmFruitTree()).generate(world, random, i1, l, j1, mFC.cocoaBlock.blockID, 3);
-            }
-        }*/
         for(int k = 0; k < 400; k++)
         {
             int l = chunkX + random.nextInt(16) + 8;

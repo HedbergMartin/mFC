@@ -49,7 +49,6 @@ public class EntityCauldronItem extends EntityItem {
         this.shouldDespawn = true;
         
         this.delayBeforeCanPickup = 10;
-        this.age = 0;
 
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;

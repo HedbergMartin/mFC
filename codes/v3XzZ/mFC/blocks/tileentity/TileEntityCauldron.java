@@ -50,7 +50,6 @@ public class TileEntityCauldron extends TileEntity {
 				}else {
 					this.liqiudBoilTime = 0;
 				}
-				//System.out.println("Item: " + this.itemBoiling[0] + "Item2: " + this.itemBoiling[1] + "Item3: " + this.itemBoiling[2] + "Item4: " + this.itemBoiling[3] + "Item5: " + this.itemBoiling[4] + ", Output: " + this.itemBoiling[5] + ", TicksBoiled: " + this.ticksBoiled);
 				if(this.worldObj.getBlockMetadata(xCoord, yCoord, zCoord) == 3){
 					if(this.liqiudBoilTime > 100){
 						if(getFoodInCauldron()){

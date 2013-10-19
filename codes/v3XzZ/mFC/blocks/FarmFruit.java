@@ -2,17 +2,14 @@ package v3XzZ.mFC.blocks;
 
 import java.util.Random;
 
-import v3XzZ.mFC.lib.Blocks;
-import v3XzZ.util.Common;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import v3XzZ.util.Common;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -43,7 +40,7 @@ public class FarmFruit extends Block
 
     protected boolean canThisPlantGrowOnThisBlockID(int i)
     {
-        return i == Blocks.leaves.blockID;
+        return i == Block.leaves.blockID;
     }
 
     public void onNeighborBlockChange(World world, int i, int j, int k, int l)
@@ -69,7 +66,7 @@ public class FarmFruit extends Block
     public boolean canBlockStay(World world, int i, int j, int k)
     {
     	int l = world.getBlockId(i, j + 1, k);
-        return world.getBlockLightValue(i, j, k) >= 1 && l == Blocks.leaves.blockID;
+        return world.getBlockLightValue(i, j, k) >= 1 && l == Block.leaves.blockID;
     }
 
     public int idDropped(int i, Random random, int j)

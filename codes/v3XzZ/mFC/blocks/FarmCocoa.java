@@ -2,18 +2,15 @@ package v3XzZ.mFC.blocks;
 
 import java.util.Random;
 
-import v3XzZ.mFC.lib.Blocks;
-import v3XzZ.mFC.lib.Items;
-import v3XzZ.util.Common;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import v3XzZ.mFC.lib.Items;
+import v3XzZ.util.Common;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Project: mFC
@@ -48,7 +45,7 @@ public class FarmCocoa extends Block
     public boolean canPlaceBlockAt(World world, int i, int j, int k)
     {
         int l = world.getBlockId(i, j + 1, k);
-        return l == Blocks.leaves.blockID;
+        return l == Block.leaves.blockID;
     }
 
     public void onNeighborBlockChange(World world, int i, int j, int k, int l)

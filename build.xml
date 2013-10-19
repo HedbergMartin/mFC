@@ -5,6 +5,7 @@
 
 	<target name="clean">
 		<delete file="${dir.development}\forge\mcp\src\minecraft\mcmod.info" />
+		<delete file="${dir.development}\forge\mcp\src\minecraft\pack.mcmeta" />
 		<delete dir="${dir.development}\forge\mcp\src\minecraft\v3XzZ" />
 		<delete dir="${dir.development}\forge\mcp\reobf\minecraft" />
 	</target>
@@ -44,6 +45,7 @@
 		<mkdir dir="${dir.release}\${release.minecraft.version}" />
 		<jar destfile="${dir.release}\${release.minecraft.version}\mFC-${release.mod.version}.jar">
 			<fileset dir="${dir.development}\forge\mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${dir.development}\forge\mcp\src\minecraft\" includes="pack.mcmeta" />
 			<fileset dir="${dir.development}\forge\mcp\reobf\minecraft\" includes="v3XzZ\" />
 			<fileset dir="${dir.development}\sources\mFC\resources" />
 		</jar>

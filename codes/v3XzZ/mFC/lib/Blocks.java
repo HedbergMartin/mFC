@@ -1,5 +1,6 @@
 package v3XzZ.mFC.lib;
 
+import net.minecraft.block.Block;
 import v3XzZ.mFC.blocks.CropBush;
 import v3XzZ.mFC.blocks.CropCorn;
 import v3XzZ.mFC.blocks.CropGrape;
@@ -8,8 +9,6 @@ import v3XzZ.mFC.blocks.CropOnion;
 import v3XzZ.mFC.blocks.CropRice;
 import v3XzZ.mFC.blocks.CropWasabi;
 import v3XzZ.mFC.blocks.FarmFlower;
-import v3XzZ.mFC.blocks.FruitLeaves;
-import net.minecraft.block.Block;
 
 /**
  * Project: mFC
@@ -23,16 +22,15 @@ import net.minecraft.block.Block;
 
 public class Blocks {
 
-	public static Block appleBlock;
+	public static Block appleLeaves;
 	public static Block fruitSaplings;
-	public static Block avacadoBlock;
-	public static Block orangeBlock;
-	public static Block cocoaBlock;
+	public static Block avocadoLeaves;
+	public static Block orangeLeaves;
+//	public static Block cocoaBlock;
 	public static Block saltBlock;
 	public static Block cheeseWheelBlock;
 	public static Block woodenTrellis;
 	public static Block beerKeg;
-	public static FruitLeaves leaves;
 	public static Block plate;
 	public static Block shelf;
 	public static Block barrel;

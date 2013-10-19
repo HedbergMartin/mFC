@@ -124,7 +124,7 @@ public class RecipeRegister {
 			new ItemStack(Block.pumpkin, 1), new ItemStack(Items.Knife, 1, OreDictionary.WILDCARD_VALUE)
 		});
 		GameRegistry.addRecipe( new ItemStack( Items.guacamole, 1), new Object[] {
-			"X", "#", Character.valueOf('#'), Item.bowlEmpty, Character.valueOf('X'), Items.avacado
+			" XO", " # ", Character.valueOf('#'), Item.bowlEmpty, Character.valueOf('X'), Items.avacado, Character.valueOf('O'), Items.onion
 		});
 		GameRegistry.addShapelessRecipe( new ItemStack(Item.dyePowder, 1, 3), new Object[] {
 			new ItemStack(Items.CocoaFruit, 1)
